@@ -1,110 +1,580 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D-DXA</title>
-    <style>
-        :root {
-            --primary-color: #2563eb;
-            --text-color: #1f2937;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            color: var(--text-color);
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 1rem 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-        
-        nav .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-            margin: 0;
-            padding: 0;
-        }
-        
-        nav a {
-            color: white;
-            text-decoration: none;
-        }
-        
-        main {
-            min-height: calc(100vh - 200px);
-        }
-        
-        footer {
-            background-color: #f3f4f6;
-            padding: 2rem 0;
-            text-align: center;
-            margin-top: 2rem;
-        }
-        
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                gap: 1rem;
-            }
-        }
-    </style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Critical Evaluation of 3D-DXA (3D-Shaper) by Its Inventor: Methodological Limitations and Their Implications</title>
+<style>
+body { font-family: 'Times New Roman', Times, serif; max-width: 860px; margin: 2rem auto; padding: 0 1rem; line-height: 1.65; text-align: justify;}
+h1,h2,h3 { line-height: 1.3; }
+header h1 { font-size: 1.8rem; margin-bottom: 0; }
+header .byline { margin-top: .25rem; color: #333; font-size: 0.95rem; }
+figure { margin: 1rem 0; }
+figure img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+figure figcaption { font-size: 0.9rem; color: #444; text-align: center; margin-top: .5rem; }
+pre { background: #f7f7f7; padding: 0.75rem; overflow-x: auto; white-space: pre-wrap; }
+a[href^="#ref-"] { text-decoration: none; }
+.math { font-family: 'Times New Roman', Times, serif; }
+hr { margin: 2rem 0; }
+
+
+table { width:100%; border-collapse:collapse; margin: .5rem 0; }
+th, td { border:1px solid #ddd; padding:.5rem; text-align:left; vertical-align:top; }
+thead th { background:#f0f0f0; }
+</style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">3D-DXA</div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+<h1>Critical Evaluation of 3D-DXA (3D-Shaper) by Its Inventor: Methodological Limitations and Their Implications</h1>
+<div class="byline">Tristan Whitmarsh<br/>Institute of Astronomy, University of Cambridge, Cambridge, UK</div>
+</header>
+<main>
+<h2>Abstract</h2>
+3D-DXA (also sold as 3D-Shaper) is a software method that generates a 3D reconstruction of the proximal femur from a single 2D dual-energy x-ray absorptiometry (DXA) image by registering a statistical model. The software aims to provide estimates of trabecular, cortical, and structural parameters similar to those derived from quantitative computed tomography (QCT). As the inventor and developer of the software methods upon which 3D-DXA is built, I have been observing its adoption and widespread use with increasing concern. This article provides a critical evaluation of the methodological limitations inherent in 3D-DXA and discusses their implications for research and patient care.
 
-    <main>
-        <div class="container">
-            <h1>Welcome to 3D-DXA</h1>
-            <p>Your content goes here...</p>
-        </div>
-    </main>
+The primary issue is that the limited visibility of the cortex in a DXA image prevents 3D-DXA from accurately deriving cortical parameters. Instead the software relies on predictions based on overall bone mineral density (BMD) rather than direct cortical measurements. This may lead to results that do not reflect actual cortical measurements.
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 3D-DXA. All rights reserved.</p>
-        </div>
-    </footer>
+Additional concerns include the population bias due to the statistical model being derived from a specific demographic, and limited reconstruction accuracy by using single-view DXA images.
+
+These limitations have likely resulted in incorrect measurements and research outcomes, which have largely gone unrecognized due to the use of inappropriate performance assessment metrics and the absence of multiple comparison corrections in studies involving 3D-DXA.
+
+Despite these limitations, 3D-DXA has received regulatory approval in various countries, potentially compromising the accuracy of clinical diagnoses and treatment decisions. By highlighting these issues, this article aims to inform clinicians, researchers, and regulatory bodies about the significant limitations of 3D-DXA. It underscores the urgent need for a reevaluation of its use in research and clinical settings to prevent misinterpretation of results and to ensure patient safety.
+
+
+
+<h2>Keywords</h2>
+3D-DXA, 3D-Shaper, Quantitative Computed Tomography, Bone Mineral Density, Dual-energy X-ray Absorptiometry, Cortical Parameter Mapping, Hip Structure Analsyis.
+
+
+<h2>Lay Summary</h2>
+This review critically examines the 3D-DXA software, also known as 3D-Shaper, which aims to estimate trabecular, cortical, and structural parameters of the proximal femur from a single dual-energy X-ray absorptiometry (DXA) image. 3D-DXA has several inherent limitations that may lead to inaccurate measurements, potentially affecting research outcomes and patient treatment decisions. Understanding these issues is crucial for researchers and clinicians to avoid misinterpretations that could impact our knowledge of bone physiology, drug treatment effects, and patient safety.
+
+
+
+<h2>Introduction</h2>
+3D-DXA is a software method that registers a 3D statistical deformable model onto a single 2D dual-energy x-ray absorptiometry (DXA) image to generate a 3D model of the proximal femur [<a href="#ref-1">1</a>]. The model is constructed from a set of quantitative computed tomography (QCT) scans of a Spanish Caucasian population of 81 women and 30 men with a mean age of 56.2 ± 12.1 years, ranging between 30 and 84 years [<a href="#ref-2">2</a>]. The parameters of the statistical model subsequently describe the main variation in shape and density distribution of this population. In an iterative process, the parameters of the model, as well as the location, orientation and size, are searched in an attempt to have the projection of the model resemble the DXA image (<a href="#fig:pipeline">Figure 1</a>). From the resulting 3D model, cortical parameters are then measured across the bone surface, along with trabecular volumetric BMD values within. A mean absolute error of 0.33 mm for cortical thickness and 72 mg/cm³ for cortical density was reported when comparing 3D-DXA to QCT, with correlation coefficients greater or equal to 0.86 [<a href="#ref-2">2</a>].
+
+<figure id="fig:pipeline" style="float:right; width:50%; margin:0 0 1em 1em;">
+  <img src="Figure1.jpg"
+       alt="Flowchart illustrating the iterative process of 3D-DXA."
+       style="width:100%; height:auto;">
+  <figcaption style="font-size:0.9em; text-align:center;">
+    <b>Figure 1.</b> Flowchart illustrating the iterative process of 3D-DXA used to reconstruct the 3D proximal femur 
+    shape and density distribution from a single 2D DXA image. At each iteration, a projection is 
+    generated from the deformed density model instance, known as a digitally reconstructed radiograph (DRR). 
+    The DRR is then compared with the real DXA image by calculating a metric of similarity like the mean squared error. 
+    The model parameters and similarity transform (rotation, translation, and scale), are then adjusted in a way 
+    that attempts to increase the similarity in the next iteration. This process continues until the process has 
+    converged whereby the similarity between the DRR and the DXA image does not change beyond a predetermined threshold. 
+    Adapted from [<a href="#ref-3">3</a>].
+  </figcaption>
+</figure>
+
+<BR>
+
+Although other methods have been proposed for the 3D reconstruction of bone structures from DXA images using a statistical model [<a href="#ref-4">4</a>, <a href="#ref-5">5</a>], it is the software method first published in 2010 [<a href="#ref-6">6</a>] that was later commercialised as 3D-DXA by Galgo Medical SL (Barcelona, Spain), a spin-off company of the Pompeu Fabra University (Barcelona, Spain). This software was later extended to measure the cortical thickness and cortical bone mineral density (BMD) from the volumetric reconstructions [<a href="#ref-2">2</a>], which is now commercialised as 3D-Shaper by 3D-Shaper Medical SL (Barcelona, Spain), a further spin-off company of Galgo Medical SL, providing both a service and a software. The software is licensed to DMS Imaging (Mauguio, France) to be sold as 3D-DXA with their Stratos/Medix DXA devices. Fujifilm (Tokyo, Japan) is selling the same DXA devices by DMS under the Fujifilm brand name FDX Visionary DXA. Also Imex Medical (São José, Brazil) sells these devices as the Elipse series and Radiología SA (Madrid, Spain) sells them as Radioscore - DR. These all include the option of adding 3D-DXA.
+
+<BR>
+
+Having developed the original software method [<a href="#ref-1">1</a>], I possess a deep understanding of its inherent limitations that may not be apparent to other users or researchers. Although I have explained the main limitation with this software in a letter to the editor of Bone [<a href="#ref-7">7</a>], 3D-DXA continues to be sold and used throughout the world. 3D-Shaper has received approval from regulatory authorities in the EU, Japan, Thailand, Argentina, and a 510(k) clearance from the FDA, authorizing its use for diagnosing and making treatment decisions in patients. Given these endorsements, it is critical and urgent to address and clarify some of the misconceptions about this software, thereby enhancing understanding of its limitations.
+
+<h2>Methodological limitations</h2>
+
+In this section I will explain some of the limitations of the methodology that 3D-DXA is based on, as well as specific implementation details that may contribute to further inaccuracies.
+
+
+<h3>Cortical parameters are not measured</h3>
+
+The main issue lies with a lack of visibility of the cortex in DXA images for 3D-DXA to derive its cortical parameters from. To illustrate this I wish to revisit a figure from the letter to the editor of Bone (<a href="#fig:DXA">Figure 2</a>). The DXA image clearly shows that at most locations on the bone surface, there is no discernible cortex to derive the cortical parameters from. This applies to the contour of the bone projection (A) and is especially true where two opposing cortices are perpendicular to the X-ray detector (B). This is evident in this image from the GE iDXA scanner with a pixel size of 0.3 x 0.25mm, but becomes even more pronounced in images using older GE Prodigy DXA devices, which produce considerably lower resolution images with a pixel size of 0.6 x 1.05mm, but are also supported by the 3D-Shaper software.
+
+
+<figure id="fig:DXA" style="float:right; width:50%; margin:0 0 1em 1em;">
+  <img src="Figure2.jpg"
+       alt="Example DXA hip scan of a young adult acquired using the GE iDXA scanner."
+       style="width:100%; height:auto;">
+  <figcaption style="font-size:0.9em; text-align:center;">
+    <b>Figure 2.</b> Example DXA hip scan of a young adult acquired using the GE iDXA scanner. 
+    This figure was previously published in [<a href="#ref-7">7</a>].
+  </figcaption>
+</figure>
+
+
+
+<BR>
+
+Instead of measuring the cortical parameters directly from the DXA image, 3D-DXA registers a statistical model of the shape and density distribution onto the DXA image [<a href="#ref-7">7</a>], and extracts the cortical parameters from this model [<a href="#ref-2">2</a>]. This model is constructed from a set of calibrated QCT scans, in which the Hounsfield units of the voxels in a standard CT scan are converted to BMD values using a calibration phantom.
+
+<BR>
+
+To construct the model, the proximal femur in each QCT scan is first segmented, meaning a surface mesh of the proximal femur is constructed. A mathematical technique, such as Principal Component Analysis, is then applied to the points of the aligned femur bone surfaces, resulting in an average shape and a set of Principal Components (PCs) that describe the variations in shape, ordered by their importance.
+
+<BR>
+
+To construct the statistical model of the density distribution, the QCT volumes are deformed to the mean shape, and the same statistical method is applied to the BMD values in the volumes, generating a mean volume and a set of PCs that describe the variation in bone mineral density across the volume.
+
+<BR>
+
+Each principal component represents the way in which the bone’s shape or density can vary (<a href="#fig:ShapeDensityModel">Figure 3</a>). The model parameters are numerical factors that determine how much of each component is added to the mean model. Adjusting these parameters modifies the shape or density distribution, producing new model instances. The parameters are constrained to typically 2.5 to 3 standard deviations of its variation to make sure that the bone model always looks realistic according to the set of QCT scans it is built from. To create a new instance of the model, the density volume is deformed to match the new shape, using a Thin Plate Splines (TPS) transformation calculated with a subset of the shape points.
+
+
+<figure id="fig:ShapeDensityModel">
+  <img src="Figure3.jpg"
+       alt="The mean and the first three principal components (PCs) of the shape model (left) and projections of the density model (right), varying between -3 and +3 standard deviations (σ).">
+  <figcaption>
+    <b>Figure 3.</b> The mean and the first three principal components (PCs) of the shape model (left) and projections of the density model (right), 
+    varying between -3 and +3 standard deviations (<span class="math">σ</span>). 
+    Adapted from [<a href="#ref-3">3</a>].
+  </figcaption>
+</figure>
+
+<BR>
+
+3D-DXA subsequently generates a 3D reconstruction by iterative changing the model parameters and generating corresponding model instances, as well as rotating and translating the model, until the projection of the model matches with the DXA image according to a predetermined similarity metric threshold (<a href="#fig:pipeline">Figure 1</a>).
+
+<BR>
+
+The cortical thickness and cortical density is then measured from the instance of the model using a method equivalent to a deconvolution approach proposed for QCT [<a href="#ref-8">8</a>]. Therefore, the cortical parameters are not measured from the DXA image, but from a parametric model that was registered onto this image.
+
+<BR>
+
+Thus, when maps of the cortical parameters are presented by 3D-DXA, with values at locations where no cortex could possibly have been measured [<a href="#ref-9">9</a>, <a href="#ref-10">10</a>, <a href="#ref-11">11</a>, <a href="#ref-12">12</a>, <a href="#ref-13">13</a>], these maps were merely derived from the model instance. Although 3D-Shaper Medical clarifies in a response to a letter to the editor of Bone [<a href="#ref-14">14</a>] that these parameters are estimated rather than measured, a more accurate description would be that 3D-DXA predicts these values using a complex and potentially error-prone statistical method. Given the limited visibility of the cortex in DXA images, the software primarily relies on overall bone density and is constrained by the statistical characteristics of the Spanish population on which the model is based. The broader implications of this limitation are explored further in the review.
+
+
+<figure id="fig:density_model">
+  <img src="Figure4.jpg"
+       alt="Example of generating an instance of a density model and measuring the cortical parameters.">
+  <figcaption>
+    <b>Figure 4.</b> Example of generating an instance of a density model and measuring the cortical parameters from this volume. 
+    The top panels show cross-sections of the density model with the mean, PC1, PC2, PC3, and the new model instance 
+    generated by a linear combination of these volumes. Below them we see the values of the voxels taken from a line in 
+    the volume indicated by the red line in the cross-section. In the far left we can see how a stair step model (red) 
+    is fitted to the voxel values by smoothing the model (blue). This results in a cortical thickness and cortical vBMD 
+    values which can be combined into a surface BMD (sBMD) value (green). When this is done at every point on the bone 
+    surface a color coded cortical surface map can be generated as shown above.
+  </figcaption>
+</figure>
+
+<h3>Number of model parameters used</h3>
+
+There is no single parameter that increases the cortical thickness. Instead, the representation of the cortex depends on a linear combination of the average 3D volume and the PCs of the density model. In <a href="#fig:density_model">Figure 4</a> we can see an example of how the mean and first three PCs can generate a new model instance. In this example, the model parameters, which are the scaling factors for the PCs, have values of 2, 3, and -1.5, respectively. While PC1 increases or decreases the density everywhere, the other PCs change the density distribution in non descriptive ways. This figure also illustrates how the cortical parameters are subsequently estimated from this new volume by fitting a smoothed stair-step model. Selective and independent adjustments to cortical thickness, cortical density, or trabecular density, if achievable at all, would require a complex combination of multiple principal components and, consequently, many model parameters.
+
+<BR>
+
+Typically a subset of principal components is retained that describe the main modes of variation. This reduces the variation of the BMD distribution and surface points to a reduced set of parameters. How many model parameters are needed is typically determined by calculating number of shape and density model parameters that describe 95% of the variations within its population, or by determining the "elbow" in the cumulative variance plot. However, more accurate is to use Horn's parallel analysis [<a href="#ref-6">6</a>] which mathematically assesses which PCs should be considered noise and can therefore be discarded.
+
+<BR>
+
+Although the number of parameters that is used is a critical element in any statistical modeling approach, to my knowledge this number, or the method to derive this number, has never been disclosed by 3D-Shaper Medical. If the number of parameters is not appropriately large, as determined by Horn's parallel analysis, it may not be able to accurately represent the full range of variation in the femur morphology of the input population. Furthermore, if this number of parameters is not the same in research and clinical applications, there will be a disconnect in the reported and clinical accuracy of 3D-DXA.
+
+<h3>Potential population bias</h3>
+
+Any 3D bone model generated by 3D-DXA is derived from statistics on the variations of the input population. In the case of 3D-Shaper, the statistical model is built from a Spanish population of 81 women and 30 men with a mean age of 56.2 ± 12.1 years [30 years – 84 years] [<a href="#ref-2">2</a>] without treatments or diseases that impact bone metabolism [<a href="#ref-15">15</a>]. It is clear that femur morphology differs between men and women, but demographics also play an important role. For example, the femur bones of Caucasian populations are significantly different from those of Asian populations, as documented in previous studies [<a href="#ref-16">16</a>].
+
+<BR>
+
+A model built from a Caucasian population will not be able to generate a reconstruction that fits every subject in an Asian population. This is because the parameters of a statistical model are constrained to 3 standard deviation around the average femur model of a Spanish population. For instance, one study reports that White women have a femoral neck cortical thickness of 1.84±0.03 mm, while for Korean women it is 2.41±0.71 mm, as measured by QCT scans [<a href="#ref-17">17</a>]. Consequently, a Korean woman with a cortical thickness of 1.96 mm would fall outside the range of variation for a White population when constrained to three standard deviations (1.75–1.93 mm). This example illustrates the importance of having the model represent the target population.
+
+<BR>
+
+Although the measures by 3D-DXA correlate with QCT in a Japanese population [<a href="#ref-18">18</a>], this is simply because all parameters correlate with the areal BMD. It does not mean that patient specific reconstructions were obtained. In particular, the estimated cortical parameters may deviate substantially from the true values, especially regarding their spatial distribution. Even if the predicted femur shape is faulty, the density values, including cortical thickness and cortical BMD will still mirror the aBMD, as long as the projection of the statistical model largely overlaps with the bone in the DXA image. A person with low aBMD will have a low vBMD, a low cortical BMD and thinner cortex compared to a patient with high aBMD in any population. Furthermore, [<a href="#ref-18">18</a>] reported only correlations, and there may be significant bias when applying a model developed from a Spanish population to a Japanese population, which could have clinical consequences. Despite this fundamental limitation, 3D-DXA is currently being marketed in Asia, including countries such as Japan, Thailand, and India.
+
+<BR>
+
+A statistical model needs to be trained on the population to which it is applied. This could mean building separate models for each gender, ethnicity, and potentially treatment type, or by including all these subgroups in one model, provided that enough parameters are retained to capture the full range of variability. This principle is well established for machine learning and artificial intelligence tools [<a href="#ref-19">19</a>, <a href="#ref-20">20</a>, <a href="#ref-21">21</a>, <a href="#ref-22">22</a>] but is even more critical for statistical modeling approaches, where models are actively constrained by the input population. Nonetheless, 3D-DXA has been used in studies with populations that obviously differ from the model population, including:
+professional dancers[<a href="#ref-9">9</a>],
+football players and swimmers[<a href="#ref-23">23</a>]
+young women with obesity[<a href="#ref-24">24</a>],
+black women[<a href="#ref-25">25</a>],
+patients with high bone mass [<a href="#ref-11">11</a>],
+with adult growth hormone deficiency [<a href="#ref-26">26</a>]
+with psoriatic disease [<a href="#ref-27">27</a>],
+with type 2 diabetes [<a href="#ref-28">28</a>],
+with primary hyperparathyroidism [<a href="#ref-10">10</a>, <a href="#ref-29">29</a>],
+with acromegaly [<a href="#ref-30">30</a>],
+with down syndrome [<a href="#ref-13">13</a>],
+after sleeve gastrectomy [<a href="#ref-31">31</a>],
+men with spinal cord injury [<a href="#ref-32">32</a>],
+Australian middle-aged and older men with low bone mass [<a href="#ref-33">33</a>],
+and perhaps most concerning of all, paediatric cancer survivors [<a href="#ref-34">34</a>].
+
+<h3>Limited reconstruction accuracy</h3>
+
+3D-DXA is a highly complex method prone to errors at multiple stages. These include inaccuracies from QCT calibration, deformable registration for building statistical models, deformation of the density model to the shape instance, discrepancies in BMD and resolution between QCT and DXA, and simplification of the model projection by an isometric projection instead of the fan beam projection. Each of these factors can introduce biases in unpredictable ways, potentially skewing the results. In addition, specific implementation details, such as building the statistical model from a very small set of 111 adult Spanish subjects (which limits the variance in shape, density, and cortical thickness), further restrict the applicability of this software tool.
+
+<BR>
+
+Furthermore, it is not clear whether 3D-Shaper can accurately read the proprietary data files from GE and Hologic devices, particularly with respect to correctly applying the calibration and correction factors for varying body compositions. These potential inaccuracies may influence 3D-Shaper results when applied to different populations or as population characteristics drift over time.
+
+<BR>
+
+It stands to reason that, if the proximal femur shape and orientation is not perfectly matched with the DXA image, within a sub-millimetre accuracy, it should not be possible to extract the cortical thickness within a sub-millimetre accuracy, nor the cortical density. Unfortunately it is not possible to generate a perfect reconstruction from just a single 2D DXA image as an early study with 3D-DXA already showed [<a href="#ref-35">35</a>]. Here it was shown that adding a second view reduces the shape error from 1.3mm to 0.9mm, and the BMD error from 4.4% to 3.2%, indicating a clear sub-optimal reconstruction from a single view. In contrast, computed tomography reconstructs a volume using hundreds of projections acquired from all angles around the femur. Thereby QCT does allow for the independent measurement of cortical and trabecular parameters.
+
+<BR>
+
+3D-DXA can produce femur models with a completely different morphology depending on where the model parameter search converged, in particular if the correct rotation was not recovered. This means that 3D-DXA can produce femur models with a completely different morphology depending on where the model parameter search converged. This can vary greatly, as evidenced by a study using 3D-DXA involving same-day repeated DXA scans, which revealed differences in predicted strength of up to 62% [<a href="#ref-36">36</a>]. This study also reported element-by-element BMD differences reaching 30 ± 50%, which will likely reflect in a low repeatability accuracy for the cortical parameters as well, although these numbers were not provided. In a separate study, the correlation between 3D-Shaper and QCT density values was also reported to be low (<span class="math">r<sup>2</sup> = 0.48</span>) [<a href="#ref-37">37</a>], further indicating a limited subject-specific reconstruction accuracy.
+
+<BR>
+
+In a study on measuring the structural parameters of the femur using 3D-DXA, a correlation coefficient of r = 0.86 was reported for the femoral neck axis length [<a href="#ref-38">38</a>] when correlating the measurements derived from the 3D-DXA volume with the ground truth measurements from CT. This is worse than when measured directly in the DXA image (r = 0.90, [<a href="#ref-39">39</a>]). Also, the femoral neck shaft angles produced by 3D-DXA are of limited accuracy (r = 0.71, [<a href="#ref-38">38</a>]). An obvious reason for the lack of this accuracy is because the femoral head is excluded from the reconstruction process using a mask to prevent the overlap of the hemipelvis from interfering with the reconstruction, although this could be resolved by adding a second model of the hemipelvis such as in [<a href="#ref-5">5</a>].
+
+<BR>
+
+The study evaluating the ability of 3D-DXA to measure the cortical parameters reports a mean (± standard deviation) cortical thickness difference between 3D-DXA and QCT of 0.04 ± 0.21mm at the femoral neck and -0.07 ± 0.15 mm at the trochanter [<a href="#ref-2">2</a>] . This study also presented a figure showing the mean and maximum absolute cortical thickness estimation errors across the femur model surface (Fig. \ref{fig:cortical_thickness_errors}), where the errors appear substantially greater. In comparison, a QCT study measuring cortical thickness changes following an 18‐month alendronate treatment reported a 1.4% increase, corresponding to an approximate 0.018 mm increase in cortical thickness [<a href="#ref-40">40</a>]. Data compiled from three clinical trials on teriparatide indicated that cortical thickness increased by 0.035 mm [<a href="#ref-41">41</a>]. Considering the 3D-DXA error exceeds these typical treatment-induced changes, 3D-DXA measurements are unlikely to distinguish reliably between true therapy-driven effects and methodological noise. In other words, if an individual’s cortical bone appears to change, it remains unclear whether this arises from genuine physiological change, or from the inherent 3D-DXA measurement error.
+
+<figure id="fig:cortical_thickness_errors" style="float:right; width:50%; margin:0 0 1em 1em;">
+  <img src="Figure5.jpg"
+       alt="Color coded map of cortical thickness estimation errors of 3D-DXA."
+       style="width:100%; height:auto;">
+  <figcaption style="font-size:0.9em; text-align:center;">
+    <b>Figure 5.</b> The color coded map of the mean (top) and maximum (bottom) cortical thickness estimation errors of 3D-DXA 
+    with respect to the same subject QCT scans. Adapted from Figure&nbsp;8 in [<a href="#ref-2">2</a>].
+  </figcaption>
+</figure>
+
+
+
+<h3>Limited benefit over areal BMD</h3>
+
+In the statistical density model that 3D-DXA uses, the first model parameter accounts for the vast majority of the variation, and increasing its value leads to an increase in both the overall density and all cortical parameters [<a href="#ref-7">7</a>]. Given that there is little information about the cortex in the DXA image, 3D-DXA primarily relies on the overall density, and thus, on the first model parameter. As a consequence, the cortical and trabecular parameters are inherently correlated. Although there may be some contribution from the inferior medial and lateral cortices of the shaft that are visible in the DXA image, the parameters returned by 3D-DXA predominantly reflect the total areal BMD (aBMD). This means that, if aBMD increases, the 3D-DXA analysis will show simultaneous increases in trabecular BMD, cortical BMD and cortical thickness. Indeed, a recent study presented at the 2024 European Calcified Tissue Society congress [<a href="#ref-42">42</a>] and the 2024 annual meeting of the American Society for Bone and Mineral Research [<a href="#ref-43">43</a>] confirms that 3D-shaper parameters are highly correlated to aBMD and therefore do not provide additional fracture prediction information.
+
+<BR>
+
+Furthermore, while the 3D-DXA reconstruction does capture the overall femoral silhouette visible in the DXA image, its ability to recover the neck axis length and neck shaft angle is limited.  As a consequence, the reconstructed shape mainly reflects the general bone size, which is already provided by aBMD and does not add much to fracture strength prediction. Illustrative of this is the finding that strength predictions from 3D-DXA correlated with QCT (<span class="math">r<sup>2</sup> = 0.88</span>), but were not statistically better than when predicted only by femoral neck aBMD from the DXA image (<span class="math">r<sup>2</sup> = 0.87</span>) [<a href="#ref-37">37</a>]. A study by 3D-Shaper Medical shows a similar correlation (<span class="math">r<sup>2</sup>=0.86</span>) but a comparison with aBMD was excluded [<a href="#ref-44">44</a>]. In a different study on a Japanese population, measures from 3D-Shaper were not statistically better in predicting hip fracture than the total hip aBMD [<a href="#ref-45">45</a>].
+
+<BR>
+
+There have been other articles published on a similar method of registering a 3D statistical model onto a 2D DXA image and predicting femoral strength [<a href="#ref-46">46</a>, <a href="#ref-47">47</a>], with one study showing an improvement over aBMD in fracture risk prediction [<a href="#ref-48">48</a>]. This method may offer some advantages over 3D-DXA, such as the use of an additional pelvic model to help recover the full proximal femur shape. Although it remains subject to many of the same methodological limitations.
+
+<BR>
+
+If 3D-DXA fails to outperform aBMD alone, it certainly cannot surpass a combination of aBMD and HSA parameters, which are directly measured from DXA images. This highlights the fundamental limitations of 3D-DXA and calls into question its justification for use in clinical or research settings. Nonetheless, 3D-Shaper Medical now offers a 3D-DXA based Finite Element Analysis (FEA) as a service.
+
+
+<h2>Methods of validation</h2>
+
+Despite the inherent limitations of 3D-DXA, numerous publications report positive findings on its accuracy. This discrepancy can be attributed to the use of inappropriate validation methods [<a href="#ref-21">21</a>, <a href="#ref-22">22</a>] that tend to obscure the true limitations of the software. In the following sections, I will discuss the issues with these validations and how they create a perception of 3D-DXA’s reliability and clinical utility.
+
+<h3>Wrong performance assessment metrics</h3>
+
+3D-Shaper Medical compared the surface mesh generated by 3D-DXA from a DXA image with the surface mesh manually generated from the same subjects QCT scan, resulting in a mean point-to-surface distance of 0.93 mm [<a href="#ref-2">2</a>]. They also compared the cortical parameters, finding a mean absolute error of 0.33 mm for cortical thickness and 72 mg/cm³ for cortical density. However, there is no frame of reference to determine whether these reported errors are acceptable, which means these metrics do not necessarily validate the effectiveness of the software.
+
+<BR>
+
+Another way in which 3D-DXA was evaluated was through the use of correlations. Correlation coefficients of 0.86, 0.93, 0.95 and 0.91 were reported for trabecular, cortical, and integral vBMD, and cortical thickness respectively. However, these strong correlations are primarily due to the fact that all cortical parameters in both 3D-DXA models and QCT scans correlate strongly with overall density. Patients with higher-than-average aBMD in their DXA scans will, on average, also exhibit increased trabecular, cortical, and integral vBMD, along with a thicker cortex. These correlation results do not provide conclusive evidence of the software’s accuracy in generating patient-specific reconstructions and, in fact, may create a misleading impression of its performance.
+
+<BR>
+
+Correlations are also used to evaluate population-based studies using 3D-DXA. Similar effects can be seen when 3D-DXA analyses show significant correlations between its parameters and the tested factors or across different populations. This is again because these parameters are inherently correlated with overall BMD and thus directly reflect changes or differences in aBMD. The findings may appear sensible and can closely mirror true changes. For instance, exercise increases both overall density and cortical bone mineral content [<a href="#ref-49">49</a>], leading to seemingly sensible results from a 3D-DXA analysis when aBMD increases due to exercise. However, these do not reflect the actual cortical parameters themselves, but merely the underlying changes or differences in aBMD. Consequently, these studies can create a misleading impression of the effectiveness of 3D-DXA, giving a false sense of its capability to measure cortical parameters accurately.
+
+<BR>
+
+A more appropriate evaluation would involve comparing the cortical parameters against a basic baseline model, such as a blind estimator. Here a blind estimator refers to a simple, naive method of estimation that does not account for individual variability and instead applies an average value from the entire population to all subjects. For example, a blind estimator for cortical thickness would use the mean cortical thickness map from a group of individuals and apply it uniformly to every case, regardless of their specific characteristics. This approach serves as a baseline, or minimum standard, against which more advanced methods should be evaluated. Any sophisticated method should, at the very least, outperform this basic estimation. To the best of my knowledge, such an evaluation has not yet been published.
+
+<BR>
+
+Most publications on the 3D-DXA software showcase only successful reconstructions, which can create a false sense of confidence in the software’s reliability. To quantitatively assess the reliability of 3D-DXA, an evaluation of the failure rate can be performed. In a previous study [<a href="#ref-51">51</a>], although not explicitly stated, only 80 out of 173 subjects were retained after excluding reconstructions identified as inaccurate through comparison of the model projections with the DXA images, yielding a failure rate exceeding 50%. To enable such an assessment, 3D-Shaper would need to provide a side-by-side display of the model projection and the DXA image. A more robust evaluation, however, would compare renderings and cross-sectional views of the resulting volumes with the ground-truth QCT scans and assess the failure rate in an independent evaluation.
+
+<BR>
+
+In some instances, merely observing significant changes or differences is presented as evidence that 3D-DXA works, while disregarding whether the actual effects are correct. In response to my letter to the editor, significant differences between treatment groups were presented as evidence of 3D-DXA’s efficacy. 
+However, in this assessment, the authors provide 2 different results for cortical BMD changes after TPTD treatment, one showing a significant increase [<a href="#ref-52">52</a>] and the other a nonsignificant decrease [<a href="#ref-15">15</a>]. Neither of these reflects the actual change that one would expect in TPTD treatment, as I explain in Section \ref{sec:drug_efficacy_studies}.
+
+<h3>Absence of multiple comparison correction</h3>
+
+The concern in this section is not primarily related to the 3D-DXA software itself, but rather to the service provided by 3D-Shaper Medical and the subsequent publications. The critical issue lies in the lack of multiple comparison corrections when reporting changes or differences in the 3D-DXA parameters, particularly in the cortical parameter maps.
+
+<BR>
+
+Applying multiple comparison corrections is crucial when analyzing data with multiple distinct measurements. For 3D-Shaper, the software generates 71 bone parameters, with each representing a separate statistical test. Without adjusting for these multiple comparisons, such as with a Bonferroni correction, the likelihood of obtaining significant results by chance increases, leading to false conclusions. Despite this, studies using 3D-Shaper often report significant changes or differences without applying any form of multiple comparison correction [<a href="#ref-10">10</a>, <a href="#ref-24">24</a>, <a href="#ref-27">27</a>, <a href="#ref-28">28</a>], creating an unwarranted sense of confidence in the results. This can be misleading when certain parameters are measured but not reported, a form of p-hacking bias [<a href="#ref-53">53</a>], where significant results are highlighted while ignoring the increased risk of false positives due to the large number of tests conducted.
+
+<BR>
+
+A similar issue occurs when studies using 3D-Shaper present color-coded maps showing changes or differences in cortical parameters on the bone surface or BMD values in the volume. In these cases, each vertex or voxel represents an individual statistical test, with significance often determined by a simple t-test at each point [<a href="#ref-9">9</a>, <a href="#ref-10">10</a>, <a href="#ref-11">11</a>, <a href="#ref-12">12</a>, <a href="#ref-13">13</a>, <a href="#ref-28">28</a>, <a href="#ref-52">52</a>, <a href="#ref-54">54</a>, <a href="#ref-55">55</a>]. This approach highlights seemingly significant regions in the color-coded maps, creating the illusion of localized changes or differences where there are none. When presenting changes or differences in the volume through color-coded cross-sectional views, the statistical significance at the voxel level is generally not provided at all [<a href="#ref-9">9</a>, <a href="#ref-11">11</a>, <a href="#ref-30">30</a>, <a href="#ref-52">52</a>, <a href="#ref-54">54</a>, <a href="#ref-55">55</a>, <a href="#ref-56">56</a>]. In the same way this suggests real changes when, in fact, they may simply be a result of random variation. Consequently, these color-coded maps can give an overly optimistic impression of the impact of treatments or interventions, falsely suggesting efficacy where there may be none.
+
+<BR>
+
+The issue of false positives due to inadequate multiple comparison corrections has been a persistent challenge in the field of neuroimaging [<a href="#ref-57">57</a>]. To address this, the neuroimaging community has developed solutions that can also be applied to studies examining cortical bone changes on the bone surface and density changes in the voxels of QCT scans. Poole et al. [<a href="#ref-58">58</a>] describe how SurfStat (http://math.mccgill.ca/keith/surfstat/) can be used to test whether differences in the cortical parameters at each point on the bone surface were statistically significant, with random field theory applied for multiple comparison correction. Similar packages exist for voxel-based analysis, such as the Statistical Parametric Mapping library (https://www.fil.ion.ucl.ac.uk/spm/) and the FMRIB Software Library (https://fsl.fmrib.ox.ac.uk). The use of these tools would improve the statistical rigor of studies using 3D-DXA, although the observed changes or differences would still predominantly reflect the correlation of all parameters with aBMD.
+
+
+<h2>Implications</h2>
+The use of 3D-DXA has wide-reaching implications in both research and clinical practice. The following sections will delve into these challenges.
+
+<h3>Misleading results in drug efficacy studies</h3>
+\label{sec:drug_efficacy_studies}
+
+In most studies, the results of 3D-DXA align with what is expected in the cortex, as cortical parameters in healthy individuals are typically correlated with aBMD. This often leads to seemingly sensible results. However, this approach becomes flawed when the changes do not follow conventional patterns. The method is particularly problematic in drug trials where normal bone modeling and remodeling are altered, and the usual proportional increases or decreases in all parameters may not occur.
+
+<BR>
+
+An illustrative example is a study on teriparatide, where 3D-DXA indicated an increase in all cortical parameters, including a significant increase in cortical vBMD compared to placebo [<a href="#ref-52">52</a>]. In contrast, using an equivalent cortical measurement technique applied to QCT, cortical BMD was shown to significantly decrease following the same 18-month teriparatide treatment, which was seen consistently in data from three different clinical trials [<a href="#ref-41">41</a>]. This decrease is attributed to an increased rate of remodeling, which results in greater cortical porosity, as also observed using micro-CT [<a href="#ref-59">59</a>].
+
+<BR>
+
+In an earlier study, 3D-Shaper Medical did report a decrease in cortical BMD in response to teriparatide [<a href="#ref-15">15</a>]. Although this was noted by the authors as a decrease, the change was not statistically significant. A more recent independent study also found no significant changes in cortical BMD in response to teriparatide treatment using a 3D-DXA analysis [<a href="#ref-60">60</a>]. It may be possible that there is some influence from the cortex of the shaft, which is partly visible in the DXA image. Due to the nature of 3D-DXA, an aBMD decrease in this region, might have been projected across the entire femur model, including areas where no cortex is visible, since the model parameters influence the density distribution globally. However, this did not lead to the correct significant decrease in cortical BMD observed in QCT studies.
+
+<BR>
+
+The study that reported an increase in all cortical parameters with teriparatide (TPTD) also evaluated abaloparatide in parallel, showing an even greater increase in all parameters for the latter [<a href="#ref-52">52</a>]. Follow-up studies using 3D-DXA analysis also reported significant increases in cortical BMD after abaloparatide treatment [<a href="#ref-55">55</a>, <a href="#ref-56">56</a>]. Given that abaloparatide shares a similar mechanism of action with TPTD, increasing the rate of bone remodeling, one would reasonably expect it to also lead to a decrease in cortical BMD. In fact, a study using QCT observed a decrease in cortical BMD following a similar period of abaloparatide treatment in 35 patients [<a href="#ref-61">61</a>], although the reduction was not statistically significant. This suggests that the 3D-DXA studies not only produced inaccurate changes but also likely resulted in an overly favorable assessment of abaloparatide’s effects.
+
+<BR>
+
+A study by Lewiecki et al. [<a href="#ref-54">54</a>] further illustrates the limitations of 3D-DXA in measuring discordant cortical changes. Their 3D-DXA analysis reported increases in all cortical parameters in response to romosozumab. In contrast, a previous QCT analysis found no increase in cortical BMD following the same treatment [<a href="#ref-62">62</a>]. The authors noted: “It is unclear why data obtained by QCT and DXA-based 3D-SHAPER for romosozumab treatment on hip integral and trabecular vBMD were similar across the studies but differed for cortical vBMD.” Given that the letter to the editor of Bone seen by some of the same authors had already explained and predicted this discrepancy [<a href="#ref-7">7</a>], it appears that there persists a misunderstanding regarding the capabilities and limitations of 3D-DXA. As a result, this misunderstanding has likely again led to an overly optimistic assessment of the drug's efficacy.
+
+<BR>
+
+These studies further disseminate potentially incorrect results by presenting color maps of cortical and trabecular bone changes. 3D-DXA cannot measure localized or focal changes, partly because each model parameter affects the density distribution globally, and also because these changes are not visible on a DXA image. The failure to apply multiple comparison corrections in these studies further undermines the results, as the seemingly significant regions in the maps are, in fact, much less significant, leading to an overly optimistic assessment of various drugs.
+
+<h3>Patient management</h3>
+
+While the 3D-Shaper software can produce 71 measures, the clinically approved version produces only the global trabecular vBMD and cortical sBMD as well as an associated T-score and Z-score. It is not clear from what population the T- and Z-score are derived, although in a webinar by 3D-Shaper Medical a Caucasian reference data is noted [<a href="#ref-63">63</a>]. Reference plots have previously been produced for a Spanish [<a href="#ref-64">64</a>] and Argentinian [<a href="#ref-65">65</a>] population, which are both reproduced in <a href="#fig:ReferenceData">Figure 6</a>. These plots, however, appear distinct from each other and from the figures produced by the 3D-Shaper software. 3D-Shaper Medical, DMS Imaging and their distributors do not disclose this population, or how these data have been derived. However, it is confirmed by Toyo Medic Co., Ltd. (Tokyo, Japan), the distributor of 3D-Shaper in Japan, that the 3D-Shaper software approved for the Japanese market does not use reference data from a Japanese population. Considering the large difference in cortical and trabecular parameters between Caucasion and Asian populations [<a href="#ref-68">68</a>], applying these T- and Z-scores in Japan does not seem prudent without further validation. Their validity should also be confirmed for every population in which they are applied.
+
+
+<figure id="fig:ReferenceData" margin:0 0 1em 1em;">
+  <img src="Figure6.jpg"
+       alt="Reference data for a Spanish (left) and Argentinian (right) population.">
+  <figcaption style="font-size:0.9em; text-align:center;">
+    Reference data for a Spanish (left) and Argentinian (right) population, 
+    derived from [<a href="#ref-66">66</a>] and [<a href="#ref-67">67</a>] respectively.
+  </figcaption>
+</figure>
+
+
+While the 3D-Shaper or commercial 3D-DXA software does not provide a treatment decision automatically, promotional material suggest the use of a table to aid the clinician in deciding on a treatment following a 3D-DXA analysis. This table, which was reproduced in Table \ref{tab:bone_density_changes}A, provides, for various treatment types, symbols (-, =, +, ++, +++) to represent how the treatment affects the trabecular vBMD or cortical sBMD. The symbols are based on thresholds, which, where available, are provided in Table \ref{tab:bone_density_changes}C. Although the threshold values are rather arbitrary or not specified, the table may be largely correct from knowledge on QCT studies. However, these data are said to have been derived from the 3D-DXA studies with references added to the various treatment types. Since 3D-DXA has particular issues when the cortical parameters do not change in line with the overall density, such as with a teriparatide treatment, I would like to highlight the provided effects from this drug. I have provided the symbols for each of the references provided by 3D-Shaper Medical, as well as a different study that was not mentioned, in Table \ref{tab:bone_density_changes}B. They are quite varied and different from the symbols 3D-Shaper Medical provided in the table. It is, therefore, not clear how the symbols were derived, which puts into question their validity when using in conjunction with a 3D-DXA analysis.
+
+<BR>
+
+In a webinar [<a href="#ref-66">66</a>] 3D-Shaper Medical suggested a potential clinical use where 3D-Shaper resulted in a low cortical sBMD and very low trabecular vBMD. Since teriparatide, according to the table, improves the trabecular bone more than the cortical bone, teriparatide was said to be the best treatment. However, based on this table, a clinician would naturally chose Denosumab or Abaloparatide over teribaratide if neglecting the vertebral aBMD.
+
+<BR>
+
+3D-DXA will likely only be used  alongside regular DXA T-score and Z-score assessments. Thus, the danger of missing a high risk individual will be minimum. However, due to the error associated with 3D-DXA, the cortical sBMD and trabecular vBMD will always be slightly higher or lower. In patients on the border of treatment this may sway the clinician to give anti-osteoporosis drugs where this would not be indicated by aBMD alone.
+
+<BR>
+
+A study on Trabecular Bone Score (TBS) shows that this additional assessment significantly influences treatment decisions in secondary osteoporosis [<a href="#ref-67">67</a>]. In that study, 21–25.5% of patients with unremarkable BMD measurements had poor bone quality indicated by TBS, which changed the treatment decision. A similar effect could occur with 3D-DXA, potentially leading to unintended consequences, such as overprescription. If the table was used, this may also sway the clinician to chose one drug over the other.
+
+<BR>
+
+It is also stated by 3D-Shaper Medical that patients can be monitored to determine whether the selected treatment does indeed have the expected effect on the cortex and trabecular compartment. However, considering that errors of 3D-DXA are greater than expected changes, and that repeatability is low [<a href="#ref-36">36</a>], it cannot be ascertained whether changes seen in a follow-up 3D-DXA assessment are due to real effects or merely the inherent error of 3D-DXA. If a clinician trusts these results, they may be swayed to unnecessarily change the treatment.
+
+
+
+
+
+<figure id="tab-bone_density_changes">
+<div><strong>(A)</strong></div>
+<table><thead><tr><th></th><th>2D DXA (Total hip) aBMD</th><th>3D-DXA (3D-Shaper) Trabecular vBMD</th><th>3D-DXA (3D-Shaper) Cortical sBMD</th></tr></thead><tbody><tr><td>Alendronate</td><td>+</td><td>+</td><td>+</td></tr><tr><td>Denosumab</td><td>++</td><td>++</td><td>++</td></tr><tr><td>Zoledronic acid</td><td>+</td><td>+</td><td>++</td></tr><tr><td>Teriparatide [<a href="#ref-3">3</a>, <a href="#ref-4">4</a>, <a href="#ref-5">5</a>, <a href="#ref-6">6</a>]^*</td><td>+</td><td>++</td><td>=</td></tr><tr><td>Abaloparatide</td><td>++</td><td>++</td><td>++</td></tr><tr><td>Romosozumab</td><td>+++</td><td>+++</td><td>+++</td></tr></tbody></table>
+<div style="height:1rem"></div>
+<div><strong>(B)</strong></div>
+<table><thead><tr><th></th><th>aBMD</th><th>vBMD</th><th>sBMD</th></tr></thead><tbody><tr><td>Teriparatide [<a href="#ref-4">4</a>, <a href="#ref-5">5</a>] (18 months)</td><td>++ (3.3%)</td><td>++/+++ (9%)</td><td>+ (1.8%)</td></tr><tr><td>Teriparatide [<a href="#ref-6">6</a>] (24 months)</td><td>= (p &gt; 0.05)</td><td>++/+++ (5.9%)</td><td>= (p &gt; 0.05)</td></tr><tr><td>Teriparatide [<a href="#ref-7">7</a>] (24 months)</td><td>= (p &gt; 0.05)</td><td>++/+++ (&gt;14%)</td><td>= (p &gt; 0.05)</td></tr></tbody></table>
+<div style="height:1rem"></div>
+<div><strong>(C)</strong></div>
+<table><thead><tr><th>Symbol</th><th>(Total hip) aBMD</th><th>Trabecular vBMD</th><th>Cortical sBMD</th></tr></thead><tbody><tr><td>+++</td><td>Δ &gt; n/a %</td><td>Δ &gt; n/a %</td><td>Δ &gt; n/a %</td></tr><tr><td>++</td><td>2 &lt; Δ ≤ n/a %</td><td>4 &lt; Δ ≤ n/a %</td><td>2 &lt; Δ ≤ n/a %</td></tr><tr><td>+</td><td>0.5 &lt; Δ ≤ 2 %</td><td>0.5 &lt; Δ ≤ 4 %</td><td>0.5 &lt; Δ ≤ 2 %</td></tr><tr><td>=</td><td>-0.5 ≤ Δ ≤ 0.5 %</td><td>-0.5 ≤ Δ ≤ 0.5 %</td><td>-0.5 ≤ Δ ≤ 0.5 %</td></tr><tr><td>-</td><td>-2 ≤ Δ &lt; -0.5 %</td><td>-4 ≤ Δ &lt; -0.5 %</td><td>-2 ≤ Δ &lt; -0.5 %</td></tr><tr><td>--</td><td>Δ &lt; -2 %</td><td>Δ &lt; -4 %</td><td>Δ &lt; -2 %</td></tr></tbody></table>
+<figcaption>These tables illustrate how 3D-Shaper Medical suggests a 3D-DXA analysis can be used to decide on a treatment. (A) The table provided by 3D-Shaper Medical which is said to help prescribe a treatment best suited to a patients' needs. Only the references for teriparatide are provided here. (B) The effects of teriparatide treatment seen from a 3D-DXA analysis as reported by the referenced studies, as well as an additional study that was not referenced by 3D-Shaper Medical. (C) The threshold values that determine the various symbols that indicate the way a particular treatment affects the aBMD, trabecular vBMD and cortical sBMD, where this was available. $^*$ the addition of [<a href="#ref-3">3</a>] is likely an error since this study does not include teriparatide.</figcaption>
+</figure>
+
+
+
+
+
+
+<BR>
+
+Although the clinical version of 3D-DXA does not provide information about the cortical sBMD in the various anatomical regions, it does display a color coded 3D model of the sBMD across the bone surface. 3D-Shaper Medical subsequently suggests this can be used to detect local fragility [<a href="#ref-66">66</a>]. Unfortunately, 3D-DXA cannot reconstruct the patient specific cortical map. I will refer again for Fig \ref{fig:DXA} for an intuitive explanation for this. Thus, if a 3D-DXA cortical map suggests local deficiencies, these may be statistically plausible outputs of the model, but do not correspond to the patient's actual anatomy. This again may lead to an unnecessary or inappropriate treatment decision.
+
+<BR>
+
+The 3D-Shaper software has now also received FDA clearance through the 510(k) premarket notification process [<a href="#ref-68">68</a>]. 3D-Shaper Medical obtained this using a correlation study comparing the cross-sectional area (CSA), cross-sectional moment of inertia (CSMI), section modulus (Z), Buckling Ratio (BR), cortical surface bone mineral density (sBMD), trabecular volumetric bone mineral density (vBMD) and integral vBMD to similar measurements from the Hip Structural Analysis (HSA) software by Hologic Inc., which had previously received FDA clearance.
+
+<BR>
+
+Notably, the neck axis length and neck shaft angle have remained absent from this evaluation, and thus the used of these parameters is not cleared by the FDA. It should be noted that The International Society for Clinical Densitometry (ISCD) guidelines recommend that HSA parameters should not be used to assess risk of hip fracture, with the exception of hip axis length [<a href="#ref-69">69</a>]. Furthermore, this regulatory approval does not include a T-score or Z-score to compare the measurements with reference data. This raises concerns about the clinical applicability of 3D-Shaper in the United States.
+
+<BR>
+
+Finally, 3D-Shaper parameters were considered to be substantially equivalent to the HSA option for the Hologic QDR X-ray Bone Densitometers. The FDA is not able to confirm whether 3D-Shaper can be used with other DXA scanners, leaving the question of compatibility with other devices in the United States unresolved.
+
+
+<h2>Discussion</h2>
+
+In summary, 3D-DXA produces a variety of bone parameters that appear highly detailed, but primarily reflect overall areal BMD rather than measuring distinct cortical or trabecular properties. While the software may yield results that correlate with true values in populations where cortical and trabecular changes are proportional to aBMD, it falls short in capturing patient-specific measurements or localized changes. This limitation is especially pronounced in scenarios such as anabolic therapy, where cortical and trabecular bone parameters may change inversely and 3D-DXA fails to reflect these true changes observed by QCT. This raises significant concerns for its use in routine clinical care or as a reliable research tool.
+
+<BR>
+
+3D-DXA was initially developed to better diagnose osteoporosis by providing an estimate of the integral vBMD [<a href="#ref-70">70</a>, <a href="#ref-71">71</a>]. By not attempting to separately assess the cortical and trabecular compartments, the integral vBMD produced by 3D-DXA may still represent a valid estimation. The methodology was later extended to attempt to improve fracture risk estimations by analyzing the model parameters directly, since these parameters fully describe the morphology of the statistical model [<a href="#ref-51">51</a>, <a href="#ref-72">72</a>, <a href="#ref-73">73</a>, <a href="#ref-74">74</a>]. However, the key limitations of 3D-DXA, as detailed in this review, remain and undermine its accuracy and reliability.
+
+<BR>
+
+This study was limited by the lack of transparency from the companies commercializing 3D-DXA, including 3D-Shaper Medical, DMS Imaging, and Fujifilm. As a result, it relies on publicly available information and my own experience in developing this methodology. I encourage readers to seek clarifications from these companies or their representatives regarding aspects of 3D-DXA and 3D-Shaper that have not been disclosed.
+
+<BR>
+
+Evaluations from professional societies could provide valuable guidance by providing independent assessments of the validity of 3D-DXA and establishing official recommendations regarding its use. Although an update on the practice guideline for dual-energy X-ray absorptiometry by the International Working Group on DXA Best Practices states regarding 3D-DXA that "more evidence is needed to make recommendations for the application of these novel imaging techniques in clinical practice" [<a href="#ref-75">75</a>], I believe there is now sufficient evidence to base a recommendation on, and I hope this review will be helpful in that regard.
+
+<BR>
+
+In conclusion, given the fundamental limitations of 3D-DXA, it is my professional assessment that the cortical and trabecular parameters provided by 3D-DXA should not be used for research purposes, nor are they suitable for clinical applications such as diagnosis, monitoring, or treatment decision support.
+
+<h2>Disclosures</h2>
+The author is the co-inventor of a patent related to the methodology underlying the 3D-DXA software. The author has been involved in discussions regarding the intellectual property and origins of the commercial 3D-DXA software code, statistical models, and promotional material. The author is not affiliated with 3D-Shaper Medical or other companies involved in the commercial exploitation of 3D-DXA and has not received equity, royalties, or other financial compensation. The author has lectured for UCB in educational fora and received research grant support from Amgen Inc. and Lilly. The views expressed in this article are solely those of the author and are based on a critical evaluation of the methodology and available scientific evidence.
+
+
+<h2>References</h2><ol>
+
+<li id="ref-1">Whitmarsh T (2012). <a href="http://hdl.handle.net/10803/94492" target="_blank"><i>3D Reconstruction of the Proximal Femur and Lumbar Vertebrae from Dual-Energy X-Ray Absorptiometry for Osteoporotic Risk Assessment</i></a></li>
+
+<li id="ref-2">Humbert L, Martelli Y, Fonolla R, et al. (2017). <a href="https://doi.org/10.1109/tmi.2016.2593346" target="_blank"><i>3D-DXA: Assessing the Femoral Shape,  the Trabecular Macrostructure and the Cortex in 3D from DXA images</i></a>. IEEE Transactions on Medical Imaging, 36(1), 27–39.</li>
+
+<li id="ref-3">Whitmarsh T, Humbert L, De Craene M, et al. (2011). <a href="https://doi.org/10.1109/tmi.2011.2163074" target="_blank"><i>Reconstructing the 3D Shape and Bone Mineral Density Distribution of the Proximal Femur From Dual-Energy X-Ray Absorptiometry</i></a>. IEEE Transactions on Medical Imaging, 30(12), 2101–2114.</li>
+
+<li id="ref-4">Ahmad O, Ramamurthi K, Wilson KE, et al. (2010). <a href="https://doi.org/10.1002/jbmr.140" target="_blank"><i>Volumetric DXA (VXA): A new method to extract 3D information from multiple in vivo DXA images</i></a>. Journal of Bone and Mineral Research, 25(12), 2744–2751.</li>
+
+<li id="ref-5">V\"{a}\"{a}n\"{a}nen SP, Grassi L, Flivik G, et al. (). <a href="https://doi.org/10.1016/j.media.2015.06.001" target="_blank"><i>Generation of 3D shape,  density,  cortical thickness and finite element mesh of proximal femur from a DXA image</i></a>. Medical Image Analysis, 24(1).</li>
+
+<li id="ref-6">
+Whitmarsh T, Humbert L, De Craene M, et al. <a href="http://dx.doi.org/10.1117/12.844110" target="_blank"><i>3D bone mineral density distribution and shape reconstruction of the proximal femur from a single simulated DXA image: a n in vitro study</i></a>. In: Dawant BM, Haynor DR, eds. Medical I maging 2010: Image Processing. Vol. 7623. SPIE; 2010:76234U.
+</li>
+
+<li id="ref-7">
+Whitmarsh T. <a href="https://doi.org/10.1016/j.bone.2021.115939" target="_blank"><i>Concerns regarding the use of 3D-DXA</i></a>. Bone. 2021;149:115939. 
+</li>
+
+<li id="ref-8">Treece G, Gee A (2015). <a href="https://doi.org/10.1016/j.media.2014.11.012" target="_blank"><i>Independent measurement of femoral cortical thickness and cortical bone density using clinical CT</i></a>. Medical Image Analysis, 20(1), 249–264.</li>
+
+<li id="ref-9">Freitas L, Amorim T, Humbert L, et al. (2018). <a href="https://doi.org/10.1080/02640414.2018.1483178" target="_blank"><i>Cortical and trabecular bone analysis of professional dancers using 3D-DXA: a case–control study</i></a>. Journal of Sports Sciences, 37(1), 82–89.</li>
+
+<li id="ref-10">Gracia-Marco L, García-Fontana B, Ubago-Guisado E, et al. (2019). <a href="https://doi.org/10.1210/clinem/dgz060" target="_blank"><i>Analysis of Bone Impairment by 3D DXA Hip Measures in Patients With Primary Hyperparathyroidism: A Pilot Study</i></a>. The Journal of Clinical Endocrinology \&amp; Metabolism, 105(1), 175–184.</li>
+
+<li id="ref-11">Orduna G, Humbert L, Fonolla R, et al. (2018). <a href="https://doi.org/10.1016/j.jocd.2017.05.012" target="_blank"><i>Cortical and Trabecular Bone Analysis of Patients With High Bone Mass From the Barcelona Osteoporosis Cohort Using 3-Dimensional Dual-Energy X-ray Absorptiometry: A Case-Control Study</i></a>. Journal of Clinical Densitometry, 21(4), 480–484.</li>
+
+<li id="ref-12">Gifre L, Humbert L, Muxi A, et al. (2017). <a href="https://doi.org/10.1007/s00198-017-4268-9" target="_blank"><i>Analysis of the evolution of cortical and trabecular bone compartments in the proximal femur after spinal cord injury by 3D-DXA</i></a>. Osteoporosis International, 29(1), 201–209.</li>
+
+<li id="ref-13">García Hoyos M, Humbert L, Salmón Z, et al. (2019). <a href="https://doi.org/10.1007/s11657-019-0645-7" target="_blank"><i>Analysis of volumetric BMD in people with Down syndrome using DXA-based 3D modeling</i></a>. Archives of Osteoporosis, 14(1).</li>
+
+<li id="ref-14">Beck B, Harding A, Weeks B, et al. (2021). <a href="https://doi.org/10.1016/j.bone.2021.115936" target="_blank"><i>Response to “Concerns regarding the use of 3D-DXA”</i></a>. Bone, 149, 115936.</li>
+
+<li id="ref-15">Winzenrieth R, Humbert L, Di Gregorio S, Bonel E, García M, Del Rio L. <a href="https://doi.org/10.1007/s00198-018-4624-4" target="_blank"><i>Effects of osteoporosis drug treatments on cortical and trabecular bone in the femur using DXA-based 3D modeling</i></a>. Osteoporos Int.2018;29(10):2323–2333. </li>
+
+<li id="ref-16">Cummings SR, Cauley JA, Palermo L, et al. <a href="https://doi.org/10.1007/BF01623243 " target="_blank"><i>Racial differences in hip axis lengths might explain r acial differences in rates of hip fracture</i></a>. Osteoporos Int.1994;4(4):226–229.</li>
+
+<li id="ref-17">Kim KM, Brown JK, Kim KJ, et al. <a href="https://doi.org/10.1007/s00198-0101459-z" target="_blank"><i>Differences in femoral neck geometry associated with age and ethnicity</i></a>. Osteoporos Int. 2010;22(7):2165–2174.</li>
+
+<li id="ref-18">Sone T, Humbert L, Lopez M, et al. (2022). <i>Assessment of femoral shape, trabecular and cortical bone in Japanese subjects using DXA-based 3D modelling</i>. JOURNAL OF BONE AND MINERAL RESEARCH, 37, 214--214.</li>
+<li id="ref-19">Varoquaux G, Cheplygina V (2022). <a href="https://doi.org/10.1038/s41746-022-00592-y" target="_blank"><i>Machine learning for medical imaging: methodological failures and recommendations for the future</i></a>. npj Digital Medicine, 5(1).</li>
+
+<li id="ref-20">{Hadjiiski L, Cha K, Chan H, et al. (). <a href="https://doi.org/10.1002/mp.16188" target="_blank"><i>AAPM task group report 273: Recommendations on best practices for AI and machine learning for computer‐aided diagnosis in medical imaging</i></a>. Medical Physics, 50(2).</li>
+
+<li id="ref-21">Huisman M (2024). <a href="https://doi.org/10.1007/s00330-024-10859-5" target="_blank"><i>When AUC-ROC and accuracy are not accurate: what everyone needs to know about evaluating artificial intelligence in radiology</i></a>. European Radiology, 34(12), 7892–7894.</li>
+
+<li id="ref-22">Gallifant J, Bitterman DS, Celi LA, et al. (2024). <a href="https://doi.org/10.1038/s41746-024-01242-1" target="_blank"><i>Ethical debates amidst flawed healthcare artificial intelligence metrics</i></a>. npj Digital Medicine, 7(1).</li>
+
+<li id="ref-23">Amani A, Bellver M, del Rio L, et al. (2022). <a href="https://doi.org/10.1055/a-1928-9824" target="_blank"><i>Femur 3D-DXA Assessment in Female Football Players,  Swimmers, and Sedentary Controls</i></a>. International Journal of Sports Medicine, 44(06), 420–426.</li>
+
+<li id="ref-24">Maïmoun L, Renard E, Humbert L, et al. (2021). <a href="https://doi.org/10.1016/j.bone.2021.116005" target="_blank"><i>Modification of bone mineral density,  bone geometry and volumetric BMD in young women with obesity</i></a>. Bone, 150, 116005.</li>
+
+<li id="ref-25">Jain RK, López Picazo M, Humbert L, et al. (2025). <a href="https://doi.org/10.1016/j.eprac.2024.10.015" target="_blank"><i>Bone Structural Parameters as Measured by 3-Dimensional Dual-Energy X-Ray Absorptiometry Are Superior in Black Women and Demonstrate Unique Associations With Prior Fracture Versus White Women</i></a>. Endocrine Practice, 31(2), 152–158.</li>
+
+<li id="ref-26">Gracia-Marco L, Gonzalez-Salvatierra S, Garcia-Martin A, et al. (2021). <a href="https://doi.org/10.3390/jcm10040657" target="_blank"><i>3D DXA Hip Differences in Patients with Acromegaly or Adult Growth Hormone Deficiency</i></a>. Journal of Clinical Medicine, 10(4), 657.</li>
+
+<li id="ref-27">Toussirot E, Winzenrieth R, Aubin F, et al. (2024). <a href="https://doi.org/10.3389/fmed.2024.1341077" target="_blank"><i>Areal bone mineral density,  trabecular bone score and 3D-DXA analysis of proximal femur in psoriatic disease</i></a>. Frontiers in Medicine, 11.</li>
+
+<li id="ref-28">Ubago-Guisado E, Moratalla-Aranda E, González-Salvatierra S, et al. (2023). <a href="https://doi.org/10.3389/fendo.2022.1069224" target="_blank"><i>Do patients with type 2 diabetes have impaired hip bone microstructure? A study using 3D modeling of hip dual-energy X-ray absorptiometry</i></a>. Frontiers in Endocrinology, 13.</li>
+
+<li id="ref-29">Guerra FS, Palladino N, Winzenrieth R, et al. (2024). <a href="https://doi.org/10.1007/s40200-024-01487-3" target="_blank"><i>Advanced 3D-DXA insights into bone density changes in hyperparathyroidism</i></a>. Journal of Diabetes \&amp; Metabolic Disorders, 23(2), 2191–2199.</li>
+
+<li id="ref-30">Kužma M, Vaňuga P, Ságová I, et al. <a href="https://doi.org/10.1530/EJE-18-0881" target="_blank"><i>Non-invasive DXA derived bone structure assessment of a cromegaly patients: a cross sectional study</i></a>. Eur J Endocrinol. 2019;180(3):201–211.</li>
+
+<li id="ref-31">Maïmoun L, Aouinti S, Puech M, et al. <a href="https://doi.org/10.1093/jbmr/zjae202" target="_blank"><i>Modification of bone architecture following sleeve gastrectomy: a five-year follow-up</i></a>. J Bone Miner Res. 2024;40(2):251–261.</li>
+
+<li id="ref-32">Maïmoun L, Gelis A, Serrand C, et al. (2023). <a href="https://doi.org/10.1007/s00223-023-01110-2" target="_blank"><i>Alteration of Volumetric Bone Mineral Density Parameters in Men with Spinal Cord Injury</i></a>. Calcified Tissue International, 113(3), 304–316.</li>
+
+<li id="ref-33">Harding AT, Weeks BK, Lambert C, et al. (2020). <a href="https://doi.org/10.1016/j.bone.2020.115362" target="_blank"><i>Effects of supervised high-intensity resistance and impact training or machine-based isometric training on regional bone geometry and strength in middle-aged and older men with low bone mass: The LIFTMOR-M semi-randomised controlled trial</i></a>. Bone, 136, 115362.</li>
+
+<li id="ref-34">Gil-Cosano JJ, Ubago-Guisado E, Sánchez MJ, et al. (2020). <a href="https://doi.org/10.1186/s12889-020-09607-3" target="_blank"><i>The effect of an online exercise programme on bone health in paediatric cancer survivors (iBoneFIT): study protocol of a multi-centre randomized controlled trial</i></a>. BMC Public Health, 20(1).</li>
+
+<li id="ref-35">Humbert L, Whitmarsh T, De Craene M, et al. (2010). <a href="https://doi.org/10.1109/isbi.2010.5490310" target="_blank"><i>3D reconstruction of both shape and Bone Mineral Density distribution of the femur from DXA images</i></a>. 2010 IEEE International Symposium on Biomedical Imaging: From Nano to Macro, 456–459.</li>
+
+<li id="ref-36">O’Rourke D, Beck BR, Harding AT, et al. (2021). <a href="https://doi.org/10.1016/j.jbiomech.2021.110315" target="_blank"><i>Assessment of femoral neck strength and bone mineral density changes following exercise using 3D-DXA images</i></a>. Journal of Biomechanics, 119, 110315.</li>
+
+<li id="ref-37">Dudle A, Gugler Y, Pretterklieber M, et al. (2023). <a href="https://doi.org/10.3389/fbioe.2023.1111020" target="_blank"><i>2D-3D reconstruction of the proximal femur from DXA scans: Evaluation of the 3D-Shaper software</i></a>. Frontiers in Bioengineering and Biotechnology, 11.</li>
+
+<li id="ref-38">Clotet J, Martelli Y, Di Gregorio S, et al. (2018). <a href="https://doi.org/10.1016/j.jocd.2017.05.002" target="_blank"><i>Structural Parameters of the Proximal Femur by 3-Dimensional Dual-Energy X-ray Absorptiometry Software: Comparison With Quantitative Computed Tomography</i></a>. Journal of Clinical Densitometry, 21(4), 550–562.</li>
+
+<li id="ref-39">Ramamurthi K, Ahmad O, Engelke K, et al. (2011). <a href="https://doi.org/10.1007/s00198-011-1578-1" target="_blank"><i>An in vivo comparison of hip structure analysis (HSA) with measurements obtained by QCT</i></a>. Osteoporosis International, 23(2), 543–551.</li>
+
+<li id="ref-40">Whitmarsh T, Treece GM, Gee AH, et al. (2015). <a href="https://doi.org/10.1002/jbmr.2454" target="_blank"><i>Mapping Bone Changes at the Proximal Femoral Cortex of Postmenopausal Women in Response to Alendronate and Teriparatide Alone,  Combined or Sequentially</i></a>. Journal of Bone and Mineral Research, 30(7), 1309–1318.</li>
+
+<li id="ref-41">Whitmarsh T, Treece GM, Gee AH, et al. (2016). <a href="https://doi.org/10.1371/journal.pone.0147722" target="_blank"><i>The Effects on the Femoral Cortex of a 24 Month Treatment Compared to an 18 Month Treatment with Teriparatide: A Multi-Trial Retrospective Analysis</i></a>. PLOS ONE, 11(2), e0147722.</li>
+
+<li id="ref-42">Huininga K, Koromani F, Zillikens M, et al. (2024). <a href="https://doi.org/10.1093/jbmrpl/ziae063" target="_blank"><i>Use of 3D Shaper Analysis for the Assessment of Fracture Risk in a Population-Based Setting</i></a>. JBMR Plus, 8(Supplement\_1), i1--i340.</li>
+
+<li id="ref-43">Huininga K, Koromani F, Zillikens MC, et al. (2024). <a href="https://store.omnipress.com/asbmr.html" target="_blank"><i>Use of 3D Shaper Analysis for the Assessment of Fracture Risk in a Population-based Setting</i></a>. ASBMR 2024 Annual Meeting Abstracts and Abstract Book.</li>
+
+<li id="ref-44">Qasim M, López Picazo M, Ruiz Wills C, et al. (2024). <a href="https://doi.org/10.1016/j.jocd.2024.101471" target="_blank"><i>3D-DXA Based Finite Element Modelling for Femur Strength Prediction: Evaluation Against QCT</i></a>. Journal of Clinical Densitometry, 27(2), 101471.</li>
+
+<li id="ref-45">Iki M, Winzenrieth R, Tamaki J, et al. (2021). <a href="https://doi.org/10.1007/s00198-021-06013-2" target="_blank"><i>Predictive ability of novel volumetric and geometric indices derived from dual-energy X-ray absorptiometric images of the proximal femur for hip fracture compared with conventional areal bone mineral density: the Japanese Population-based Osteoporosis (JPOS) Cohort Study</i></a>. Osteoporosis International, 32(11), 2289–2299.</li>
+
+<li id="ref-46">Grassi L, Väänänen SP, Ristinmaa M, et al. <a href="https://doi.org/10.1007/s10237-016-0866-2" target="_blank"><i>Prediction of femoral strength using 3D finite element models reconstructed from DXA images: validation against experiments</i></a>. Biomechanics and Modeling in Mechanobiology, 16(3).</li>
+
+<li id="ref-47">Grassi L, Fleps I, Sahlstedt H, et al. (). <a href="https://doi.org/10.1016/j.bone.2020.115678" target="_blank"><i>Validation of 3D finite element models from simulated DXA images for biofidelic simulations of sideways fall impact to the hip</i></a>. Bone, 142.</li>
+
+<li id="ref-48">Grassi L, Väänänen SP, Jehpsson L, et al. (). <a href="https://doi.org/10.1002/jbmr.4878" target="_blank"><i>3D Finite Element Models Reconstructed From 2D Dual‐Energy X‐Ray Absorptiometry (DXA) Images Improve Hip Fracture Prediction Compared to Areal BMD in Osteoporotic Fractures in Men (MrOS) Sweden Cohort</i></a>. Journal of Bone and Mineral Research, 38(9).</li>
+
+<li id="ref-49">Grassi L, Väänänen SP, Voss A, et al. <a href="https://doi.org/10.1016/j.bone.2025.117457" target="_blank"><i>DXA-based 3D finite element models predict hip fractures better than areal BMD in elderly women</i></a>. Bone. 2025;195:117457.</li>
+
+<li id="ref-50">Allison SJ, Poole KES, Treece GM, et al. (2015). <a href="https://doi.org/10.1002/jbmr.2499" target="_blank"><i>The Influence of High-Impact Exercise on Cortical and Trabecular Bone Mineral Content and 3D Distribution Across the Proximal Femur in Older Men: A Randomized Controlled Unilateral Intervention</i></a>. Journal of Bone and Mineral Research, 30(9), 1709–1716.</li>
+
+<li id="ref-51">Whitmarsh T, Fritscher KD, Humbert L, et al. (2011). <a href="https://doi.org/10.1109/isbi.2011.5872614" target="_blank"><i>Hip fracture discrimination using 3D reconstructions from Dual-energy X-ray Absorptiometry</i></a>. 2011 IEEE International Symposium on Biomedical Imaging: From Nano to Macro, 1189–1192.</li>
+
+<li id="ref-52">Winzenrieth R, Ominsky M, Wang Y, et al. (2021). <a href="https://doi.org/10.1007/s00198-020-05806-1" target="_blank"><i>Differential effects of abaloparatide and teriparatide on hip cortical volumetric BMD by DXA-based 3D modeling</i></a>. Osteoporosis International, 32(3), 575–583.</li>
+
+<li id="ref-53">England JR, Cheng PM (2019). <a href="https://doi.org/10.2214/ajr.18.20490" target="_blank"><i>Artificial Intelligence for Medical Image Analysis: A Guide for Authors and Reviewers</i></a>. American Journal of Roentgenology, 212(3), 513–519.</li>
+
+<li id="ref-54">Lewiecki EM, Betah D, Humbert L, et al. (2024). <a href="https://doi.org/10.1093/jbmr/zjae028" target="_blank"><i>3D-modeling from hip DXA shows improved bone structure with romosozumab followed by denosumab or alendronate</i></a>. Journal of Bone and Mineral Research, 39(4), 473–483.</li>
+
+<li id="ref-55">Winzenrieth R, Kostenuik P, Boxberger J, et al. (2022). <a href="https://doi.org/10.1002/jbm4.10612" target="_blank"><i>Proximal Femur Responses to Sequential Therapy With Abaloparatide Followed by Alendronate in Postmenopausal Women With Osteoporosis by 3D Modeling of Hip Dual‐Energy X‐Ray Absorptiometry (DXA)</i></a>. JBMR Plus, 6(4).</li>
+
+<li id="ref-56">Winzenrieth R, Humbert L, Boxberger JI, et al. (2022). <a href="https://doi.org/10.1016/j.jocd.2021.11.007" target="_blank"><i>Abaloparatide Effects on Cortical Volumetric BMD and Estimated Strength Indices of Hip Subregions by 3D-DXA in Women With Postmenopausal Osteoporosis</i></a>. Journal of Clinical Densitometry, 25(3), 392–400.</li>
+
+<li id="ref-57">Bennett C, Miller M, Wolford G (2009). <a href="https://doi.org/10.1016/s1053-8119(09)71202-9" target="_blank"><i>Neural correlates of interspecies perspective taking in the post-mortem Atlantic Salmon: an argument for multiple comparisons correction</i></a>. NeuroImage, 47, S125.</li>
+
+<li id="ref-58">Poole KE, Treece GM, Gee AH, et al. (2014). <a href="https://doi.org/10.1002/jbmr.2325" target="_blank"><i>Denosumab Rapidly Increases Cortical Bone in Key Locations of the Femur: A 3D Bone Mapping Study in Women With Osteoporosis</i></a>. Journal of Bone and Mineral Research, 30(1), 46–54.</li>
+
+<li id="ref-59">Sato M, Westmore M, Ma YL, et al. (2004). <a href="https://doi.org/10.1359/jbmr.040112" target="_blank"><i>Teriparatide [PTH(1–34)] Strengthens the Proximal Femur of Ovariectomized Nonhuman Primates Despite Increasing Porosity</i></a>. Journal of Bone and Mineral Research, 19(4), 623–629.</li>
+
+<li id="ref-60">Hadji P, Kamali L, Thomasius F, et al. (2024). <a href="https://doi.org/10.1007/s00198-024-07208-z" target="_blank"><i>Real-world efficacy of a teriparatide biosimilar (RGB-10) compared with reference teriparatide on bone mineral density,  trabecular bone score,  and bone parameters assessed using quantitative ultrasound,  3D-SHAPER{\textregistered} and high-resolution peripheral computer tomography in postmenopausal women with osteoporosis and very high fracture risk</i></a>. Osteoporosis International, 35(12), 2107–2116.</li>
+
+<li id="ref-61">Sone T, Ohnaru K, Sugai T, et al. (2023). <a href="https://doi.org/10.1007/s11657-023-01344-5" target="_blank"><i>The effects of abaloparatide on hip geometry and biomechanical properties in Japanese osteoporotic patients assessed using DXA-based hip structural analysis: results of the Japanese phase 3 ACTIVE-J trial</i></a>. Archives of Osteoporosis, 18(1).</li>
+
+<li id="ref-62">Genant HK, Engelke K, Bolognese MA, et al. (2016). <a href="https://doi.org/10.1002/jbmr.2932" target="_blank"><i>Effects of Romosozumab Compared With Teriparatide on Bone Density and Mass at the Spine and Hip in Postmenopausal Women With Low Bone Mass</i></a>. Journal of Bone and Mineral Research, 32(1), 181–187.</li>
+
+<li id="ref-63">MEDICAL 3S (2021). <i>Webinar - Use of 3D-Shaper in clinical research: state of the art and potential applications</i></li>
+
+<li id="ref-64">Casado Burgos E, Di Gregorio S, González Macías J, et al. (2019). <i>Datos de referencia de mediciones óseas en modelos 3D de fémur proximal en población española cn DXA: Proyecto SEIOMM 3D-SHAPPER</i>. Congreso SEIOMM (24º : 2019 : Gerona).</li>
+
+<li id="ref-65">Brance ML, Saravi FD, Henr{\'i}quez MM, et al. (2020). <a href="https://ri.conicet.gov.ar/handle/11336/154012" target="_blank"><i>Reference Values of Three-Dimensional Proximal Femur Parameters from Bone Densitometry Images in Healthy Subjects from Argentina</i></a>. World Congress on Osteoporosis, Osteoarthritis and Musculoskeletal Diseases, 372--372.</li>
+
+<li id="ref-66">Jennings I (). <i>3D Shaper Technology: Revolutionizing Bone Health Analysis</i></li>
+
+<li id="ref-77">Al-Hashimi L, Klotsche J, Ohrndorf S, et al. (2023). <a href="https://doi.org/10.3390/jcm12124147" target="_blank"><i>Trabecular Bone Score Significantly Influences Treatment Decisions in Secondary Osteoporosis</i></a>. Journal of Clinical Medicine, 12(12), 4147.</li>
+
+<li id="ref-68">Food {, Administration} D (2022). <a href="https://www.accessdata.fda.gov/cdrh_docs/pdf22/K220822.pdf" target="_blank"><i>510(k) Summary: K220822</i></a></li>
+
+<li id="ref-69">Broy SB, Cauley JA, Lewiecki ME, et al. (2015). <a href="https://doi.org/10.1016/j.jocd.2015.06.005" target="_blank"><i>Fracture Risk Prediction by Non-BMD DXA Measures: the 2015 ISCD Official Positions Part 1: Hip Geometry</i></a>. Journal of Clinical Densitometry, 18(3), 287–308.</li>
+
+<li id="ref-70">Whitmarsh T, Humbert L, Craene MD, et al. (2009). <i>Reconstrucción de la forma del fémur y densidad mineral ósea en 3D para el diagnóstico de osteoporosis a partir de DXA</i></li>
+
+<li id="ref-71">Whitmarsh T, Humbert L, Del Río Barquero LM, et al. (2011). <i>Volumetric Bone Mineral Density Estimation using a 3D Reconstruction Method from Dual-energy X-ray Absorptiometry</i>. ASBMR 2011 Annual Meeting Abstracts and Abstract Book.</li>
+
+<li id="ref-72">Whitmarsh T, Fritscher KD, Humbert L, et al. (2011). <a href="https://doi.org/10.1007/978-3-642-23629-7_48" target="_blank"><i>A Statistical Model of Shape and Bone Mineral Density Distribution of the Proximal Femur for Fracture Risk Assessment</i></a>. Medical Image Computing and Computer-Assisted Intervention – MICCAI 2011, 393–400.</li>
+
+<li id="ref-73">Whitmarsh T, Fritscher KD, Humbert L, et al. (2012). <a href="https://doi.org/10.1016/j.bone.2012.08.114" target="_blank"><i>Hip fracture discrimination from dual-energy X-ray absorptiometry by statistical model registration</i></a>. Bone, 51(5), 896–901.</li>
+
+<li id="ref-74">Martelli Y, Whitmarsh T, Humbert L, et al. (2012). <i>A software framework for 3D reconstruction and fracture risk assessment of the proximal femur from dual-energy x-ray absorptiometry</i>. Proceedings of VPH 2012: Virtual Physiological Human - Integrative approaches to computational biomedicine.</li>
+
+<li id="ref-75">Slart RHJA, Punda M, Ali DS, et al. (2024). <a href="https://doi.org/10.1007/s00259-024-06912-6" target="_blank"><i>Updated practice guideline for dual-energy X-ray absorptiometry (DXA)</i></a>. European Journal of Nuclear Medicine and Molecular Imaging, 52(2), 539–563.</li>
+</ol>
+</main>
 </body>
 </html>

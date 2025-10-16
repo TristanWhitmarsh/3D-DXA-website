@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>3D-DXA (3D-Shaper) の批判的評価: 方法論上の限界とその影響</title>
+
+  <!-- SEO hreflang cluster -->
+  <link rel="alternate" hreflang="x-default" href="https://3d-dxa.com/">
+  <link rel="alternate" hreflang="en" href="https://3d-dxa.com/en/">
+  <link rel="alternate" hreflang="nl" href="https://3d-dxa.com/nl/">
+  <link rel="alternate" hreflang="es" href="https://3d-dxa.com/es/">
+  <link rel="alternate" hreflang="ja" href="https://3d-dxa.com/ja/">
+  <link rel="canonical" href="https://3d-dxa.com/ja/">
+
+  <style>
+    body { font-family: 'Times New Roman', Times, serif; max-width: 860px; margin: 2rem auto; padding: 0 1rem; line-height: 1.65; text-align: justify; }
+    h1,h2,h3 { line-height: 1.3; }
+    header h1 { font-size: 1.8rem; margin-bottom: 0; }
+    header .byline { margin-top: .25rem; color: #333; font-size: 0.95rem; }
+    figure { margin: 1rem 0; }
+    figure img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+    figure figcaption { font-size: 0.9rem; color: #444; text-align: center; margin-top: .5rem; }
+    pre { background: #f7f7f7; padding: 0.75rem; overflow-x: auto; white-space: pre-wrap; }
+    a[href^="#ref-"] { text-decoration: none; }
+    .math { font-family: 'Times New Roman', Times, serif; }
+    hr { margin: 2rem 0; }
+
+    table { width:100%; border-collapse:collapse; margin: .5rem 0; }
+    th, td { border:1px solid #ddd; padding:.5rem; text-align:left; vertical-align:top; }
+    thead th { background:#f0f0f0; }
+
+    /* language switcher */
+    .lang-switcher { display:flex; gap:.75rem; padding:.75rem 1rem; }
+    .lang-switcher a { text-decoration:none; padding:.25rem .5rem; border-radius:.5rem; }
+    .lang-switcher a.active { outline:1px solid currentColor; }
+  </style>
+</head>
+<body>
+
+  <!-- Language switcher -->
+  <nav class="lang-switcher" aria-label="言語">
+    <a href="/en/" lang="en" hreflang="en">English</a>
+    <a href="/nl/" lang="nl" hreflang="nl">Nederlands</a>
+    <a href="/es/" lang="es" hreflang="es">Español</a>
+    <a href="/ja/" lang="ja" hreflang="ja">日本語</a>
+  </nav>
+
+  <header>
+    <h1>3D-DXA と 3D-Shaper の批判的評価: 方法論上の限界とその影響</h1>
+    <div class="byline">Tristan Whitmarsh<br/>Institute of Astronomy, University of Cambridge, Cambridge, UK</div>
+    <p class="source">
+      <b>Original peer-reviewed article:</b><br/>
+      Tristan Whitmarsh, Critical evaluation of 3D-DXA and 3D-Shaper: methodological limitations and their implications, JBMR Plus, Volume 9, Issue 9, September 2025, ziaf075,
+      <a href="https://doi.org/10.1093/jbmrpl/ziaf075" target="_blank" rel="noopener">https://doi.org/10.1093/jbmrpl/ziaf075</a>.
+    </p>
+  </header>
+
+  <main>
+    <h2>要旨</h2>
+    <p>3D-DXA はソフトウェア 3D-Shaper に実装されている方法で、統計モデルの位置合わせにより単一の 2D DXA 画像から近位大腿骨の 3D 再構成を生成します。3D-DXA の実装は、定量的コンピュータ断層撮影 (Quantitative Computed Tomography, QCT) から得られるものと同様の、海綿骨、皮質骨、構造パラメータの推定を提供することを目的としています。本手法の発明者かつ開発者として、私はその普及と広範な使用を懸念をもって見守ってきました。本稿では、3D-DXA に内在する方法論上の限界を批判的に評価し、研究と臨床への影響を論じます。</p>
+
+    <p>主な問題は、DXA 画像における皮質の視認性が限られているため、3D-DXA が皮質パラメータを正確に導出できないことです。その代わりに、ソフトウェアは皮質の直接測定ではなく、全体の bone mineral density (BMD) に基づく推定に依拠します。これにより、実際の皮質測定を反映しない結果になる可能性があります。</p>
+
+    <p>さらに、統計モデルが特定のデモグラフィから構築されていることによる集団バイアス、単一視点の DXA 画像を用いることによる再構成精度の限界も懸念されます。</p>
+
+    <p>これらの限界は、3D-DXA を用いた研究で不適切な性能評価指標が使われ、複数比較の補正が欠落していることも相まって、誤った測定や結論につながっている可能性があります。</p>
+
+    <p>それにもかかわらず、3D-DXA は各国で規制当局の承認を受けており、診断や治療判断の精度を損なう恐れがあります。本稿はこれらの問題を明らかにし、臨床家、研究者、規制当局に 3D-DXA の重大な限界を理解してもらい、誤解を避け患者の安全を確保するために、使用の再評価が緊急に必要であることを訴えるものです。</p>
+
+    <h2>キーワード</h2>
+    <p>3D-DXA, 3D-Shaper, Quantitative Computed Tomography, bone mineral density, Dual-energy X-ray Absorptiometry, 皮質パラメータマッピング, Hip Structure Analysis.</p>
+
+    <h2>一般向け要約</h2>
+    <p>本レビューは 3D-DXA (3D-Shaper) を批判的に検討します。これは単一の DXA 画像から近位大腿骨の海綿骨、皮質骨、構造パラメータを推定しようとするソフトウェアです。3D-DXA には本質的な限界があり、測定の不正確さを招き、研究結果や治療判断に影響する可能性があります。これらの点を理解することは、骨の生理、薬剤効果、患者安全に関わる誤解を避ける上で重要です。</p>
+
+    <h2>はじめに</h2>
+    <p>3D-DXA は、2D の DXA 画像上に 3D の統計的変形モデルを位置合わせして近位大腿骨の 3D モデルを生成する方法です [<a href="#ref-1">1</a>]。モデルは、スペイン人コーカソイド 81 女性と 30 男性 (平均年齢 56.2 ± 12.1 歳、範囲 30-84 歳) の QCT から構築されます [<a href="#ref-2">2</a>]。モデルのパラメータは、その集団における形状と密度分布の主な変動を記述します。反復的にモデルパラメータと位置・姿勢 (位置、向き、スケール) を探索し、モデル投影が DXA 画像に近づくまで最適化します (<a href="#fig:pipeline">図 1</a>)。得られた 3D モデルから骨表面上の皮質パラメータと、内部の trabecular volumetric bone mineral density (vBMD) を測定します。3D-DXA と QCT の比較では、皮質厚に対して平均絶対誤差 0.33 mm、皮質密度に対して 72 mg/cm³、相関係数は ≥ 0.86 と報告されました [<a href="#ref-2">2</a>]。</p>
+
+    <figure id="fig:pipeline" style="float:right; width:50%; margin:0 0 1em 1em;">
+      <img src="3d-dxa.com/Figure1.jpg" alt="3D-DXA の反復処理のフローチャート。" style="width:100%; height:auto;">
+      <figcaption style="font-size:0.9em; text-align:center;">
+        <b>図 1.</b> 単一の 2D DXA 画像から近位大腿骨の形状と密度分布を再構成するための 3D-DXA の反復処理。
+        各反復で、変形した密度モデルから投影 (digitally reconstructed radiograph, DRR) を生成し、実際の DXA 画像と
+        類似度指標 (例: mean squared error) で比較します。次の反復で類似度が上がるように、モデルパラメータと変換
+        (回転、並進、スケール) を調整します。所定のしきい値まで収束すると終了します。出典 [<a href="#ref-3">3</a>] を改変。
+      </figcaption>
+    </figure>
+
+    <p>DXA 画像と統計モデルを用いた 3D 再構成の他手法も提案されていますが [<a href="#ref-4">4</a>, <a href="#ref-5">5</a>]、2010 年に公表された方法 [<a href="#ref-6">6</a>] がその後 Galgo Medical SL (バルセロナ) により 3D-DXA として製品化されました。後に、体積再構成から皮質厚と cortical BMD を測定するよう拡張され [<a href="#ref-2">2</a>]、現在は 3D-Shaper Medical SL により 3D-Shaper としてサービスおよびソフトウェアが提供されています。DMS Imaging は自社の DXA 装置 Stratos/Medix に 3D-DXA をライセンスし、Fujifilm は同装置を FDX Visionary DXA として販売しています。Imex Medical は Elipse、Radiología SA は Radioscore - DR として販売しており、いずれも 3D-DXA をオプション提供しています。</p>
+
+    <p>私は元の方法 [<a href="#ref-1">1</a>] を開発したため、他の利用者や研究者には見えにくい内在的限界を熟知しています。Bone 誌への書簡で主たる限界を説明しましたが [<a href="#ref-7">7</a>]、3D-DXA は世界中で販売・使用され続けています。3D-Shaper は EU、日本、タイ、アルゼンチンで承認を受け、さらに FDA の 510(k) クリアランスも取得しました。これらの事実を踏まえ、誤解を正し限界を明確にすることが急務です。</p>
+
+    <h2>方法論上の限界</h2>
+    <p>本節では、3D-DXA の基盤となる手法の限界と、さらに不正確さを招き得る実装上の要素を説明します。</p>
+
+    <h3>皮質パラメータは測定されていない</h3>
+    <p>最大の問題は、DXA 画像に皮質が十分には写らないため、3D-DXA が皮質パラメータを測定できないことです。<a href="#fig:DXA">図 2</a> に示すように、骨表面のほとんどの位置で、皮質を識別できません。これは投影輪郭 (A) でも、対向する皮質が検出器に垂直な箇所 (B) でも同様です。GE iDXA (ピクセル 0.3 x 0.25 mm) では明瞭で、より解像度の低い GE Prodigy (0.6 x 1.05 mm) ではさらに顕著です。後者の画像も 3D-Shaper がサポートしています。</p>
+
+    <figure id="fig:DXA" style="float:right; width:50%; margin:0 0 1em 1em;">
+      <img src="3d-dxa.com/Figure2.jpg" alt="GE iDXA による若年成人の股関節 DXA 画像の例。" style="width:100%; height:auto;">
+      <figcaption style="font-size:0.9em; text-align:center;">
+        <b>図 2.</b> GE iDXA による若年成人の股関節 DXA 画像の例。[<a href="#ref-7">7</a>] に既報の図。
+      </figcaption>
+    </figure>
+
+    <p>3D-DXA は DXA 画像から直接測定するのではなく、形状と密度の統計モデルを DXA に登録し [<a href="#ref-7">7</a>]、そのモデルから皮質パラメータを取り出します [<a href="#ref-2">2</a>]。モデルは、通常の CT の Hounsfield 単位をキャリブレーションファントムで BMD に変換した QCT から構築されます。</p>
+
+    <p>モデル構築では、各 QCT で近位大腿骨をセグメンテーションし表面メッシュを作成します。整列した骨表面に主成分分析 (PCA) を適用し、平均形状と、重要度順に並んだ主成分 (PC) を得ます。</p>
+
+    <p>密度分布モデルでは、QCT 体積を平均形状に変形し、ボクセルの BMD 値に対して同様の統計処理を行い、平均体積と密度の PC を得ます。</p>
+
+    <p>各 PC は形状や密度の変動様式を表します (<a href="#fig:ShapeDensityModel">図 3</a>)。モデルパラメータ (重み) により各 PC をどれだけ加えるかが決まり、重みを変えると新しいインスタンスが得られます。パラメータは通常 2.5 から 3 標準偏差に制限され、現実的な骨形状に保たれます。新しい形状に合わせて密度体積を変形する際は Thin Plate Splines を用います。</p>
+
+    <figure id="fig:ShapeDensityModel">
+      <img src="3d-dxa.com/Figure3.jpg" alt="形状モデルの平均と最初の3主成分 (左)、密度モデルの投影 (右)。-3 から +3 SD の範囲。">
+      <figcaption>
+        <b>図 3.</b> 形状モデルの平均と 3 つの PC (左)、密度モデルの投影 (右)。-3 から +3 標準偏差で変化。出典 [<a href="#ref-3">3</a>] を改変。
+      </figcaption>
+    </figure>
+
+    <p>3D-DXA は、モデルパラメータとモデルの姿勢を反復的に更新し、モデル投影が DXA 画像と一致するまで最適化します (<a href="#fig:pipeline">図 1</a>)。</p>
+
+    <p>皮質厚と皮質密度は、そのインスタンスから QCT 向けに提案されたデコンボリューション手法に相当する方法で測定されます [<a href="#ref-8">8</a>]。したがって、皮質パラメータは DXA 画像から測定されたのではなく、その上に登録されたパラメトリックモデルから導かれます。</p>
+
+    <p>DXA 画像に皮質が見えない部位にも値が表示される皮質パラメータマップ [<a href="#ref-9">9</a> - <a href="#ref-13">13</a>] は、モデルから導かれたものです。3D-Shaper Medical は「推定」であると述べますが [<a href="#ref-14">14</a>]、実際には複雑で誤差の多い統計的予測です。DXA の皮質情報が乏しいため、ソフトウェアは主に全体 BMD に依存し、モデルを構築したスペイン人集団の統計的特性に強く制約されます。</p>
+
+    <figure id="fig:density_model">
+      <img src="3d-dxa.com/Figure4.jpg" alt="密度モデルのインスタンス生成と皮質パラメータ測定の例。">
+      <figcaption>
+        <b>図 4.</b> 密度モデルのインスタンス生成と皮質パラメータの測定例。
+        上段は平均、PC1-3、新インスタンスの断面。下段は赤線に沿ったボクセル値。
+        左端は平坦な段差モデルを平滑化してフィットし、皮質厚と cortical vBMD を推定して surface BMD (sBMD) を得る様子。
+      </figcaption>
+    </figure>
+
+    <h3>使用されるモデルパラメータの数</h3>
+    <p>皮質厚だけを増やす単一のパラメータは存在しません。皮質の表現は、平均体積と密度モデルの PC の線形結合に依存します。<a href="#fig:density_model">図 4</a> は平均と最初の 3 PC がどのように新しい体積を生成するか示します。皮質厚や皮質密度、海綿骨密度を独立かつ選択的に調整するには、多くの PC を組み合わせる必要があります。</p>
+
+    <p>通常、主要な変動を説明する PC のサブセットが保持されます。必要なパラメータ数は、累積寄与率 (例: 95%) や肘点で決める場合がありますが、より厳密には Horn の平行分析でノイズ成分を除外すべきです [<a href="#ref-6">6</a>]。</p>
+
+    <p>重要な点にもかかわらず、3D-Shaper Medical はパラメータ数やその決定法を公表していません。Horn に基づく適切な数が確保されないと、対象集団のばらつきを表現できません。研究用と臨床用で数が異なる場合、報告精度と臨床精度の乖離が生じます。</p>
+
+    <h3>集団バイアスの可能性</h3>
+    <p>3D-DXA の 3D 骨モデルは、学習に用いた集団の統計に基づきます。3D-Shaper では、治療や骨代謝に影響する疾患のないスペイン人集団 (81 女性、30 男性、平均 56.2 ± 12.1 歳) からモデルを構築しています [<a href="#ref-2">2</a>, <a href="#ref-15">15</a>]。性差に加え、民族差も大きく、コーカソイドとアジア人では近位大腿骨の形態が異なることが知られています [<a href="#ref-16">16</a>]。</p>
+
+    <p>コーカソイドから作られたモデルは、アジア人の全ての被験者に対して、平均から ±3 SD の制約内で適切に再構成できない場合があります。例えば、白人女性の大腿骨頸部の皮質厚は 1.84 ± 0.03 mm、韓国人女性は 2.41 ± 0.71 mm と報告されています [<a href="#ref-17">17</a>]。2.41 mm は白人集団の ±3 SD 範囲 (1.75-1.93 mm) を外れます。モデルは対象集団に合わせて作る必要があります。</p>
+
+    <p>日本人集団で 3D-DXA の値が QCT と相関したという報告はありますが [<a href="#ref-18">18</a>]、それは全てのパラメータが areal BMD (aBMD) と相関するからで、患者固有の再構成を意味しません。形状推定に誤りがあっても、モデル投影が DXA の骨と重なっていれば、密度値 (皮質厚や皮質 BMD を含む) は aBMD を反映します。にもかかわらず 3D-DXA は日本、タイ、インドなどアジアで販売されています。</p>
+
+    <p>統計モデルは適用対象となる集団で学習すべきです。性別、民族、治療種別ごとに別モデルを作るか、十分なサンプルを含めてパラメータ数を確保する必要があります。これは機械学習では当然の原則で [<a href="#ref-19">19</a> - <a href="#ref-22">22</a>]、統計モデルではなおさら重要です。それにもかかわらず、3D-DXA は多様な集団に適用されています: プロダンサー [<a href="#ref-9">9</a>]、サッカー選手と水泳選手 [<a href="#ref-23">23</a>]、若年の肥満女性 [<a href="#ref-24">24</a>]、黒人女性 [<a href="#ref-25">25</a>]、高骨量患者 [<a href="#ref-11">11</a>]、成人成長ホルモン欠乏症 [<a href="#ref-26">26</a>]、乾癬性疾患 [<a href="#ref-27">27</a>]、2 型糖尿病 [<a href="#ref-28">28</a>]、原発性副甲状腺機能亢進症 [<a href="#ref-10">10</a>, <a href="#ref-29">29</a>]、先端巨大症 [<a href="#ref-30">30</a>]、ダウン症 [<a href="#ref-13">13</a>]、スリーブ胃切除後 [<a href="#ref-31">31</a>]、脊髄損傷の男性 [<a href="#ref-32">32</a>]、骨量が低い中高年のオーストラリア人男性 [<a href="#ref-33">33</a>]、小児がんサバイバー [<a href="#ref-34">34</a>]。</p>
+
+    <h3>再構成精度の限界</h3>
+    <p>3D-DXA は、QCT のキャリブレーション、統計モデル構築のための変形登録、密度体積の形状への変形、QCT と DXA の BMD と解像度の違い、投影の単純化 (本来のファンビームではなく等角投影) など、多段階で誤差要因を含みます。各要因は予測困難なバイアスを導入し得ます。さらに、111 名という少数のスペイン成人からモデルを作っている点も、形状、密度、皮質厚の多様性を制限します。</p>
+
+    <p>3D-Shaper が GE や Hologic の専用データを正しく読み、体組成に応じた補正を適切に適用できるかも不明です。これらは集団の違いや時間経過により精度に影響します。</p>
+
+    <p>近位大腿骨の形状と姿勢をサブミリで正確に合わせられないなら、皮質厚や皮質密度をサブミリ精度で推定することはできません。初期の研究では、2 方向の追加で形状誤差が 1.3 mm から 0.9 mm、BMD 誤差が 4.4% から 3.2% に減少することが示され、単一視点が不十分であることが分かりました [<a href="#ref-35">35</a>]。一方、CT は多数の投影から再構成し、皮質と海綿骨を独立に測定できます。</p>
+
+    <p>3D-DXA は、探索が収束した場所によって全く異なる形態を生み得ます。特に回転が誤っていると顕著です。同日反復スキャンの研究では、推定強度の差が最大 62% に達し [<a href="#ref-36">36</a>]、要素ごとの BMD 差も 30 ± 50% と報告されました。別研究では 3D-Shaper と QCT の密度の相関が低い (<span class="math">r<sup>2</sup> = 0.48</span>) ことも示されています [<a href="#ref-37">37</a>]。</p>
+
+    <p>構造パラメータでは、3D-DXA と CT の比較で大腿骨頸部の軸長の相関は r = 0.86 でしたが [<a href="#ref-38">38</a>]、DXA 画像から直接測った場合 (Hip Structure Analysis) の r = 0.90 より低い結果でした [<a href="#ref-39">39</a>]。頸部-骨幹角の相関も限定的でした (r = 0.71 [<a href="#ref-38">38</a>])。これは、骨盤半側の重なりを避けるために大腿骨頭をマスクで再構成から除外していることが一因で、骨盤モデルを追加すれば改善する可能性があります [<a href="#ref-5">5</a>]。</p>
+
+    <p>皮質パラメータの評価では、3D-DXA と QCT の差の平均 (± SD) は、頸部で 0.04 ± 0.21 mm、転子部で -0.07 ± 0.15 mm と報告されました [<a href="#ref-2">2</a>]。図 5 は表面上の平均および最大の絶対誤差を示し、多くの領域で平均誤差が 0.2 mm 超、最大誤差が 1 mm 超です。比較として、アレンドロネート 18 か月後の QCT 研究では皮質厚の増加は 1.4% (約 0.018 mm) [<a href="#ref-40">40</a>]、テリパラチド 3 試験の統合では約 0.035 mm [<a href="#ref-41">41</a>] でした。3D-DXA の誤差はこれらの治療変化を上回るため、治療効果と方法論的ノイズを区別するのは困難です。</p>
+
+    <figure id="fig:cortical_thickness_errors" style="float:right; width:50%; margin:0 0 1em 1em;">
+      <img src="3d-dxa.com/Figure5.jpg" alt="3D-DXA の皮質厚推定誤差のカラーマップ。" style="width:100%; height:auto;">
+      <figcaption style="font-size:0.9em; text-align:center;">
+        <b>図 5.</b> 同一被験者の QCT と比較した 3D-DXA の皮質厚推定の平均 (上) と最大 (下) の誤差マップ。[<a href="#ref-2">2</a>] 図 8 を改変。
+      </figcaption>
+    </figure>
+
+    <h3>areal BMD に対する利点の限定性</h3>
+    <p>密度の統計モデルでは、第 1 主成分が分散の多くを占め、その増加は全体の密度や皮質パラメータの増加をもたらします [<a href="#ref-7">7</a>]。DXA に皮質情報がほとんどないため、3D-DXA は主にこの成分に依存し、海綿骨と皮質のパラメータは本質的に areal BMD (aBMD) と相関します。aBMD が上がれば、trabecular vBMD、cortical BMD、皮質厚が同時に上がります。ECTS 2024 と ASBMR 2024 の研究は、3D-Shaper のパラメータが aBMD と強く相関し、骨折予測に追加情報を与えないことを示しています [<a href="#ref-42">42</a>, <a href="#ref-43">43</a>]。</p>
+
+    <p>また、再構成は DXA 画像に見える骨の輪郭は捉えるものの、頸部軸長や頸部-骨幹角の精度は限定的で、結果的に主に骨サイズを反映します。これは aBMD にすでに含まれており、強度予測の改善は小さいことを意味します。実際、3D-DXA による強度予測は QCT と相関 (<span class="math">r<sup>2</sup> = 0.88</span>) しますが、DXA の頸部 aBMD だけによる予測 (<span class="math">r<sup>2</sup> = 0.87</span>) を有意に上回りませんでした [<a href="#ref-37">37</a>]。3D-Shaper Medical の別研究でも類似の相関 (<span class="math">r<sup>2</sup> = 0.86</span>) が示されましたが、aBMD との比較はありませんでした [<a href="#ref-44">44</a>]。日本のコホートでも、3D-Shaper の指標は大腿骨全体の aBMD より優れてはいませんでした [<a href="#ref-45">45</a>]。</p>
+
+    <p>DXA に 3D モデルを登録して強度を予測する類似手法も報告されており [<a href="#ref-46">46</a> - <a href="#ref-48">48</a>]、一部では aBMD より改善が示されましたが、基本的な限界は同様です。</p>
+
+    <p>aBMD 単独を上回れないなら、DXA から直接測定される Hip Structure Analysis (HSA) の指標との組み合わせを上回ることも困難です。それでも 3D-Shaper Medical は 3D-DXA に基づく有限要素解析のサービスを提供しています。</p>
+
+    <h2>検証方法</h2>
+    <p>3D-DXA の限界にもかかわらず、多くの論文が高い精度を報告しています。これは、実際の限界を隠してしまう不適切な検証手法のためです [<a href="#ref-21">21</a>, <a href="#ref-22">22</a>]。以下に問題点を述べます。</p>
+
+    <h3>不適切な性能評価指標</h3>
+    <p>3D-Shaper Medical は、DXA から 3D-DXA で生成した表面メッシュと、同一被験者の QCT から手動で作成した表面メッシュを比較し、平均点-表面距離 0.93 mm と報告しました [<a href="#ref-2">2</a>]。皮質パラメータでも、皮質厚の平均絶対誤差 0.33 mm、皮質密度 72 mg/cm³ と示しました。しかし、これらの誤差が許容範囲かどうかの基準が示されておらず、妥当性の証明にはなりません。</p>
+
+    <p>相関係数による評価も行われています。海綿骨、皮質、全体の vBMD と皮質厚に対して 0.86、0.93、0.95、0.91 といった高い相関が報告されましたが、これらは主に全体 BMD に依存するために生じるもので、患者固有の再構成精度を保証するものではありません。</p>
+
+    <p>集団研究でも同様です。3D-DXA のパラメータと各種因子との相関が示されても、それは aBMD の変化を反映しているだけの場合があります。より適切なのは、盲目的推定器のような単純なベースラインと比較することです。例えば、ある集団の平均の皮質厚マップを全患者に適用する単純推定です。洗練された方法は少なくともこれを上回るべきですが、そのような評価は公表されていません。</p>
+
+    <p>多くの論文は成功例だけを提示しており、信頼性を過大評価しがちです。失敗率を定量化するには、モデル投影と DXA 画像の並列表示や、再構成体積の断面と QCT の比較が必要です。先行研究では、明示されていないものの、173 例中 80 例のみが保持され、50% を超える失敗率が示唆されます [<a href="#ref-51">51</a>]。</p>
+
+    <p>統計的に有意な差があるという事実だけをもって「正しい」とする誤りもあります。私の書簡への応答では、テリパラチド後の cortical BMD の変化について、増加とする結果 [<a href="#ref-52">52</a>] と、有意差なしとする結果 [<a href="#ref-15">15</a>] が併存しましたが、QCT では一般にリモデリング亢進により皮質密度が低下します (後述)。</p>
+
+    <h3>多重比較補正の欠如</h3>
+    <p>この問題は、特に 3D-Shaper のサービスを用いた研究で顕著です。ソフトウェアは 71 パラメータを出力し、それぞれが独立の検定になります。Bonferroni などの多重比較補正を行わなければ、偶然の有意が増えますが、多くの研究で補正が行われていません [<a href="#ref-10">10</a>, <a href="#ref-24">24</a>, <a href="#ref-27">27</a>, <a href="#ref-28">28</a>]。</p>
+
+    <p>骨表面や体積のカラーマップでも同様です。各頂点やボクセルは独立の検定であり、点ごとに t 検定で有意を表示する手法が一般的です [<a href="#ref-9">9</a> - <a href="#ref-12">12</a>, <a href="#ref-13">13</a>, <a href="#ref-28">28</a>, <a href="#ref-52">52</a>, <a href="#ref-54">54</a>, <a href="#ref-55">55</a>]。体積マップではそもそも統計を示さない例もあります [<a href="#ref-9">9</a>, <a href="#ref-11">11</a>, <a href="#ref-30">30</a>, <a href="#ref-52">52</a>, <a href="#ref-54">54</a>, <a href="#ref-55">55</a>, <a href="#ref-56">56</a>]。これは偶然のパターンを「局所変化」と誤認させ、介入効果を過大評価します。</p>
+
+    <p>神経画像分野ではこの問題が広く知られており [<a href="#ref-57">57</a>]、SurfStat (表面; ランダムフィールド理論) や SPM/FSL (ボクセル) などの解決策があります [<a href="#ref-58">58</a>]。これらの適用で統計的厳密性は高まりますが、3D-DXA のパラメータが aBMD に強く依存するという根本は変わりません。</p>
+
+    <h2>含意</h2>
+
+    <h3>薬剤有効性研究における誤解を招く結果</h3>
+    <p>多くの研究で、3D-DXA の結果は「健康者では皮質パラメータが aBMD と相関する」という一般則と整合し、もっともらしく見えます。しかし、骨形成やリモデリングが撹乱され、各指標が比例して変化しない状況、特にアナボリック治療では破綻します。</p>
+
+    <p>テリパラチドの例では、3D-DXA で全ての皮質指標の増加 (cortical vBMD の有意増加を含む) が報告されました [<a href="#ref-52">52</a>]。一方、QCT の等価な測定では 18-24 か月後に皮質 BMD の有意な低下が観察されており、リモデリング亢進による皮質多孔化が原因とされています [<a href="#ref-41">41</a>, <a href="#ref-59">59</a>]。別の 3D-DXA 研究では有意差なしと報告されています [<a href="#ref-15">15</a>, <a href="#ref-60">60</a>]。DXA で部分的に見える骨幹皮質の変化がモデル全体に波及し、局所的な低下を再現できていない可能性があります。</p>
+
+    <p>アバロパラチドでは 3D-DXA 研究が増加を報告しましたが [<a href="#ref-52">52</a>, <a href="#ref-55">55</a>, <a href="#ref-56">56</a>]、QCT の研究では皮質密度の減少傾向が観察されています [<a href="#ref-61">61</a>]。ロモソズマブでも 3D-DXA は広範な増加を報告した一方で [<a href="#ref-54">54</a>]、QCT では皮質密度の増加は見られませんでした [<a href="#ref-62">62</a>]。これらの乖離は、前述の限界から予見可能です [<a href="#ref-7">7</a>]。</p>
+
+    <p>加えて、色分けマップで「局所」変化を示すことにより、誤った印象が広まり得ます。3D-DXA はモデルパラメータが密度分布にグローバルに作用するため、患者固有の局所パターンを測ることはできません。多重比較補正が不十分なままでは、過度に楽観的な評価につながります。</p>
+
+    <h3>患者マネジメント</h3>
+    <p>3D-Shaper は 71 個の指標を算出できますが、臨床承認版は主に trabecular vBMD と cortical surface BMD (sBMD)、および T-score と Z-score を提供します。参照集団は不明で、セミナーではコーカソイド参照とされます [<a href="#ref-63">63</a>]。スペインとアルゼンチンの参照曲線が公開されています (<a href="#fig:ReferenceData">図 6</a>) [<a href="#ref-64">64</a>, <a href="#ref-65">65</a>] が、相互やソフトウェアの図と一致しません。日本向け承認版では日本人参照を使っていないことも確認されています。コーカソイドとアジア人の差を踏まえると [<a href="#ref-68">68</a>]、慎重さが必要です。</p>
+
+    <figure id="fig:ReferenceData" margin:0 0 1em 1em;">
+      <img src="3d-dxa.com/Figure6.jpg" alt="スペイン人 (左) とアルゼンチン人 (右) の参照データ。">
+      <figcaption style="font-size:0.9em; text-align:center;">
+        スペイン人 (左) とアルゼンチン人 (右) の参照データ。[<a href="#ref-66">66</a>] と [<a href="#ref-67">67</a>] に基づく。
+      </figcaption>
+    </figure>
+
+    <p>販促資料では、治療選択を支援する表が提示されています (下の表 A-C)。しきい値は任意的または未記載で、個別研究の要約は表の記号と一致しません。これに基づく臨床判断の妥当性は疑問です。</p>
+
+    <p>ウェビナー [<a href="#ref-66">66</a>] では、sBMD が低く vBMD が非常に低い場合、海綿骨の改善が大きいとしてテリパラチドが最適とされました。しかし、脊椎 aBMD を考慮しない場合、デノスマブやアバロパラチドを選ぶ臨床家もいるでしょう。</p>
+
+    <p>実臨床では 3D-DXA は通常の DXA の T-score, Z-score と併用されます。高リスク例の見落としは最小ですが、境界例では sBMD と vBMD のノイズが処方判断を左右し得ます。Trabecular Bone Score (TBS) が治療方針に大きく影響することが示されており [<a href="#ref-77">77</a>]、3D-DXA でも同様の影響が考えられます。</p>
+
+    <p>フォローアップにも問題があります。3D-DXA の誤差は期待される変化量を上回り、再現性が低いため [<a href="#ref-36">36</a>]、観察された変化が真の生理かノイズかを判別できません。結果を信頼すると不要な治療変更につながる恐れがあります。</p>
+
+    <figure id="tab-bone_density_changes">
+      <div><strong>(A)</strong></div>
+      <table>
+        <thead>
+          <tr><th></th><th>2D DXA (Total hip) aBMD</th><th>3D-DXA (3D-Shaper) Trabecular vBMD</th><th>3D-DXA (3D-Shaper) Cortical sBMD</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Alendronate</td><td>+</td><td>+</td><td>+</td></tr>
+          <tr><td>Denosumab</td><td>++</td><td>++</td><td>++</td></tr>
+          <tr><td>Zoledronic acid</td><td>+</td><td>+</td><td>++</td></tr>
+          <tr><td>Teriparatide [<a href="#ref-3">3</a>, <a href="#ref-4">4</a>, <a href="#ref-5">5</a>, <a href="#ref-6">6</a>]*</td><td>+</td><td>++</td><td>=</td></tr>
+          <tr><td>Abaloparatide</td><td>++</td><td>++</td><td>++</td></tr>
+          <tr><td>Romosozumab</td><td>+++</td><td>+++</td><td>+++</td></tr>
+        </tbody>
+      </table>
+      <div style="height:1rem"></div>
+      <div><strong>(B)</strong></div>
+      <table>
+        <thead>
+          <tr><th></th><th>aBMD</th><th>vBMD</th><th>sBMD</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Teriparatide [<a href="#ref-4">4</a>, <a href="#ref-5">5</a>] (18 か月)</td><td>++ (3.3%)</td><td>++/+++ (9%)</td><td>+ (1.8%)</td></tr>
+          <tr><td>Teriparatide [<a href="#ref-6">6</a>] (24 か月)</td><td>= (p > 0.05)</td><td>++/+++ (5.9%)</td><td>= (p > 0.05)</td></tr>
+          <tr><td>Teriparatide [<a href="#ref-7">7</a>] (24 か月)</td><td>= (p > 0.05)</td><td>++/+++ (>14%)</td><td>= (p > 0.05)</td></tr>
+        </tbody>
+      </table>
+      <div style="height:1rem"></div>
+      <div><strong>(C)</strong></div>
+      <table>
+        <thead>
+          <tr><th>記号</th><th>(Total hip) aBMD</th><th>Trabecular vBMD</th><th>Cortical sBMD</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>+++</td><td>Δ > n/a %</td><td>Δ > n/a %</td><td>Δ > n/a %</td></tr>
+          <tr><td>++</td><td>2 < Δ ≤ n/a %</td><td>4 < Δ ≤ n/a %</td><td>2 < Δ ≤ n/a %</td></tr>
+          <tr><td>+</td><td>0.5 < Δ ≤ 2 %</td><td>0.5 < Δ ≤ 4 %</td><td>0.5 < Δ ≤ 2 %</td></tr>
+          <tr><td>=</td><td>-0.5 ≤ Δ ≤ 0.5 %</td><td>-0.5 ≤ Δ ≤ 0.5 %</td><td>-0.5 ≤ Δ ≤ 0.5 %</td></tr>
+          <tr><td>-</td><td>-2 ≤ Δ < -0.5 %</td><td>-4 ≤ Δ < -0.5 %</td><td>-2 ≤ Δ < -0.5 %</td></tr>
+          <tr><td>--</td><td>Δ < -2 %</td><td>Δ < -4 %</td><td>Δ < -2 %</td></tr>
+        </tbody>
+      </table>
+      <figcaption>これらの表は、3D-Shaper Medical が 3D-DXA 解析を治療選択に用いる方法の一例を示します。
+      (A) 販促資料の表 (テリパラチドの文献のみ掲載)。 (B) 3D-DXA 研究で報告されたテリパラチドの効果に関する要約と追補。 (C) 記号の閾値 (可能な限り)。
+      * [<a href="#ref-3">3</a>] の追加は誤記の可能性があります (テリパラチドを含みません)。</figcaption>
+    </figure>
+
+    <h2>考察</h2>
+    <p>まとめると、3D-DXA は精緻に見える多様な指標を出力しますが、独立した皮質や海綿骨の性質というより、主として全体の areal BMD を反映します。皮質と海綿骨の変化が aBMD と比例的な集団では一見もっともらしい結果を与えますが、患者固有の測定や局所的変化の把握には向きません。これは特に、各コンパートメントが逆方向に変化し得るアナボリック治療で顕著で、QCT では観測される変化を 3D-DXA は捉えられません。</p>
+
+    <p>3D-DXA は当初、integral vBMD の推定により骨粗鬆症診断の改善を目指して開発されました [<a href="#ref-70">70</a>, <a href="#ref-71">71</a>]。皮質と海綿骨を厳密に分けないため、integral vBMD は有効な推定である可能性が残ります。その後、モデルパラメータ自体を解析して骨折リスク推定の改善を図りました [<a href="#ref-51">51</a>, <a href="#ref-72">72</a> - <a href="#ref-74">74</a>]。しかし、本稿で述べた根本的な限界が、精度と信頼性を損なっています。</p>
+
+    <p>本稿は、3D-DXA を商業化する企業 (3D-Shaper Medical、DMS Imaging、Fujifilm) の透明性の欠如により、公開情報と私自身の開発経験に依拠しています。未公開の点は、各社または代理人に問い合わせて確認されることを推奨します。</p>
+
+    <p>学会による独立評価は、3D-DXA の妥当性と使用に関する勧告を提供し得ます。国際ワーキンググループによる DXA 実践ガイドの改訂では「臨床実装には更なるエビデンスが必要」とされていますが [<a href="#ref-75">75</a>]、現時点で勧告を下せるだけの情報が集まりつつあると考えます。本レビューが一助となれば幸いです。</p>
+
+    <p>結論として、3D-DXA の根本的限界を踏まえると、3D-DXA が提供する皮質および海綿骨のパラメータは研究用途には用いるべきではなく、診断、モニタリング、治療意思決定支援などの臨床用途にも適さないと考えます。</p>
+
+    <h2>利益相反</h2>
+    <p>著者は 3D-DXA の基盤となる方法に関する特許の共同発明者です。商用 3D-DXA のコード、統計モデル、販促資料の知的財産と起源に関する議論に関与しましたが、3D-Shaper Medical その他の企業に所属せず、株式、ロイヤリティ、その他の報酬を受け取っていません。UCB の教育フォーラムで講義し、Amgen Inc. と Lilly から研究助成を受けました。本稿の見解は著者個人のものであり、方法論と公開された科学的証拠の批判的評価に基づいています。</p>
+
+    <h2>References</h2>
+    <!-- Keep the references exactly as in the original English page -->
+    <ol>
+      <li id="ref-1">Whitmarsh T (2012). <a href="http://hdl.handle.net/10803/94492" target="_blank"><i>3D Reconstruction of the Proximal Femur and Lumbar Vertebrae from Dual-Energy X-Ray Absorptiometry for Osteoporotic Risk Assessment</i></a></li>
+      <li id="ref-2">Humbert L, Martelli Y, Fonolla R, et al. (2017). <a href="https://doi.org/10.1109/tmi.2016.2593346" target="_blank"><i>3D-DXA: Assessing the Femoral Shape,  the Trabecular Macrostructure and the Cortex in 3D from DXA images</i></a>. IEEE Transactions on Medical Imaging, 36(1), 27–39.</li>
+      <li id="ref-3">Whitmarsh T, Humbert L, De Craene M, et al. (2011). <a href="https://doi.org/10.1109/tmi.2011.2163074" target="_blank"><i>Reconstructing the 3D Shape and Bone Mineral Density Distribution of the Proximal Femur From Dual-Energy X-Ray Absorptiometry</i></a>. IEEE Transactions on Medical Imaging, 30(12), 2101–2114.</li>
+      <li id="ref-4">Ahmad O, Ramamurthi K, Wilson KE, et al. (2010). <a href="https://doi.org/10.1002/jbmr.140" target="_blank"><i>Volumetric DXA (VXA): A new method to extract 3D information from multiple in vivo DXA images</i></a>. Journal of Bone and Mineral Research, 25(12), 2744–2751.</li>
+      <li id="ref-5">Väänänen SP, Grassi L, Flivik G, et al. (). <a href="https://doi.org/10.1016/j.media.2015.06.001" target="_blank"><i>Generation of 3D shape,  density,  cortical thickness and finite element mesh of proximal femur from a DXA image</i></a>. Medical Image Analysis, 24(1).</li>
+      <li id="ref-6">Whitmarsh T, Humbert L, De Craene M, et al. <a href="http://dx.doi.org/10.1117/12.844110" target="_blank"><i>3D bone mineral density distribution and shape reconstruction of the proximal femur from a single simulated DXA image: an in vitro study</i></a>. In: Dawant BM, Haynor DR, eds. Medical Imaging 2010: Image Processing. Vol. 7623. SPIE; 2010:76234U.</li>
+      <li id="ref-7">Whitmarsh T. <a href="https://doi.org/10.1016/j.bone.2021.115939" target="_blank"><i>Concerns regarding the use of 3D-DXA</i></a>. Bone. 2021;149:115939.</li>
+      <li id="ref-8">Treece G, Gee A (2015). <a href="https://doi.org/10.1016/j.media.2014.11.012" target="_blank"><i>Independent measurement of femoral cortical thickness and cortical bone density using clinical CT</i></a>. Medical Image Analysis, 20(1), 249–264.</li>
+      <li id="ref-9">Freitas L, Amorim T, Humbert L, et al. (2018). <a href="https://doi.org/10.1080/02640414.2018.1483178" target="_blank"><i>Cortical and trabecular bone analysis of professional dancers using 3D-DXA: a case–control study</i></a>. Journal of Sports Sciences, 37(1), 82–89.</li>
+      <li id="ref-10">Gracia-Marco L, García-Fontana B, Ubago-Guisado E, et al. (2019). <a href="https://doi.org/10.1210/clinem/dgz060" target="_blank"><i>Analysis of Bone Impairment by 3D DXA Hip Measures in Patients With Primary Hyperparathyroidism: A Pilot Study</i></a>. The Journal of Clinical Endocrinology &amp; Metabolism, 105(1), 175–184.</li>
+      <li id="ref-11">Orduna G, Humbert L, Fonolla R, et al. (2018). <a href="https://doi.org/10.1016/j.jocd.2017.05.012" target="_blank"><i>Cortical and Trabecular Bone Analysis of Patients With High Bone Mass From the Barcelona Osteoporosis Cohort Using 3-Dimensional Dual-Energy X-ray Absorptiometry: A Case-Control Study</i></a>. Journal of Clinical Densitometry, 21(4), 480–484.</li>
+      <li id="ref-12">Gifre L, Humbert L, Muxi A, et al. (2017). <a href="https://doi.org/10.1007/s00198-017-4268-9" target="_blank"><i>Analysis of the evolution of cortical and trabecular bone compartments in the proximal femur after spinal cord injury by 3D-DXA</i></a>. Osteoporosis International, 29(1), 201–209.</li>
+      <li id="ref-13">García Hoyos M, Humbert L, Salmón Z, et al. (2019). <a href="https://doi.org/10.1007/s11657-019-0645-7" target="_blank"><i>Analysis of volumetric BMD in people with Down syndrome using DXA-based 3D modeling</i></a>. Archives of Osteoporosis, 14(1).</li>
+      <li id="ref-14">Beck B, Harding A, Weeks B, et al. (2021). <a href="https://doi.org/10.1016/j.bone.2021.115936" target="_blank"><i>Response to “Concerns regarding the use of 3D-DXA”</i></a>. Bone, 149, 115936.</li>
+      <li id="ref-15">Winzenrieth R, Humbert L, Di Gregorio S, Bonel E, García M, Del Rio L. <a href="https://doi.org/10.1007/s00198-018-4624-4" target="_blank"><i>Effects of osteoporosis drug treatments on cortical and trabecular bone in the femur using DXA-based 3D modeling</i></a>. Osteoporos Int.2018;29(10):2323–2333.</li>
+      <li id="ref-16">Cummings SR, Cauley JA, Palermo L, et al. <a href="https://doi.org/10.1007/BF01623243 " target="_blank"><i>Racial differences in hip axis lengths might explain racial differences in rates of hip fracture</i></a>. Osteoporos Int.1994;4(4):226–229.</li>
+      <li id="ref-17">Kim KM, Brown JK, Kim KJ, et al. <a href="https://doi.org/10.1007/s00198-0101459-z" target="_blank"><i>Differences in femoral neck geometry associated with age and ethnicity</i></a>. Osteoporos Int. 2010;22(7):2165–2174.</li>
+      <li id="ref-18">Sone T, Humbert L, Lopez M, et al. (2022). <i>Assessment of femoral shape, trabecular and cortical bone in Japanese subjects using DXA-based 3D modelling</i>. JOURNAL OF BONE AND MINERAL RESEARCH, 37, 214--214.</li>
+      <li id="ref-19">Varoquaux G, Cheplygina V (2022). <a href="https://doi.org/10.1038/s41746-022-00592-y" target="_blank"><i>Machine learning for medical imaging: methodological failures and recommendations for the future</i></a>. npj Digital Medicine, 5(1).</li>
+      <li id="ref-20">Hadjiiski L, Cha K, Chan H, et al. (). <a href="https://doi.org/10.1002/mp.16188" target="_blank"><i>AAPM task group report 273: Recommendations on best practices for AI and machine learning for computer‐aided diagnosis in medical imaging</i></a>. Medical Physics, 50(2).</li>
+      <li id="ref-21">Huisman M (2024). <a href="https://doi.org/10.1007/s00330-024-10859-5" target="_blank"><i>When AUC-ROC and accuracy are not accurate: what everyone needs to know about evaluating artificial intelligence in radiology</i></a>. European Radiology, 34(12), 7892–7894.</li>
+      <li id="ref-22">Gallifant J, Bitterman DS, Celi LA, et al. (2024). <a href="https://doi.org/10.1038/s41746-024-01242-1" target="_blank"><i>Ethical debates amidst flawed healthcare artificial intelligence metrics</i></a>. npj Digital Medicine, 7(1).</li>
+      <li id="ref-23">Amani A, Bellver M, del Rio L, et al. (2022). <a href="https://doi.org/10.1055/a-1928-9824" target="_blank"><i>Femur 3D-DXA Assessment in Female Football Players,  Swimmers, and Sedentary Controls</i></a>. International Journal of Sports Medicine, 44(06), 420–426.</li>
+      <li id="ref-24">Maïmoun L, Renard E, Humbert L, et al. (2021). <a href="https://doi.org/10.1016/j.bone.2021.116005" target="_blank"><i>Modification of bone mineral density,  bone geometry and volumetric BMD in young women with obesity</i></a>. Bone, 150, 116005.</li>
+      <li id="ref-25">Jain RK, López Picazo M, Humbert L, et al. (2025). <a href="https://doi.org/10.1016/j.eprac.2024.10.015" target="_blank"><i>Bone Structural Parameters as Measured by 3-Dimensional Dual-Energy X-Ray Absorptiometry Are Superior in Black Women and Demonstrate Unique Associations With Prior Fracture Versus White Women</i></a>. Endocrine Practice, 31(2), 152–158.</li>
+      <li id="ref-26">Gracia-Marco L, Gonzalez-Salvatierra S, Garcia-Martin A, et al. (2021). <a href="https://doi.org/10.3390/jcm10040657" target="_blank"><i>3D DXA Hip Differences in Patients with Acromegaly or Adult Growth Hormone Deficiency</i></a>. Journal of Clinical Medicine, 10(4), 657.</li>
+      <li id="ref-27">Toussirot E, Winzenrieth R, Aubin F, et al. (2024). <a href="https://doi.org/10.3389/fmed.2024.1341077" target="_blank"><i>Areal bone mineral density,  trabecular bone score and 3D-DXA analysis of proximal femur in psoriatic disease</i></a>. Frontiers in Medicine, 11.</li>
+      <li id="ref-28">Ubago-Guisado E, Moratalla-Aranda E, González-Salvatierra S, et al. (2023). <a href="https://doi.org/10.3389/fendo.2022.1069224" target="_blank"><i>Do patients with type 2 diabetes have impaired hip bone microstructure? A study using 3D modeling of hip dual-energy X-ray absorptiometry</i></a>. Frontiers in Endocrinology, 13.</li>
+      <li id="ref-29">Guerra FS, Palladino N, Winzenrieth R, et al. (2024). <a href="https://doi.org/10.1007/s40200-024-01487-3" target="_blank"><i>Advanced 3D-DXA insights into bone density changes in hyperparathyroidism</i></a>. Journal of Diabetes &amp; Metabolic Disorders, 23(2), 2191–2199.</li>
+      <li id="ref-30">Kužma M, Vaňuga P, Ságová I, et al. <a href="https://doi.org/10.1530/EJE-18-0881" target="_blank"><i>Non-invasive DXA derived bone structure assessment of acromegaly patients: a cross sectional study</i></a>. Eur J Endocrinol. 2019;180(3):201–211.</li>
+      <li id="ref-31">Maïmoun L, Aouinti S, Puech M, et al. <a href="https://doi.org/10.1093/jbmr/zjae202" target="_blank"><i>Modification of bone architecture following sleeve gastrectomy: a five-year follow-up</i></a>. J Bone Miner Res. 2024;40(2):251–261.</li>
+      <li id="ref-32">Maïmoun L, Gelis A, Serrand C, et al. (2023). <a href="https://doi.org/10.1007/s00223-023-01110-2" target="_blank"><i>Alteration of Volumetric Bone Mineral Density Parameters in Men with Spinal Cord Injury</i></a>. Calcified Tissue International, 113(3), 304–316.</li>
+      <li id="ref-33">Harding AT, Weeks BK, Lambert C, et al. (2020). <a href="https://doi.org/10.1016/j.bone.2020.115362" target="_blank"><i>Effects of supervised high-intensity resistance and impact training or machine-based isometric training on regional bone geometry and strength in middle-aged and older men with low bone mass: The LIFTMOR-M semi-randomised controlled trial</i></a>. Bone, 136, 115362.</li>
+      <li id="ref-34">Gil-Cosano JJ, Ubago-Guisado E, Sánchez MJ, et al. (2020). <a href="https://doi.org/10.1186/s12889-020-09607-3" target="_blank"><i>The effect of an online exercise programme on bone health in paediatric cancer survivors (iBoneFIT): study protocol of a multi-centre randomized controlled trial</i></a>. BMC Public Health, 20(1).</li>
+      <li id="ref-35">Humbert L, Whitmarsh T, De Craene M, et al. (2010). <a href="https://doi.org/10.1109/isbi.2010.5490310" target="_blank"><i>3D reconstruction of both shape and Bone Mineral Density distribution of the femur from DXA images</i></a>. 2010 IEEE International Symposium on Biomedical Imaging: From Nano to Macro, 456–459.</li>
+      <li id="ref-36">O’Rourke D, Beck BR, Harding AT, et al. (2021). <a href="https://doi.org/10.1016/j.jbiomech.2021.110315" target="_blank"><i>Assessment of femoral neck strength and bone mineral density changes following exercise using 3D-DXA images</i></a>. Journal of Biomechanics, 119, 110315.</li>
+      <li id="ref-37">Dudle A, Gugler Y, Pretterklieber M, et al. (2023). <a href="https://doi.org/10.3389/fbioe.2023.1111020" target="_blank"><i>2D-3D reconstruction of the proximal femur from DXA scans: Evaluation of the 3D-Shaper software</i></a>. Frontiers in Bioengineering and Biotechnology, 11.</li>
+      <li id="ref-38">Clotet J, Martelli Y, Di Gregorio S, et al. (2018). <a href="https://doi.org/10.1016/j.jocd.2017.05.002" target="_blank"><i>Structural Parameters of the Proximal Femur by 3-Dimensional Dual-Energy X-ray Absorptiometry Software: Comparison With Quantitative Computed Tomography</i></a>. Journal of Clinical Densitometry, 21(4), 550–562.</li>
+      <li id="ref-39">Ramamurthi K, Ahmad O, Engelke K, et al. (2011). <a href="https://doi.org/10.1007/s00198-011-1578-1" target="_blank"><i>An in vivo comparison of hip structure analysis (HSA) with measurements obtained by QCT</i></a>. Osteoporosis International, 23(2), 543–551.</li>
+      <li id="ref-40">Whitmarsh T, Treece GM, Gee AH, et al. (2015). <a href="https://doi.org/10.1002/jbmr.2454" target="_blank"><i>Mapping Bone Changes at the Proximal Femoral Cortex of Postmenopausal Women in Response to Alendronate and Teriparatide Alone,  Combined or Sequentially</i></a>. Journal of Bone and Mineral Research, 30(7), 1309–1318.</li>
+      <li id="ref-41">Whitmarsh T, Treece GM, Gee AH, et al. (2016). <a href="https://doi.org/10.1371/journal.pone.0147722" target="_blank"><i>The Effects on the Femoral Cortex of a 24 Month Treatment Compared to an 18 Month Treatment with Teriparatide: A Multi-Trial Retrospective Analysis</i></a>. PLOS ONE, 11(2), e0147722.</li>
+      <li id="ref-42">Huininga K, Koromani F, Zillikens M, et al. (2024). <a href="https://doi.org/10.1093/jbmrpl/ziae063" target="_blank"><i>Use of 3D Shaper Analysis for the Assessment of Fracture Risk in a Population-Based Setting</i></a>. JBMR Plus, 8(Supplement_1), i1--i340.</li>
+      <li id="ref-43">Huininga K, Koromani F, Zillikens MC, et al. (2024). <a href="https://store.omnipress.com/asbmr.html" target="_blank"><i>Use of 3D Shaper Analysis for the Assessment of Fracture Risk in a Population-based Setting</i></a>. ASBMR 2024 Annual Meeting Abstracts and Abstract Book.</li>
+      <li id="ref-44">Qasim M, López Picazo M, Ruiz Wills C, et al. (2024). <a href="https://doi.org/10.1016/j.jocd.2024.101471" target="_blank"><i>3D-DXA Based Finite Element Modelling for Femur Strength Prediction: Evaluation Against QCT</i></a>. Journal of Clinical Densitometry, 27(2), 101471.</li>
+      <li id="ref-45">Iki M, Winzenrieth R, Tamaki J, et al. (2021). <a href="https://doi.org/10.1007/s00198-021-06013-2" target="_blank"><i>Predictive ability of novel volumetric and geometric indices derived from dual-energy X-ray absorptiometric images of the proximal femur for hip fracture compared with conventional areal bone mineral density: the Japanese Population-based Osteoporosis (JPOS) Cohort Study</i></a>. Osteoporosis International, 32(11), 2289–2299.</li>
+      <li id="ref-46">Grassi L, Väänänen SP, Ristinmaa M, et al. <a href="https://doi.org/10.1007/s10237-016-0866-2" target="_blank"><i>Prediction of femoral strength using 3D finite element models reconstructed from DXA images: validation against experiments</i></a>. Biomechanics and Modeling in Mechanobiology, 16(3).</li>
+      <li id="ref-47">Grassi L, Fleps I, Sahlstedt H, et al. (). <a href="https://doi.org/10.1016/j.bone.2020.115678" target="_blank"><i>Validation of 3D finite element models from simulated DXA images for biofidelic simulations of sideways fall impact to the hip</i></a>. Bone, 142.</li>
+      <li id="ref-48">Grassi L, Väänänen SP, Jehpsson L, et al. (). <a href="https://doi.org/10.1002/jbmr.4878" target="_blank"><i>3D Finite Element Models Reconstructed From 2D Dual‐Energy X‐Ray Absorptiometry (DXA) Images Improve Hip Fracture Prediction Compared to Areal BMD in Osteoporotic Fractures in Men (MrOS) Sweden Cohort</i></a>. Journal of Bone and Mineral Research, 38(9).</li>
+      <li id="ref-49">Grassi L, Väänänen SP, Voss A, et al. <a href="https://doi.org/10.1016/j.bone.2025.117457" target="_blank"><i>DXA-based 3D finite element models predict hip fractures better than areal BMD in elderly women</i></a>. Bone. 2025;195:117457.</li>
+      <li id="ref-50">Allison SJ, Poole KES, Treece GM, et al. (2015). <a href="https://doi.org/10.1002/jbmr.2499" target="_blank"><i>The Influence of High-Impact Exercise on Cortical and Trabecular Bone Mineral Content and 3D Distribution Across the Proximal Femur in Older Men: A Randomized Controlled Unilateral Intervention</i></a>. Journal of Bone and Mineral Research, 30(9), 1709–1716.</li>
+      <li id="ref-51">Whitmarsh T, Fritscher KD, Humbert L, et al. (2011). <a href="https://doi.org/10.1109/isbi.2011.5872614" target="_blank"><i>Hip fracture discrimination using 3D reconstructions from Dual-energy X-ray Absorptiometry</i></a>. 2011 IEEE International Symposium on Biomedical Imaging: From Nano to Macro, 1189–1192.</li>
+      <li id="ref-52">Winzenrieth R, Ominsky M, Wang Y, et al. (2021). <a href="https://doi.org/10.1007/s00198-020-05806-1" target="_blank"><i>Differential effects of abaloparatide and teriparatide on hip cortical volumetric BMD by DXA-based 3D modeling</i></a>. Osteoporosis International, 32(3), 575–583.</li>
+      <li id="ref-53">England JR, Cheng PM (2019). <a href="https://doi.org/10.2214/ajr.18.20490" target="_blank"><i>Artificial Intelligence for Medical Image Analysis: A Guide for Authors and Reviewers</i></a>. American Journal of Roentgenology, 212(3), 513–519.</li>
+      <li id="ref-54">Lewiecki EM, Betah D, Humbert L, et al. (2024). <a href="https://doi.org/10.1093/jbmr/zjae028" target="_blank"><i>3D-modeling from hip DXA shows improved bone structure with romosozumab followed by denosumab or alendronate</i></a>. Journal of Bone and Mineral Research, 39(4), 473–483.</li>
+      <li id="ref-55">Winzenrieth R, Kostenuik P, Boxberger J, et al. (2022). <a href="https://doi.org/10.1002/jbm4.10612" target="_blank"><i>Proximal Femur Responses to Sequential Therapy With Abaloparatide Followed by Alendronate in Postmenopausal Women With Osteoporosis by 3D Modeling of Hip Dual‐Energy X‐Ray Absorptiometry (DXA)</i></a>. JBMR Plus, 6(4).</li>
+      <li id="ref-56">Winzenrieth R, Humbert L, Boxberger JI, et al. (2022). <a href="https://doi.org/10.1016/j.jocd.2021.11.007" target="_blank"><i>Abaloparatide Effects on Cortical Volumetric BMD and Estimated Strength Indices of Hip Subregions by 3D-DXA in Women With Postmenopausal Osteoporosis</i></a>. Journal of Clinical Densitometry, 25(3), 392–400.</li>
+      <li id="ref-57">Bennett C, Miller M, Wolford G (2009). <a href="https://doi.org/10.1016/s1053-8119(09)71202-9" target="_blank"><i>Neural correlates of interspecies perspective taking in the post-mortem Atlantic Salmon: an argument for multiple comparisons correction</i></a>. NeuroImage, 47, S125.</li>
+      <li id="ref-58">Poole KE, Treece GM, Gee AH, et al. (2014). <a href="https://doi.org/10.1002/jbmr.2325" target="_blank"><i>Denosumab Rapidly Increases Cortical Bone in Key Locations of the Femur: A 3D Bone Mapping Study in Women With Osteoporosis</i></a>. Journal of Bone and Mineral Research, 30(1), 46–54.</li>
+      <li id="ref-59">Sato M, Westmore M, Ma YL, et al. (2004). <a href="https://doi.org/10.1359/jbmr.040112" target="_blank"><i>Teriparatide [PTH(1–34)] Strengthens the Proximal Femur of Ovariectomized Nonhuman Primates Despite Increasing Porosity</i></a>. Journal of Bone and Mineral Research, 19(4), 623–629.</li>
+      <li id="ref-60">Hadji P, Kamali L, Thomasius F, et al. (2024). <a href="https://doi.org/10.1007/s00198-024-07208-z" target="_blank"><i>Real-world efficacy of a teriparatide biosimilar (RGB-10) compared with reference teriparatide on bone mineral density,  trabecular bone score,  and bone parameters assessed using quantitative ultrasound,  3D-SHAPER{\textregistered} and high-resolution peripheral computer tomography in postmenopausal women with osteoporosis and very high fracture risk</i></a>. Osteoporosis International, 35(12), 2107–2116.</li>
+      <li id="ref-61">Sone T, Ohnaru K, Sugai T, et al. (2023). <a href="https://doi.org/10.1007/s11657-023-01344-5" target="_blank"><i>The effects of abaloparatide on hip geometry and biomechanical properties in Japanese osteoporotic patients assessed using DXA-based hip structural analysis: results of the Japanese phase 3 ACTIVE-J trial</i></a>. Archives of Osteoporosis, 18(1).</li>
+      <li id="ref-62">Genant HK, Engelke K, Bolognese MA, et al. (2016). <a href="https://doi.org/10.1002/jbmr.2932" target="_blank"><i>Effects of Romosozumab Compared With Teriparatide on Bone Density and Mass at the Spine and Hip in Postmenopausal Women With Low Bone Mass</i></a>. Journal of Bone and Mineral Research, 32(1), 181–187.</li>
+      <li id="ref-63">MEDICAL 3S (2021). <i>Webinar - Use of 3D-Shaper in clinical research: state of the art and potential applications</i></li>
+      <li id="ref-64">Casado Burgos E, Di Gregorio S, González Macías J, et al. (2019). <i>Datos de referencia de mediciones óseas en modelos 3D de fémur proximal en población española cn DXA: Proyecto SEIOMM 3D-SHAPPER</i>. Congreso SEIOMM (24º : 2019 : Gerona).</li>
+      <li id="ref-65">Brance ML, Saravi FD, Henr{\'i}quez MM, et al. (2020). <a href="https://ri.conicet.gov.ar/handle/11336/154012" target="_blank"><i>Reference Values of Three-Dimensional Proximal Femur Parameters from Bone Densitometry Images in Healthy Subjects from Argentina</i></a>. World Congress on Osteoporosis, Osteoarthritis and Musculoskeletal Diseases, 372--372.</li>
+      <li id="ref-66">Jennings I (). <i>3D Shaper Technology: Revolutionizing Bone Health Analysis</i></li>
+      <li id="ref-77">Al-Hashimi L, Klotsche J, Ohrndorf S, et al. (2023). <a href="https://doi.org/10.3390/jcm12124147" target="_blank"><i>Trabecular Bone Score Significantly Influences Treatment Decisions in Secondary Osteoporosis</i></a>. Journal of Clinical Medicine, 12(12), 4147.</li>
+      <li id="ref-68">Food {, Administration} D (2022). <a href="https://www.accessdata.fda.gov/cdrh_docs/pdf22/K220822.pdf" target="_blank"><i>510(k) Summary: K220822</i></a></li>
+      <li id="ref-69">Broy SB, Cauley JA, Lewiecki ME, et al. (2015). <a href="https://doi.org/10.1016/j.jocd.2015.06.005" target="_blank"><i>Fracture Risk Prediction by Non-BMD DXA Measures: the 2015 ISCD Official Positions Part 1: Hip Geometry</i></a>. Journal of Clinical Densitometry, 18(3), 287–308.</li>
+      <li id="ref-70">Whitmarsh T, Humbert L, Craene MD, et al. (2009). <i>Reconstrucción de la forma del fémur y densidad mineral ósea en 3D para el diagnóstico de osteoporosis a partir de DXA</i></li>
+      <li id="ref-71">Whitmarsh T, Humbert L, Del Río Barquero LM, et al. (2011). <i>Volumetric Bone Mineral Density Estimation using a 3D Reconstruction Method from Dual-energy X-ray Absorptiometry</i>. ASBMR 2011 Annual Meeting Abstracts and Abstract Book.</li>
+      <li id="ref-72">Whitmarsh T, Fritscher KD, Humbert L, et al. (2011). <a href="https://doi.org/10.1007/978-3-642-23629-7_48" target="_blank"><i>A Statistical Model of Shape and Bone Mineral Density Distribution of the Proximal Femur for Fracture Risk Assessment</i></a>. Medical Image Computing and Computer-Assisted Intervention – MICCAI 2011, 393–400.</li>
+      <li id="ref-73">Whitmarsh T, Fritscher KD, Humbert L, et al. (2012). <a href="https://doi.org/10.1016/j.bone.2012.08.114" target="_blank"><i>Hip fracture discrimination from dual-energy X-ray absorptiometry by statistical model registration</i></a>. Bone, 51(5), 896–901.</li>
+      <li id="ref-74">Martelli Y, Whitmarsh T, Humbert L, et al. (2012). <i>A software framework for 3D reconstruction and fracture risk assessment of the proximal femur from dual-energy x-ray absorptiometry</i>. Proceedings of VPH 2012: Virtual Physiological Human - Integrative approaches to computational biomedicine.</li>
+      <li id="ref-75">Slart RHJA, Punda M, Ali DS, et al. (2024). <a href="https://doi.org/10.1007/s00259-024-06912-6" target="_blank"><i>Updated practice guideline for dual-energy X-ray absorptiometry (DXA)</i></a>. European Journal of Nuclear Medicine and Molecular Imaging, 52(2), 539–563.</li>
+    </ol>
+  </main>
+
+  <script>
+    (function () {
+      const supported = ['en','nl','es','ja'];
+      const parts = location.pathname.replace(/^\/+/, '').split('/');
+      const maybeLocale = parts[0];
+      const current = supported.includes(maybeLocale) ? maybeLocale : null;
+      const rest = current ? '/' + parts.slice(1).join('/') : '/';
+      document.querySelectorAll('.lang-switcher a').forEach(a => {
+        const lang = a.getAttribute('hreflang');
+        a.href = '/' + lang + rest;
+        if (lang === current) a.classList.add('active');
+      });
+    })();
+  </script>
+</body>
+</html>

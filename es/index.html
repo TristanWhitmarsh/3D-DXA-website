@@ -84,7 +84,7 @@
         y se compara con la imagen DXA real mediante una medida de similitud (p. ej., mean squared error). Los parámetros del modelo y la transformación
         (rotación, traslación y escala) se ajustan para aumentar la similitud hasta un umbral de convergencia predeterminado. Adaptado de [<a href="#ref-3">3</a>].
       </figcaption>
-    <3d-dxa.com/Figure>
+    </Figure>
 
     <p>Aunque se han propuesto otros métodos para reconstrucción 3D de estructuras óseas a partir de DXA con un modelo estadístico [<a href="#ref-4">4</a>, <a href="#ref-5">5</a>], el método publicado en 2010 [<a href="#ref-6">6</a>] fue posteriormente comercializado como 3D-DXA por Galgo Medical SL (Barcelona, España), una spin-off de la Universitat Pompeu Fabra. Más tarde se amplió para medir espesor cortical y cortical BMD a partir de las reconstrucciones volumétricas [<a href="#ref-2">2</a>], y hoy se comercializa como 3D-Shaper por 3D-Shaper Medical SL (Barcelona, España), como servicio y como software. DMS Imaging (Mauguio, Francia) tiene licencia para venderlo como 3D-DXA con sus dispositivos DXA Stratos/Medix. Fujifilm (Tokio, Japón) vende esos mismos dispositivos bajo la marca FDX Visionary DXA. Imex Medical (São José, Brasil) los vende como serie Elipse y Radiología SA (Madrid, España) como Radioscore - DR. Todos incluyen la opción 3D-DXA.</p>
 
@@ -102,7 +102,7 @@
         <b>Figura 2.</b> Ejemplo de exploración DXA de cadera en adulto joven adquirida con GE iDXA.
         Figura publicada previamente en [<a href="#ref-7">7</a>].
       </figcaption>
-    <3d-dxa.com/Figure>
+    </Figure>
 
     <p>En lugar de medir directamente desde DXA, 3D-DXA registra un modelo estadístico de forma y densidad sobre la imagen DXA [<a href="#ref-7">7</a>] y extrae los parámetros corticales de ese modelo [<a href="#ref-2">2</a>]. El modelo se construye a partir de QCT calibradas en las que las unidades Hounsfield se convierten a BMD con un fantoma de calibración.</p>
 
@@ -118,7 +118,7 @@
         <b>Figura 3.</b> Media y tres primeros componentes principales (PC) del modelo de forma (izq.) y proyecciones del modelo de densidad (der.),
         variando entre -3 y +3 desviaciones estándar. Adaptado de [<a href="#ref-3">3</a>].
       </figcaption>
-    <3d-dxa.com/Figure>
+    </Figure>
 
     <p>3D-DXA busca iterativamente parámetros y pose hasta que la proyección del modelo coincide suficientemente con la imagen DXA (<a href="#fig:pipeline">Figura 1</a>).</p>
 
@@ -133,7 +133,7 @@
         Arriba: cortes del modelo (media, PC1-3 e instancia nueva). Abajo: valores de vóxeles a lo largo de una línea (en rojo).
         Izquierda: ajuste de un modelo de escalones suavizado para estimar espesor cortical y cortical vBMD, del que se deriva la surface BMD (sBMD) sobre la superficie.
       </figcaption>
-    <3d-dxa.com/Figure>
+    </Figure>
 
     <h3>Número de parámetros del modelo</h3>
     <p>No existe un único parámetro que aumente solo el espesor cortical. La representación de la corteza depende de una combinación lineal del volumen medio y de las PC del modelo de densidad. <a href="#fig:density_model">La Figura 4</a> ilustra cómo la media y las tres primeras PC generan una instancia nueva. Ajustes selectivos e independientes de espesor cortical, densidad cortical o densidad trabecular requieren combinaciones complejas de múltiples componentes y, por tanto, muchos parámetros.</p>
@@ -170,7 +170,7 @@
         <b>Figura 5.</b> Mapa del error medio (arriba) y máximo (abajo) del espesor cortical estimado por 3D-DXA
         con respecto a QCT en los mismos sujetos. Adaptado de la Figura 8 en [<a href="#ref-2">2</a>].
       </figcaption>
-    <3d-dxa.com/Figure>
+    </Figure>
 
     <h3>Beneficio limitado frente a areal BMD</h3>
     <p>En el modelo estadístico de densidad, el primer componente explica la mayor parte de la varianza, y aumentarlo eleva la densidad global y los parámetros corticales [<a href="#ref-7">7</a>]. Dado que hay poca información cortical visible en DXA, 3D-DXA depende sobre todo de ese componente, por lo que los parámetros trabeculares y corticales están correlacionados intrínsecamente con aBMD. Cuando aBMD aumenta, el análisis 3D-DXA mostrará aumentos simultáneos en trabecular vBMD, cortical BMD y espesor cortical. Estudios recientes (ECTS 2024 y ASBMR 2024) confirman que los parámetros de 3D-Shaper se correlacionan fuertemente con aBMD y no aportan información adicional de predicción de fractura [<a href="#ref-42">42</a>, <a href="#ref-43">43</a>].</p>
@@ -222,7 +222,7 @@
         Datos de referencia para poblaciones española (izquierda) y argentina (derecha),
         derivados de [<a href="#ref-66">66</a>] y [<a href="#ref-67">67</a>].
       </figcaption>
-    <3d-dxa.com/Figure>
+    </Figure>
 
     <p>El material promocional sugiere una tabla para apoyar la elección terapéutica basada en 3D-DXA (Tabla A-C en "tab-bone_density_changes"). Los umbrales subyacentes parecen arbitrarios o no especificados; además, los resúmenes estudio por estudio difieren de la simbología mostrada en la tabla, lo que cuestiona su validez para la toma de decisiones clínicas.</p>
 
@@ -277,7 +277,7 @@
       <figcaption>Estas tablas ilustran cómo 3D-Shaper Medical propone usar un análisis 3D-DXA para apoyar la elección de tratamiento.
       (A) Tabla del material promocional; se muestran solo las referencias de teriparatida. (B) Efectos de teriparatida informados por estudios 3D-DXA, más un estudio adicional.
       (C) Umbrales que determinan los símbolos cuando están disponibles. * La inclusión de [<a href="#ref-3">3</a>] parece un error (no contiene teriparatida).</figcaption>
-    <3d-dxa.com/Figure>
+    </Figure>
 
     <h2>Discusión</h2>
     <p>En resumen, 3D-DXA produce diversos parámetros que aparentan ser muy detallados, pero reflejan principalmente la areal BMD global en lugar de medir propiedades corticales o trabeculares independientes. Aunque en poblaciones donde los cambios corticales y trabeculares son proporcionales a aBMD los resultados puedan parecer plausibles, el método no capta de forma fiable mediciones específicas de paciente ni cambios localizados. Esta limitación es especialmente relevante con terapia anabólica, donde los compartimentos pueden cambiar de forma discordante, observado por QCT pero no por 3D-DXA.</p>

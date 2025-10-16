@@ -78,7 +78,7 @@
     <p>3D-DXA は、2D の DXA 画像上に 3D の統計的変形モデルを位置合わせして近位大腿骨の 3D モデルを生成する方法です [<a href="#ref-1">1</a>]。モデルは、スペイン人コーカソイド 81 女性と 30 男性 (平均年齢 56.2 ± 12.1 歳、範囲 30-84 歳) の QCT から構築されます [<a href="#ref-2">2</a>]。モデルのパラメータは、その集団における形状と密度分布の主な変動を記述します。反復的にモデルパラメータと位置・姿勢 (位置、向き、スケール) を探索し、モデル投影が DXA 画像に近づくまで最適化します (<a href="#fig:pipeline">図 1</a>)。得られた 3D モデルから骨表面上の皮質パラメータと、内部の trabecular volumetric bone mineral density (vBMD) を測定します。3D-DXA と QCT の比較では、皮質厚に対して平均絶対誤差 0.33 mm、皮質密度に対して 72 mg/cm³、相関係数は ≥ 0.86 と報告されました [<a href="#ref-2">2</a>]。</p>
 
     <figure id="fig:pipeline" style="float:right; width:50%; margin:0 0 1em 1em;">
-      <img src="3d-dxa.com/Figure1.jpg" alt="3D-DXA の反復処理のフローチャート。" style="width:100%; height:auto;">
+      <img src="/Figure1.jpg" alt="3D-DXA の反復処理のフローチャート。" style="width:100%; height:auto;">
       <figcaption style="font-size:0.9em; text-align:center;">
         <b>図 1.</b> 単一の 2D DXA 画像から近位大腿骨の形状と密度分布を再構成するための 3D-DXA の反復処理。
         各反復で、変形した密度モデルから投影 (digitally reconstructed radiograph, DRR) を生成し、実際の DXA 画像と
@@ -98,7 +98,7 @@
     <p>最大の問題は、DXA 画像に皮質が十分には写らないため、3D-DXA が皮質パラメータを測定できないことです。<a href="#fig:DXA">図 2</a> に示すように、骨表面のほとんどの位置で、皮質を識別できません。これは投影輪郭 (A) でも、対向する皮質が検出器に垂直な箇所 (B) でも同様です。GE iDXA (ピクセル 0.3 x 0.25 mm) では明瞭で、より解像度の低い GE Prodigy (0.6 x 1.05 mm) ではさらに顕著です。後者の画像も 3D-Shaper がサポートしています。</p>
 
     <figure id="fig:DXA" style="float:right; width:50%; margin:0 0 1em 1em;">
-      <img src="3d-dxa.com/Figure2.jpg" alt="GE iDXA による若年成人の股関節 DXA 画像の例。" style="width:100%; height:auto;">
+      <img src="/Figure2.jpg" alt="GE iDXA による若年成人の股関節 DXA 画像の例。" style="width:100%; height:auto;">
       <figcaption style="font-size:0.9em; text-align:center;">
         <b>図 2.</b> GE iDXA による若年成人の股関節 DXA 画像の例。[<a href="#ref-7">7</a>] に既報の図。
       </figcaption>
@@ -113,7 +113,7 @@
     <p>各 PC は形状や密度の変動様式を表します (<a href="#fig:ShapeDensityModel">図 3</a>)。モデルパラメータ (重み) により各 PC をどれだけ加えるかが決まり、重みを変えると新しいインスタンスが得られます。パラメータは通常 2.5 から 3 標準偏差に制限され、現実的な骨形状に保たれます。新しい形状に合わせて密度体積を変形する際は Thin Plate Splines を用います。</p>
 
     <figure id="fig:ShapeDensityModel">
-      <img src="3d-dxa.com/Figure3.jpg" alt="形状モデルの平均と最初の3主成分 (左)、密度モデルの投影 (右)。-3 から +3 SD の範囲。">
+      <img src="/Figure3.jpg" alt="形状モデルの平均と最初の3主成分 (左)、密度モデルの投影 (右)。-3 から +3 SD の範囲。">
       <figcaption>
         <b>図 3.</b> 形状モデルの平均と 3 つの PC (左)、密度モデルの投影 (右)。-3 から +3 標準偏差で変化。出典 [<a href="#ref-3">3</a>] を改変。
       </figcaption>
@@ -126,7 +126,7 @@
     <p>DXA 画像に皮質が見えない部位にも値が表示される皮質パラメータマップ [<a href="#ref-9">9</a> - <a href="#ref-13">13</a>] は、モデルから導かれたものです。3D-Shaper Medical は「推定」であると述べますが [<a href="#ref-14">14</a>]、実際には複雑で誤差の多い統計的予測です。DXA の皮質情報が乏しいため、ソフトウェアは主に全体 BMD に依存し、モデルを構築したスペイン人集団の統計的特性に強く制約されます。</p>
 
     <figure id="fig:density_model">
-      <img src="3d-dxa.com/Figure4.jpg" alt="密度モデルのインスタンス生成と皮質パラメータ測定の例。">
+      <img src="/Figure4.jpg" alt="密度モデルのインスタンス生成と皮質パラメータ測定の例。">
       <figcaption>
         <b>図 4.</b> 密度モデルのインスタンス生成と皮質パラメータの測定例。
         上段は平均、PC1-3、新インスタンスの断面。下段は赤線に沿ったボクセル値。
@@ -164,7 +164,7 @@
     <p>皮質パラメータの評価では、3D-DXA と QCT の差の平均 (± SD) は、頸部で 0.04 ± 0.21 mm、転子部で -0.07 ± 0.15 mm と報告されました [<a href="#ref-2">2</a>]。図 5 は表面上の平均および最大の絶対誤差を示し、多くの領域で平均誤差が 0.2 mm 超、最大誤差が 1 mm 超です。比較として、アレンドロネート 18 か月後の QCT 研究では皮質厚の増加は 1.4% (約 0.018 mm) [<a href="#ref-40">40</a>]、テリパラチド 3 試験の統合では約 0.035 mm [<a href="#ref-41">41</a>] でした。3D-DXA の誤差はこれらの治療変化を上回るため、治療効果と方法論的ノイズを区別するのは困難です。</p>
 
     <figure id="fig:cortical_thickness_errors" style="float:right; width:50%; margin:0 0 1em 1em;">
-      <img src="3d-dxa.com/Figure5.jpg" alt="3D-DXA の皮質厚推定誤差のカラーマップ。" style="width:100%; height:auto;">
+      <img src="/Figure5.jpg" alt="3D-DXA の皮質厚推定誤差のカラーマップ。" style="width:100%; height:auto;">
       <figcaption style="font-size:0.9em; text-align:center;">
         <b>図 5.</b> 同一被験者の QCT と比較した 3D-DXA の皮質厚推定の平均 (上) と最大 (下) の誤差マップ。[<a href="#ref-2">2</a>] 図 8 を改変。
       </figcaption>
@@ -215,7 +215,7 @@
     <p>3D-Shaper は 71 個の指標を算出できますが、臨床承認版は主に trabecular vBMD と cortical surface BMD (sBMD)、および T-score と Z-score を提供します。参照集団は不明で、セミナーではコーカソイド参照とされます [<a href="#ref-63">63</a>]。スペインとアルゼンチンの参照曲線が公開されています (<a href="#fig:ReferenceData">図 6</a>) [<a href="#ref-64">64</a>, <a href="#ref-65">65</a>] が、相互やソフトウェアの図と一致しません。日本向け承認版では日本人参照を使っていないことも確認されています。コーカソイドとアジア人の差を踏まえると [<a href="#ref-68">68</a>]、慎重さが必要です。</p>
 
     <figure id="fig:ReferenceData" margin:0 0 1em 1em;">
-      <img src="3d-dxa.com/Figure6.jpg" alt="スペイン人 (左) とアルゼンチン人 (右) の参照データ。">
+      <img src="/Figure6.jpg" alt="スペイン人 (左) とアルゼンチン人 (右) の参照データ。">
       <figcaption style="font-size:0.9em; text-align:center;">
         スペイン人 (左) とアルゼンチン人 (右) の参照データ。[<a href="#ref-66">66</a>] と [<a href="#ref-67">67</a>] に基づく。
       </figcaption>

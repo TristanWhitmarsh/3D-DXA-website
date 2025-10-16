@@ -77,7 +77,7 @@
     <p>3D-DXA es un método que registra un modelo estadístico deformable 3D sobre una imagen DXA 2D para generar un modelo 3D del fémur proximal [<a href="#ref-1">1</a>]. El modelo se construye a partir de QCT de una población caucásica española de 81 mujeres y 30 hombres con edad media 56.2 ± 12.1 años (rango 30-84) [<a href="#ref-2">2</a>]. Los parámetros del modelo describen la variación principal en forma y distribución de densidad de esa población. En un proceso iterativo, se buscan los parámetros del modelo y la pose (posición, orientación y escala) hasta que la proyección del modelo se asemeje a la imagen DXA (<a href="#fig:pipeline">Figura 1</a>). A partir del modelo 3D resultante se miden parámetros corticales sobre la superficie ósea y la volumetric bone mineral density (vBMD) trabecular interna. Se informó un error absoluto medio de 0.33 mm para el espesor cortical y de 72 mg/cm³ para la densidad cortical al comparar con QCT, con coeficientes de correlación ≥ 0.86 [<a href="#ref-2">2</a>].</p>
 
     <figure id="fig:pipeline" style="float:right; width:50%; margin:0 0 1em 1em;">
-      <img src="3d-dxa.com/Figure1.jpg" alt="Diagrama de flujo del proceso iterativo de 3D-DXA." style="width:100%; height:auto;">
+      <img src="/Figure1.jpg" alt="Diagrama de flujo del proceso iterativo de 3D-DXA." style="width:100%; height:auto;">
       <figcaption style="font-size:0.9em; text-align:center;">
         <b>Figura 1.</b> Diagrama de flujo del proceso iterativo que usa 3D-DXA para reconstruir la forma y la distribución de densidad del fémur proximal
         a partir de una imagen DXA 2D. En cada iteración se genera una proyección del modelo de densidad deformado (digitally reconstructed radiograph, DRR)
@@ -97,7 +97,7 @@
     <p>El problema central es la falta de visibilidad de la corteza en imágenes DXA, que impide a 3D-DXA medir parámetros corticales. La <a href="#fig:DXA">Figura 2</a> ilustra que, en la mayor parte de la superficie, no hay corteza discernible de la que derivar parámetros. Esto es válido para el contorno de la proyección (A) y especialmente donde dos corticales opuestas son perpendiculares al detector (B). Se aprecia con un escáner GE iDXA (tamaño de píxel 0.3 x 0.25 mm) y aún más con GE Prodigy (0.6 x 1.05 mm), también soportados por 3D-Shaper.</p>
 
     <figure id="fig:DXA" style="float:right; width:50%; margin:0 0 1em 1em;">
-      <img src="3d-dxa.com/Figure2.jpg" alt="Ejemplo de DXA de cadera con escáner GE iDXA." style="width:100%; height:auto;">
+      <img src="/Figure2.jpg" alt="Ejemplo de DXA de cadera con escáner GE iDXA." style="width:100%; height:auto;">
       <figcaption style="font-size:0.9em; text-align:center;">
         <b>Figura 2.</b> Ejemplo de exploración DXA de cadera en adulto joven adquirida con GE iDXA.
         Figura publicada previamente en [<a href="#ref-7">7</a>].
@@ -113,7 +113,7 @@
     <p>Cada componente principal representa una forma en que puede variar la forma o la densidad (<a href="#fig:ShapeDensityModel">Figura 3</a>). Los parámetros del modelo (pesos) determinan cuánto se suma de cada componente. Normalmente se limitan a 2.5-3 desviaciones estándar para mantener instancias realistas. Para crear una instancia nueva, el volumen de densidad se deforma a la nueva forma usando Thin Plate Splines.</p>
 
     <figure id="fig:ShapeDensityModel">
-      <img src="3d-dxa.com/Figure3.jpg" alt="Media y tres primeros componentes del modelo de forma (izquierda) y proyecciones del modelo de densidad (derecha), entre -3 y +3 SD.">
+      <img src="/Figure3.jpg" alt="Media y tres primeros componentes del modelo de forma (izquierda) y proyecciones del modelo de densidad (derecha), entre -3 y +3 SD.">
       <figcaption>
         <b>Figura 3.</b> Media y tres primeros componentes principales (PC) del modelo de forma (izq.) y proyecciones del modelo de densidad (der.),
         variando entre -3 y +3 desviaciones estándar. Adaptado de [<a href="#ref-3">3</a>].
@@ -127,7 +127,7 @@
     <p>Cuando 3D-DXA muestra mapas corticales con valores en lugares donde no hay corteza visible [<a href="#ref-9">9</a> a <a href="#ref-13">13</a>], esos mapas provienen del modelo. Aunque 3D-Shaper Medical aclara en una respuesta que son estimaciones [<a href="#ref-14">14</a>], una descripción más precisa es que 3D-DXA predice estos valores con un método estadístico complejo y potencialmente propenso a error. Dada la limitada información cortical en DXA, el software se apoya sobre todo en la BMD total y queda limitado por las características estadísticas de la población española usada para construir el modelo.</p>
 
     <figure id="fig:density_model">
-      <img src="3d-dxa.com/Figure4.jpg" alt="Ejemplo de generación de una instancia del modelo de densidad y medición de parámetros corticales.">
+      <img src="/Figure4.jpg" alt="Ejemplo de generación de una instancia del modelo de densidad y medición de parámetros corticales.">
       <figcaption>
         <b>Figura 4.</b> Ejemplo de generación de una instancia del modelo de densidad y medición de parámetros corticales a partir de ese volumen.
         Arriba: cortes del modelo (media, PC1-3 e instancia nueva). Abajo: valores de vóxeles a lo largo de una línea (en rojo).
@@ -165,7 +165,7 @@
     <p>En un estudio sobre parámetros corticales, la diferencia media (± DE) entre 3D-DXA y QCT fue 0.04 ± 0.21 mm en el cuello y -0.07 ± 0.15 mm en el trocánter [<a href="#ref-2">2</a>]. La figura 5 muestra el error medio y máximo absolutos sobre la superficie, con error medio > 0.2 mm y máximos > 1 mm. En comparación, un estudio QCT tras 18 meses de alendronato informó un aumento de 1.4% (≈ 0.018 mm) [<a href="#ref-40">40</a>]; datos de tres ensayos con teriparatida mostraron ≈ 0.035 mm [<a href="#ref-41">41</a>]. Como el error de 3D-DXA excede esos cambios, es improbable que distinga con fiabilidad efectos terapéuticos reales de ruido metodológico.</p>
 
     <figure id="fig:cortical_thickness_errors" style="float:right; width:50%; margin:0 0 1em 1em;">
-      <img src="3d-dxa.com/Figure5.jpg" alt="Mapa codificado por colores de errores de espesor cortical estimado por 3D-DXA." style="width:100%; height:auto;">
+      <img src="/Figure5.jpg" alt="Mapa codificado por colores de errores de espesor cortical estimado por 3D-DXA." style="width:100%; height:auto;">
       <figcaption style="font-size:0.9em; text-align:center;">
         <b>Figura 5.</b> Mapa del error medio (arriba) y máximo (abajo) del espesor cortical estimado por 3D-DXA
         con respecto a QCT en los mismos sujetos. Adaptado de la Figura 8 en [<a href="#ref-2">2</a>].
@@ -217,7 +217,7 @@
     <p>Aunque 3D-Shaper puede calcular 71 métricas, la versión aprobada clínicamente produce principalmente la trabecular vBMD y la cortical surface BMD (sBMD) globales, además de T-score y Z-score. No está claro de qué población proceden esas referencias; en un seminario se mencionan datos de referencia caucásicos [<a href="#ref-63">63</a>]. Se han publicado curvas de referencia para poblaciones española y argentina (<a href="#fig:ReferenceData">Figura 6</a>) [<a href="#ref-64">64</a>, <a href="#ref-65">65</a>], que parecen diferir entre sí y de las figuras generadas por el software. El distribuidor japonés confirma que la versión aprobada allí no usa referencia de población japonesa. Dadas las diferencias entre poblaciones caucásicas y asiáticas [<a href="#ref-68">68</a>], conviene ser prudentes.</p>
 
     <figure id="fig:ReferenceData" margin:0 0 1em 1em;">
-      <img src="3d-dxa.com/Figure6.jpg" alt="Datos de referencia para poblaciones española (izquierda) y argentina (derecha).">
+      <img src="/Figure6.jpg" alt="Datos de referencia para poblaciones española (izquierda) y argentina (derecha).">
       <figcaption style="font-size:0.9em; text-align:center;">
         Datos de referencia para poblaciones española (izquierda) y argentina (derecha),
         derivados de [<a href="#ref-66">66</a>] y [<a href="#ref-67">67</a>].

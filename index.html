@@ -1,41 +1,58 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Critical Evaluation of 3D-DXA (3D-Shaper) by Its Inventor: Methodological Limitations and Their Implications</title>
-<style>
-body { font-family: 'Times New Roman', Times, serif; max-width: 860px; margin: 2rem auto; padding: 0 1rem; line-height: 1.65; text-align: justify;}
-h1,h2,h3 { line-height: 1.3; }
-header h1 { font-size: 1.8rem; margin-bottom: 0; }
-header .byline { margin-top: .25rem; color: #333; font-size: 0.95rem; }
-figure { margin: 1rem 0; }
-figure img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
-figure figcaption { font-size: 0.9rem; color: #444; text-align: center; margin-top: .5rem; }
-pre { background: #f7f7f7; padding: 0.75rem; overflow-x: auto; white-space: pre-wrap; }
-a[href^="#ref-"] { text-decoration: none; }
-.math { font-family: 'Times New Roman', Times, serif; }
-hr { margin: 2rem 0; }
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Critical Evaluation of 3D-DXA (3D-Shaper) …</title>
 
+  <!-- SEO hreflang cluster (repeat on every language page, with the page's own lang) -->
+  <link rel="alternate" hreflang="x-default" href="https://3d-dxa.com/">
+  <link rel="alternate" hreflang="en" href="https://3d-dxa.com/en/">
+  <link rel="alternate" hreflang="nl" href="https://3d-dxa.com/nl/">
+  <link rel="alternate" hreflang="es" href="https://3d-dxa.com/es/">
+  <link rel="alternate" hreflang="ja" href="https://3d-dxa.com/ja/">
 
-table { width:100%; border-collapse:collapse; margin: .5rem 0; }
-th, td { border:1px solid #ddd; padding:.5rem; text-align:left; vertical-align:top; }
-thead th { background:#f0f0f0; }
-</style>
+  <style>
+    body { font-family: 'Times New Roman', Times, serif; max-width: 860px; margin: 2rem auto; padding: 0 1rem; line-height: 1.65; text-align: justify; }
+    h1,h2,h3 { line-height: 1.3; }
+    header h1 { font-size: 1.8rem; margin-bottom: 0; }
+    header .byline { margin-top: .25rem; color: #333; font-size: 0.95rem; }
+    figure { margin: 1rem 0; }
+    figure img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+    figure figcaption { font-size: 0.9rem; color: #444; text-align: center; margin-top: .5rem; }
+    pre { background: #f7f7f7; padding: 0.75rem; overflow-x: auto; white-space: pre-wrap; }
+    a[href^="#ref-"] { text-decoration: none; }
+    .math { font-family: 'Times New Roman', Times, serif; }
+    hr { margin: 2rem 0; }
+
+    /* language switcher */
+    .lang-switcher { display:flex; gap:.75rem; padding:.75rem 1rem; }
+    .lang-switcher a { text-decoration:none; padding:.25rem .5rem; border-radius:.5rem; }
+    .lang-switcher a.active { outline:1px solid currentColor; }
+  </style>
 </head>
 <body>
-<header>
-<h1>Critical evaluation of 3D-DXA and 3D-Shaper: methodological limitations and their implications</h1>
-<div class="byline">Tristan Whitmarsh<br/>Institute of Astronomy, University of Cambridge, Cambridge, UK</div>
-<p class="source">
-  <b>Original peer-reviewed article:</b><BR>
-Tristan Whitmarsh, Critical evaluation of 3D-DXA and 3D-Shaper: methodological limitations and their implications, JBMR Plus, Volume 9, Issue 9, September 2025, ziaf075, 
-  <a href="https://doi.org/10.1093/jbmrpl/ziaf075" target="_blank" rel="noopener">https://doi.org/10.1093/jbmrpl/ziaf075</a>.
-</p>
-</header>
-<main>
-<h2>Abstract</h2>
+
+  <!-- Language switcher goes here (inside body) -->
+  <nav class="lang-switcher" aria-label="Language">
+    <a href="/en/" lang="en" hreflang="en">English</a>
+    <a href="/nl/" lang="nl" hreflang="nl">Nederlands</a>
+    <a href="/es/" lang="es" hreflang="es">Español</a>
+    <a href="/ja/" lang="ja" hreflang="ja">日本語</a>
+  </nav>
+
+  <header>
+    <h1>Critical evaluation of 3D-DXA and 3D-Shaper: methodological limitations and their implications</h1>
+    <div class="byline">Tristan Whitmarsh<br/>Institute of Astronomy, University of Cambridge, Cambridge, UK</div>
+    <p class="source">
+      <b>Original peer-reviewed article:</b><br/>
+      Tristan Whitmarsh, Critical evaluation of 3D-DXA and 3D-Shaper: methodological limitations and their implications, JBMR Plus, Volume 9, Issue 9, September 2025, ziaf075,
+      <a href="https://doi.org/10.1093/jbmrpl/ziaf075" target="_blank" rel="noopener">https://doi.org/10.1093/jbmrpl/ziaf075</a>.
+    </p>
+  </header>
+
+  <main>
+    <h2>Abstract</h2>
 3D-DXA, as implemented in the software tool 3D-Shaper, is a software method that generates a 3D reconstruction of the proximal femur from a single 2D DXA image by registering a statistical model. Implementations of 3D-DXA aim to provide estimates of trabecular, cortical, and structural parameters similar to those derived from quantitative computed tomography (QCT). As the inventor and developer of the software methods upon which 3D-DXA is built, I have been observing its adoption and widespread use with increasing concern. This article provides a critical evaluation of the methodological limitations inherent to 3D-DXA and discusses their implications for research and patient care.
 
 The primary issue is that the limited visibility of the cortex in a DXA image prevents 3D-DXA from accurately deriving cortical parameters. Instead, the software relies on predictions based on overall BMD rather than direct cortical measurements. This may lead to results that do not reflect actual cortical measurements.

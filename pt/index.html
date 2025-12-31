@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt">
 
 <head>
@@ -126,20 +126,22 @@
 <body>
 
   <!-- Language switcher goes here (inside body) -->
-  <nav class="lang-switcher" aria-label="Idioma">
-    <a href="/" lang="en" hreflang="en">English</a>
-    <a href="/nl/" lang="nl" hreflang="nl">Nederlands</a>
-    <a href="/es/" lang="es" hreflang="es">Español</a>
-    <a href="/fr/" lang="fr" hreflang="fr">Français</a>
-    <a href="/it/" lang="it" hreflang="it">Italiano</a>
-    <a href="/de/" lang="de" hreflang="de">Deutsch</a>
-    <a href="/pt/" lang="pt" hreflang="pt">Português</a>
-    <a href="/th/" lang="th" hreflang="th">ไทย</a>
-    <a href="/ko/" lang="ko" hreflang="ko">한국어</a>
-    <a href="/hi/" lang="hi" hreflang="hi">हिन्दी</a>
-    <a href="/ja/" lang="ja" hreflang="ja">日本語</a>
-    <a href="/ms/" lang="ms" hreflang="ms">Bahasa Melayu</a>
-  </nav>
+  <div class="lang-switcher">
+    <select aria-label="Idioma" onchange="if(this.value) location.href=this.value;">
+      <option value="/" lang="en">English</option>
+      <option value="/nl/" lang="nl">Nederlands</option>
+      <option value="/es/" lang="es">Español</option>
+      <option value="/fr/" lang="fr">Français</option>
+      <option value="/it/" lang="it">Italiano</option>
+      <option value="/de/" lang="de">Deutsch</option>
+      <option value="/pt/" lang="pt" selected>Português</option>
+      <option value="/th/" lang="th">ไทย</option>
+      <option value="/ko/" lang="ko">한국어</option>
+      <option value="/hi/" lang="hi">हिन्दी</option>
+      <option value="/ja/" lang="ja">日本語</option>
+      <option value="/ms/" lang="ms">Bahasa Melayu</option>
+    </select>
+  </div>
 
   <header>
     <h1>Avaliação crítica do 3D-DXA e 3D-Shaper: limitações metodológicas e suas implicações</h1>

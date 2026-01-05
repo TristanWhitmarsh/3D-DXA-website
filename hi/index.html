@@ -125,21 +125,22 @@
 
 <body>
 
-  <!-- Language switcher goes here (inside body) -->
-  <nav class="lang-switcher" aria-label="Idioma">
-    <a href="/" lang="en" hreflang="en">English</a>
-    <a href="/nl/" lang="nl" hreflang="nl">Nederlands</a>
-    <a href="/es/" lang="es" hreflang="es">Español</a>
-    <a href="/fr/" lang="fr" hreflang="fr">Français</a>
-    <a href="/it/" lang="it" hreflang="it">Italiano</a>
-    <a href="/de/" lang="de" hreflang="de">Deutsch</a>
-    <a href="/pt/" lang="pt" hreflang="pt">Português</a>
-    <a href="/th/" lang="th" hreflang="th">ไทย</a>
-    <a href="/ko/" lang="ko" hreflang="ko">한국어</a>
-    <a href="/hi/" lang="hi" hreflang="hi">हिन्दी</a>
-    <a href="/ja/" lang="ja" hreflang="ja">日本語</a>
-    <a href="/ms/" lang="ms" hreflang="ms">Bahasa Melayu</a>
-  </nav>
+  <div class="lang-switcher">
+    <select aria-label="Language" onchange="if(this.value) location.href=this.value;">
+      <option value="/" lang="en">English</option>
+      <option value="/nl/" lang="nl">Nederlands</option>
+      <option value="/es/" lang="es">Español</option>
+      <option value="/fr/" lang="fr">Français</option>
+      <option value="/it/" lang="it">Italiano</option>
+      <option value="/de/" lang="de">Deutsch</option>
+      <option value="/pt/" lang="pt">Português</option>
+      <option value="/th/" lang="th">ไทย</option>
+      <option value="/ko/" lang="ko">한국어</option>
+      <option value="/hi/" lang="hi" selected>हिन्दी</option>
+      <option value="/ja/" lang="ja">日本語</option>
+      <option value="/ms/" lang="ms">Bahasa Melayu</option>
+    </select>
+  </div>
 
   <header>
     <h1>3D-DXA और 3D-Shaper का महत्वपूर्ण मूल्यांकन: पद्धतिगत सीमाएं और उनके निहितार्थ</h1>
@@ -209,7 +210,7 @@
     जिसमें सहसंबंध गुणांक (correlation coefficients) 0.86 या उससे अधिक था [<a href="#ref-2">2</a>]।
 
     <figure id="fig:pipeline" style="float:right; width:50%; margin:0 0 1em 1em;">
-      <img src="Figure1.jpg" alt="3D-DXA की पुनरावृत्ति प्रक्रिया को दर्शाने वाला फ्लोचार्ट।"
+      <img src="/Figure1.jpg" alt="3D-DXA की पुनरावृत्ति प्रक्रिया को दर्शाने वाला फ्लोचार्ट।"
         style="width:100%; height:auto;">
       <figcaption style="font-size:0.9em; text-align:center;">
         <b>चित्र 1.</b> एक एकल 2D DXA छवि से 3D प्रॉक्सिमल फेमर आकार और घनत्व वितरण के पुनर्निर्माण के लिए उपयोग की जाने
@@ -267,7 +268,7 @@
 
 
     <figure id="fig:DXA" style="float:right; width:50%; margin:0 0 1em 1em;">
-      <img src="Figure2.jpg" alt="GE iDXA स्कैनर का उपयोग करके प्राप्त एक युवा वयस्क का उदाहरण DXA हिप स्कैन।"
+      <img src="/Figure2.jpg" alt="GE iDXA स्कैनर का उपयोग करके प्राप्त एक युवा वयस्क का उदाहरण DXA हिप स्कैन।"
         style="width:100%; height:auto;">
       <figcaption style="font-size:0.9em; text-align:center;">
         <b>चित्र 2.</b> GE iDXA स्कैनर का उपयोग करके प्राप्त एक युवा वयस्क का उदाहरण DXA हिप स्कैन। यह चित्र पहले [<a
@@ -309,7 +310,7 @@
 
 
     <figure id="fig:ShapeDensityModel">
-      <img src="Figure3.jpg"
+      <img src="/Figure3.jpg"
         alt="आकार मॉडल के औसत और पहले तीन मुख्य घटक (PC) (बाएं) और घनत्व मॉडल के प्रक्षेपण (दाएं), -3 और +3 मानक विचलन (σ) के बीच भिन्न।">
       <figcaption>
         <b>चित्र 3.</b> आकार मॉडल के औसत और पहले तीन मुख्य घटक (PC) (बाएं) और घनत्व मॉडल के प्रक्षेपण (दाएं), -3 और +3
@@ -343,7 +344,7 @@
 
 
     <figure id="fig:density_model">
-      <img src="Figure4.jpg" alt="घनत्व मॉडल का एक उदाहरण तैयार करना और कॉर्टिकल मापदंडों को मापना।">
+      <img src="/Figure4.jpg" alt="घनत्व मॉडल का एक उदाहरण तैयार करना और कॉर्टिकल मापदंडों को मापना।">
       <figcaption>
         <b>चित्र 4.</b> इस वॉल्यूम से घनत्व मॉडल का एक उदाहरण तैयार करने और कॉर्टिकल मापदंडों को मापने का उदाहरण। शीर्ष
         पैनल माध्य, PC1, PC2, PC3 के साथ घनत्व मॉडल के क्रॉस-सेक्शन और इन वॉल्यूम के रैखिक संयोजन द्वारा उत्पन्न नया
@@ -505,7 +506,7 @@
     होती है, तो यह स्पष्ट नहीं रहता है कि यह वास्तविक शारीरिक परिवर्तन से उत्पन्न हुई है, या 3D-DXA माप त्रुटि से।
 
     <figure id="fig:cortical_thickness_errors" style="float:right; width:50%; margin:0 0 1em 1em;">
-      <img src="Figure5.jpg" alt="3D-DXA की कॉर्टिकल मोटाई अनुमान त्रुटियों का रंग कोडित मानचित्र।"
+      <img src="/Figure5.jpg" alt="3D-DXA की कॉर्टिकल मोटाई अनुमान त्रुटियों का रंग कोडित मानचित्र।"
         style="width:100%; height:auto;">
       <figcaption style="font-size:0.9em; text-align:center;">
         <b>चित्र 5.</b> उसी विषय के QCT स्कैन के संबंध में 3D-DXA की औसत (ऊपर) और अधिकतम (नीचे) कॉर्टिकल मोटाई अनुमान
@@ -765,7 +766,7 @@
 
 
     <figure id="fig:ReferenceData" margin:0 0 1em 1em;">
-      <img src="Figure6.jpg" alt="स्पेनिश (बाएं) और अर्जेंटीना (दाएं) आबादी के लिए संदर्भ डेटा।">
+      <img src="/Figure6.jpg" alt="स्पेनिश (बाएं) और अर्जेंटीना (दाएं) आबादी के लिए संदर्भ डेटा।">
       <figcaption style="font-size:0.9em; text-align:center;">
         स्पेनिश (बाएं) और अर्जेंटीना (दाएं) आबादी के लिए संदर्भ डेटा, क्रमशः [<a href="#ref-64">64</a>] और [<a
           href="#ref-65">65</a>] से प्राप्त।

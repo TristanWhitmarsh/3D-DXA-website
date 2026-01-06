@@ -569,236 +569,410 @@
 
 
 
-    <h3>Limited benefit over areal BMD</h3>
+    <h3>ประโยชน์ที่จำกัดเหนือกว่า aBMD (Limited benefit over areal BMD)</h3>
 
-    In the statistical density model that 3D-DXA uses, the first model parameter accounts for the vast majority of the
-    variation, and increasing its value leads to an increase in both the overall density and all cortical parameters [<a
-      href="#ref-7">7</a>]. Given that there is little information about the cortex in the DXA image, 3D-DXA primarily
-    relies on the overall density, and thus, on the first model parameter. As a consequence, the cortical and trabecular
-    parameters are inherently correlated. Although there may be some contribution from the inferior medial and lateral
-    cortices of the shaft that are visible in the DXA image, the parameters returned by 3D-DXA predominantly reflect the
-    total areal BMD (aBMD). This means that, if aBMD increases, the 3D-DXA analysis will show simultaneous increases in
-    trabecular BMD, cortical BMD and cortical thickness. Indeed, a recent study presented at the 2024 European Calcified
-    Tissue Society congress [<a href="#ref-42">42</a>] and the 2024 annual meeting of the American Society for Bone and
-    Mineral Research [<a href="#ref-43">43</a>] confirms that 3D-shaper parameters are highly correlated to aBMD and
-    therefore do not provide additional fracture prediction information.
-
-    <BR>
-
-    Furthermore, while the 3D-DXA reconstruction does capture the overall femoral silhouette visible in the DXA image,
-    its ability to recover the neck axis length and neck shaft angle is limited. As a consequence, the reconstructed
-    shape mainly reflects the general bone size, which is already provided by aBMD and does not add much to fracture
-    strength prediction. Illustrative of this is the finding that strength predictions from 3D-DXA correlated with QCT
-    (<span class="math">r<sup>2</sup> = 0.88</span>), but were not statistically better than when predicted only by
-    femoral neck aBMD from the DXA image (<span class="math">r<sup>2</sup> = 0.87</span>) [<a href="#ref-37">37</a>]. A
-    study by 3D-Shaper Medical shows a similar correlation (<span class="math">r<sup>2</sup>=0.86</span>) but a
-    comparison with aBMD was excluded [<a href="#ref-44">44</a>]. In a different study on a Japanese population,
-    measures from 3D-Shaper were not statistically better in predicting hip fracture than the total hip aBMD [<a
-      href="#ref-45">45</a>].
+    ในโมเดลความหนาแน่นทางสถิติที่ 3D-DXA ใช้ พารามิเตอร์โมเดลแรกอธิบายความแปรปรวนส่วนใหญ่
+    และการเพิ่มค่าของมันจะนำไปสู่การเพิ่มขึ้นของทั้งความหนาแน่นโดยรวมและพารามิเตอร์ของกระดูกเปลือกแข็งทั้งหมด [<a
+      href="#ref-7">7</a>] เนื่องจากมีข้อมูลเพียงเล็กน้อยเกี่ยวกับกระดูกเปลือกแข็งในภาพ DXA 3D-DXA จึงอาศัย
+    ความหนาแน่นโดยรวมเป็นหลัก และด้วยเหตุนี้จึงอาศัยพารามิเตอร์โมเดลแรกเป็นสำคัญ ผลที่ตามมาคือ พารามิเตอร์ของ
+    กระดูกเปลือกแข็งและกระดูกโปร่งจึงมีความสัมพันธ์กันโดยเนื้อแท้ แม้ว่าอาจมีส่วนสนับสนุนจากกระดูกเปลือกแข็งด้านใน
+    (inferior medial) และด้านข้าง (lateral) ของแท่งกระดูกที่มองเห็นได้ในภาพ DXA แต่พารามิเตอร์ที่ส่งกลับมาจาก
+    3D-DXA ส่วนใหญ่สะท้อนถึง BMD เชิงพื้นที่รวม (total areal BMD หรือ aBMD) ซึ่งหมายความว่าหาก aBMD เพิ่มขึ้น
+    การวิเคราะห์ด้วย 3D-DXA จะแสดงการเพิ่มขึ้นพร้อมกันของ vBMD ของกระดูกโปร่ง, vBMD ของกระดูกเปลือกแข็ง และ
+    ความหนาของกระดูกเปลือกแข็ง อันที่จริง การศึกษาล่าสุดที่นำเสนอในการประชุมสภาเนื้อเยื่อแคลเซียมยุโรป (European
+    Calcified Tissue Society) ปี 2024 [<a href="#ref-42">42</a>] และการประชุมประจำปีของสมาคมอเมริกันเพื่อการวิจัย
+    กระดูกและแร่ธาตุ (American Society for Bone and Mineral Research) ปี 2024 [<a href="#ref-43">43</a>] ยืนยันว่า
+    พารามิเตอร์ของ 3D-Shaper มีความสัมพันธ์อย่างสูงกับ aBMD และดังนั้นจึงไม่ได้ให้ข้อมูลการทำนายการแตกหักเพิ่มเติม
 
     <BR>
 
-    There have been other articles published on a similar method of registering a 3D statistical model onto a 2D DXA
-    image and predicting femoral strength [<a href="#ref-46">46</a>, <a href="#ref-47">47</a>], with one study showing
-    an improvement over aBMD in fracture risk prediction [<a href="#ref-48">48</a>]. This method may offer some
-    advantages over 3D-DXA, such as the use of an additional pelvic model to help recover the full proximal femur shape.
-    Although it remains subject to many of the same methodological limitations.
+    นอกจากนี้ แม้ว่าการสร้างภาพจำลอง 3D-DXA จะจับภาพร่างของกระดูกต้นขาโดยรวมที่มองเห็นได้ในภาพ DXA
+    ความสามารถในการกู้คืนความยาวแกนคอและมุมคอกระดูกต้นขานั้นมีจำกัด ผลที่ตามมาคือ รูปร่างที่สร้างขึ้นใหม่
+    ส่วนใหญ่สะท้อนถึงขนาดกระดูกทั่วไป ซึ่งมีให้อยู่แล้วใน aBMD และไม่ได้ช่วยเพิ่มความสามารถในการทำนายความแข็งแรง
+    ต่อการแตกหักมากนัก สิ่งที่แสดงให้เห็นถึงจุดนี้คือการค้นพบว่าการทำนายความแข็งแรงจาก 3D-DXA มีความสัมพันธ์กับ QCT
+    (<span class="math">r<sup>2</sup> = 0.88</span>) แต่ไม่ได้ดีไปกว่าการทำนายโดยใช้เพียง aBMD ของคอกระดูกต้นขา
+    จากภาพ DXA ทางสถิติ (<span class="math">r<sup>2</sup> = 0.87</span>) [<a href="#ref-37">37</a>] การศึกษาโดย
+    3D-Shaper Medical แสดงความสัมพันธ์ที่คล้ายกัน (<span class="math">r<sup>2</sup>=0.86</span>) แต่ความแตกต่าง
+    กับ aBMD ถูกแยกออกไป [<a href="#ref-44">44</a>] ในการศึกษาที่แตกต่างกันในประชากรญี่ปุ่น
+    มาตรวัดจาก 3D-Shaper ไม่ได้ดีไปกว่า aBMD ของสะโพกรวมในการทำนายการแตกหักของสะโพกอย่างมีนัยสำคัญทางสถิติ [<a
+      href="#ref-45">45</a>]
 
     <BR>
 
-    If 3D-DXA fails to outperform aBMD alone, it certainly cannot surpass a combination of aBMD and HSA parameters,
-    which are directly measured from DXA images. This highlights the fundamental limitations of 3D-DXA and calls into
-    question its justification for use in clinical or research settings. Nonetheless, 3D-Shaper Medical now offers a
-    3D-DXA based finite element analysis as a service.
-
-
-    <h2>Methods of validation</h2>
-
-    Despite the inherent limitations of 3D-DXA, numerous publications report positive findings on its accuracy. This
-    discrepancy can be attributed to the use of inappropriate validation methods [<a href="#ref-21">21</a>, <a
-      href="#ref-22">22</a>] that tend to obscure the true limitations of the software. In the following sections, I
-    will discuss the issues with these validations and how they create a perception of 3D-DXA’s reliability and clinical
-    utility.
-
-    <h3>Wrong performance assessment metrics</h3>
-
-    3D-Shaper Medical compared the surface mesh generated by 3D-DXA from a DXA image with the surface mesh manually
-    generated from the same subjects QCT scan, resulting in a mean point-to-surface distance of 0.93 mm [<a
-      href="#ref-2">2</a>]. They also compared the cortical parameters, finding a mean absolute error of 0.33 mm for
-    cortical thickness and 72 mg/cm³ for cortical density. However, there is no frame of reference to determine whether
-    these reported errors are acceptable, which means these metrics do not necessarily validate the effectiveness of the
-    software.
+    ยังมีบทความอื่นๆ ที่ตีพิมพ์เกี่ยวกับวิธีการที่คล้ายคลึงกันในการลงทะเบียนโมเดลทางสถิติ 3 มิติบนภาพ DXA 2 มิติ
+    และทำนายความแข็งแรงของกระดูกต้นขา [<a href="#ref-46">46</a>, <a href="#ref-47">47</a>] โดยมีการศึกษาหนึ่งแสดง
+    การปรับปรุงเหนือกว่า aBMD ในการทำนายความเสี่ยงของการแตกหัก [<a href="#ref-48">48</a>, <a href="#ref-49">49</a>]
+    วิธีนี้อาจมีข้อดีบางประการเหนือกว่า 3D-DXA เช่น การใช้โมเดลกระดูกเชิงกรานเพิ่มเติมเพื่อช่วยกู้คืนรูปร่างของ
+    กระดูกต้นขาส่วนบนทั้งหมด แม้ว่าจะยังคงอยู่ภายใต้ข้อจำกัดทางระเบียบวิธีเดียวกันหลายประการ
 
     <BR>
 
-    Another way in which 3D-DXA was evaluated was through the use of correlations. Correlation coefficients of 0.86,
-    0.93, 0.95 and 0.91 were reported for trabecular, cortical, and integral vBMD, and cortical thickness respectively.
-    However, these strong correlations are primarily due to the fact that all cortical parameters in both 3D-DXA models
-    and QCT scans correlate strongly with overall density. Patients with higher-than-average aBMD in their DXA scans
-    will, on average, also exhibit increased trabecular, cortical, and integral vBMD, along with a thicker cortex. These
-    correlation results do not provide conclusive evidence of the software’s accuracy in generating patient-specific
-    reconstructions and, in fact, may create a misleading impression of its performance.
+    หาก 3D-DXA ไม่สามารถทำงานได้ดีกว่า aBMD เพียงอย่างเดียว มันก็ย่อมไม่สามารถเหนือกว่าการรวมกันของ
+    aBMD และพารามิเตอร์ HSA ซึ่งวัดได้โดยตรงจากภาพ DXA สิ่งนี้เน้นย้ำถึงข้อจำกัดพื้นฐานของ 3D-DXA และ
+    ทำให้เกิดคำถามถึงความชอบธรรมในการนำไปใช้ในงานคลินิกหรือการวิจัย อย่างไรก็ตาม ปัจจุบัน 3D-Shaper Medical
+    ได้ให้บริการวิเคราะห์ Finite Element บนพื้นฐานของ 3D-DXA เป็นการบริการ
+
+
+    <h2>วิธีการตรวจสอบความถูกต้อง (Methods of validation)</h2>
+
+    แม้จะมีข้อจำกัดที่มีอยู่ของ 3D-DXA แต่สิ่งตีพิมพ์จำนวนมากรายงานผลลัพธ์เชิงบวกเกี่ยวกับความแม่นยำของมัน
+    ความแตกต่างนี้สามารถเกิดจากการใช้ระเบียบวิธีตรวจสอบความถูกต้องที่ไม่เหมาะสม [<a href="#ref-21">21</a>, <a
+      href="#ref-22">22</a>] ซึ่งมักจะบดบังข้อจำกัดที่แท้จริงของซอฟต์แวร์ ในส่วนต่อไปนี้ ข้าพเจ้าจะอภิปรายเกี่ยวกับ
+    ประเด็นของการตรวจสอบความถูกต้องเหล่านี้ และวิธีที่พวกมันสร้างการรับรู้ถึงความน่าเชื่อถือและประโยชน์ทางคลินิก
+    ของ 3D-DXA
+
+    <h3>ตัวชี้วัดการประเมินประสิทธิภาพที่ไม่ถูกต้อง (Wrong performance assessment metrics)</h3>
+
+    3D-Shaper Medical เปรียบเทียบพื้นผิวเมชที่สร้างโดย 3D-DXA จากภาพ DXA กับพื้นผิวเมชที่สร้างขึ้น
+    ด้วยตนเองจากการสแกน QCT ของตัวแบบเดียวกัน ส่งผลให้ได้ระยะห่างจากจุดถึงพื้นผิวเฉลี่ย 0.93 มม. [<a
+      href="#ref-2">2</a>] พวกเขายังเปรียบเทียบพารามิเตอร์ของกระดูกเปลือกแข็ง โดยพบข้อผิดพลาดสัมบูรณ์เฉลี่ย 0.33 มม.
+    สำหรับความหนาของกระดูกเปลือกแข็ง และ 72 มก./ซม.³ สำหรับความหนาแน่นของกระดูกเปลือกแข็ง อย่างไรก็ตาม
+    ไม่มีกรอบการอ้างอิงที่จะกำหนดว่าข้อผิดพลาดที่รายงานเหล่านี้เป็นที่ยอมรับหรือไม่ ซึ่งหมายความว่าตัวชี้วัดเหล่านี้
+    ไม่ได้ตรวจสอบประสิทธิภาพของซอฟต์แวร์เสมอไป
 
     <BR>
 
-    Correlations are also used to evaluate population-based studies using 3D-DXA. Similar effects can be seen when
-    3D-DXA analyses show significant correlations between its parameters and the tested factors or across different
-    populations. This is again because these parameters are inherently correlated with overall BMD and thus directly
-    reflect changes or differences in aBMD. The findings may appear sensible and can closely mirror true changes. For
-    instance, exercise increases both overall density and cortical bone mineral content [<a href="#ref-49">49</a>],
-    leading to seemingly sensible results from a 3D-DXA analysis when aBMD increases due to exercise. However, these do
-    not reflect the actual cortical parameters themselves, but merely the underlying changes or differences in aBMD.
-    Consequently, these studies can create a misleading impression of the effectiveness of 3D-DXA, giving a false sense
-    of its capability to measure cortical parameters accurately.
+    อีกวิธีหนึ่งที่ 3D-DXA ถูกประเมินคือการใช้ค่าความสัมพันธ์ (correlations) มีรายงานค่าสัมประสิทธิ์สหสัมพันธ์ที่
+    0.86, 0.93, 0.95 และ 0.91 สำหรับ vBMD ของกระดูกโปร่ง, กระดูกเปลือกแข็ง และความหนาแน่นรวม (integral vBMD)
+    รวมถึงความหนาของกระดูกเปลือกแข็งตามลำดับ อย่างไรก็ตาม
+    ความสัมพันธ์ที่แข็งแกร่งเหล่านี้ส่วนใหญ่เกิดจากข้อเท็จจริงที่ว่า
+    พารามิเตอร์ของกระดูกเปลือกแข็งทั้งหมดในทั้งโมเดล 3D-DXA และการสแกน QCT มีความสัมพันธ์อย่างมากกับความหนาแน่นโดยรวม
+    ผู้ป่วยที่มี aBMD สูงกว่าค่าเฉลี่ยในการสแกน DXA โดยเฉลี่ยแล้วจะแสดงการเพิ่มขึ้นของ vBMD ของกระดูกโปร่ง,
+    กระดูกเปลือกแข็ง
+    และความหนาแน่นรวม พร้อมกับกระดูกเปลือกแข็งที่หนาขึ้น ผลลัพธ์ความสัมพันธ์เหล่านี้ไม่ได้ให้หลักฐานข้อสรุป
+    ของความแม่นยำของซอฟต์แวร์ในการสร้างภาพจำลองเฉพาะบุคคล และในความเป็นจริง
+    อาจสร้างความประทับใจที่เข้าใจผิดเกี่ยวกับประสิทธิภาพของมัน
 
     <BR>
 
-    A more appropriate evaluation would involve comparing the cortical parameters against a basic baseline model, such
-    as a blind estimator. Here a blind estimator refers to a simple, naive method of estimation that does not account
-    for individual variability and instead applies an average value from the entire population to all subjects. For
-    example, a blind estimator for cortical thickness would use the mean cortical thickness map from a group of
-    individuals and apply it uniformly to every case, regardless of their specific characteristics. This approach serves
-    as a baseline, or minimum standard, against which more advanced methods should be evaluated. Any sophisticated
-    method should, at the very least, outperform this basic estimation. To the best of my knowledge, such an evaluation
-    has not yet been published.
+    ค่าความสัมพันธ์ยังถูกใช้เพื่อประเมินการศึกษาเชิงประชากรที่ใช้ 3D-DXA ผลกระทบที่คล้ายกันสามารถเห็นได้เมื่อ
+    การวิเคราะห์ด้วย 3D-DXA แสดงความสัมพันธ์ที่มีนัยสำคัญระหว่างพารามิเตอร์และปัจจัยที่ทดสอบหรือในประชากรที่แตกต่างกัน
+    นี่เป็นอีกครั้งเพราะพารามิเตอร์เหล่านี้มีความสัมพันธ์โดยเนื้อแท้กับ BMD โดยรวม และด้วยเหตุนี้จึงสะท้อนถึง
+    การเปลี่ยนแปลงหรือความแตกต่างใน aBMD โดยตรง
+    ผลการวิจัยอาจดูสมเหตุสมผลและสามารถสะท้อนการเปลี่ยนแปลงที่แท้จริงได้อย่างใกล้ชิด
+    ตัวอย่างเช่น การออกกำลังกายช่วยเพิ่มทั้งความหนาแน่นโดยรวมและปริมาณแร่ธาตุในกระดูกเปลือกแข็ง [<a
+      href="#ref-49">49</a>]
+    นำไปสู่ผลลัพธ์ที่ดูสมเหตุสมผลจากการวิเคราะห์ 3D-DXA เมื่อ aBMD เพิ่มขึ้นเนื่องจากการออกกำลังกาย อย่างไรก็ตาม
+    สิ่งเหล่านี้ไม่ได้สะท้อนถึงพารามิเตอร์ของกระดูกเปลือกแข็งที่แท้จริง แต่เป็นเพียงการเปลี่ยนแปลงหรือความแตกต่าง
+    ที่อยู่ภายใต้ aBMD เท่านั้น ดังนั้น การศึกษาเหล่านี้จึงสามารถสร้างความประทับใจที่เข้าใจผิดเกี่ยวกับประสิทธิภาพของ
+    3D-DXA
+    ทำให้เกิดความรู้สึกที่ผิดว่ามันมีความสามารถในการวัดพารามิเตอร์ของกระดูกเปลือกแข็งได้อย่างแม่นยำ
 
     <BR>
 
-    Most publications on the 3D-DXA software showcase only successful reconstructions, which can create a false sense of
-    confidence in the software’s reliability. To quantitatively assess the reliability of 3D-DXA, an evaluation of the
-    failure rate can be performed. In a previous study [<a href="#ref-51">51</a>], although not explicitly stated, only
-    80 out of 173 subjects were retained after excluding reconstructions identified as inaccurate through comparison of
-    the model projections with the DXA images, yielding a failure rate exceeding 50%. To enable such an assessment,
-    3D-Shaper would need to provide a side-by-side display of the model projection and the DXA image. A more robust
-    evaluation, however, would compare renderings and cross-sectional views of the resulting volumes with the
-    ground-truth QCT scans and assess the failure rate in an independent evaluation.
+    การประเมินที่เหมาะสมกว่าจะเกี่ยวข้องกับการเปรียบเทียบพารามิเตอร์ของกระดูกเปลือกแข็งกับโมเดลพื้นฐานง่ายๆ
+    เช่น โปรพริวเอสติเมเตอร์ (blind estimator) ในที่นี้ blind estimator หมายถึงวิธีการประมาณแบบง่ายๆ ที่ไม่ได้คำนึงถึง
+    ความเป็นปัจเจกของตัวแบบ แต่ใช้ค่าเฉลี่ยจากประชากรทั้งหมดกับตัวแบบทุกตัวแทน ตัวอย่างเช่น blind estimator สำหรับ
+    ความหนาของกระดูกเปลือกแข็งจะใช้แผนที่ความหนาเฉลี่ยจากกลุ่มบุคคลและนำไปใช้กับทุกกรณีอย่างสม่ำเสมอ โดยไม่คำนึงถึง
+    ลักษณะเฉพาะของพวกเขา แนวทางนี้ทำหน้าที่เป็นเส้นฐาน (baseline) หรือมาตรฐานขั้นต่ำที่วิธีการขั้นสูงควรได้รับการประเมิน
+    วิธีการที่ซับซ้อนใดๆ ควรสามารถทำผลงานได้ดีกว่าการประมาณขั้นพื้นฐานนี้เป็นอย่างน้อย ตามความรู้ของข้าพเจ้า
+    การประเมินดังกล่าวไม่เคยได้รับการตีพิมพ์
 
     <BR>
 
-    In some instances, merely observing significant changes or differences is presented as evidence that 3D-DXA works,
-    while disregarding whether the actual effects are correct. In response to my letter to the editor, significant
-    differences between treatment groups were presented as evidence of 3D-DXA’s efficacy.
-    However, in this assessment, the authors provide 2 different results for cortical BMD changes after TPTD treatment,
-    one showing a significant increase [<a href="#ref-52">52</a>] and the other a nonsignificant decrease [<a
-      href="#ref-15">15</a>]. Neither of these reflects the actual change that one would expect in TPTD treatment, as I
-    explain in Section “Misleading results in drug efficacy studies”.
-
-    <h3>Absence of multiple comparison correction</h3>
-
-    The concern in this section is not primarily related to the 3D-DXA software itself, but rather to the service
-    provided by 3D-Shaper Medical and the subsequent publications. The critical issue lies in the lack of multiple
-    comparison corrections when reporting changes or differences in the 3D-DXA parameters, particularly in the cortical
-    parameter maps.
+    สิ่งตีพิมพ์ส่วนใหญ่เกี่ยวกับซอฟต์แวร์ 3D-DXA มักจะแสดงเฉพาะการสร้างภาพจำลองที่ประสบความสำเร็จ ซึ่งอาจสร้าง
+    ความมั่นใจที่ผิดพลาดในความน่าเชื่อถือของซอฟต์แวร์ เพื่อประเมินความน่าเชื่อถือของ 3D-DXA ในเชิงปริมาณ
+    การประเมินอัตราความล้มเหลว (failure rate) สามารถทำได้ ในการศึกษาก่อนหน้านี้ [<a href="#ref-51">51</a>]
+    แม้ว่าจะไม่ได้ระบุไว้อย่างชัดเจน แต่มีเพียง 80 จาก 173
+    ตัวแบบเท่านั้นที่ถูกเก็บไว้หลังจากคัดออกเนื่องจากการสร้างภาพจำลอง
+    ที่ถูกระบุว่าไม่ถูกต้องผ่านการเปรียบเทียบภาพฉายโมเดลกับภาพ DXA ซึ่งให้อัตราความล้มเหลวสูงถึง 50% เพื่อให้สามารถ
+    ทำการประเมินดังกล่าวได้ 3D-Shaper จำเป็นต้องมีการแสดงการเปรียบเทียบเคียงข้างกันระหว่างภาพฉายโมเดลและภาพ DXA
+    อย่างไรก็ตาม การประเมินที่แข็งแกร่งกว่าจะเปรียบเทียบภาพเรนเดอร์และภาพตัดขวางของปริมาตรที่ได้กับการสแกน QCT
+    ซึ่งเป็นค่าความจริง และประเมินอัตราความล้มเหลวในการประเมินที่เป็นอิสระ
 
     <BR>
 
-    Applying multiple comparison corrections is crucial when analyzing data with multiple distinct measurements. For
-    3D-Shaper, the software generates 71 bone parameters, with each representing a separate statistical test. Without
-    adjusting for these multiple comparisons, such as with a Bonferroni correction, the likelihood of obtaining
-    significant results by chance increases, leading to false conclusions. Despite this, studies using 3D-Shaper often
-    report significant changes or differences without applying any form of multiple comparison correction [<a
-      href="#ref-10">10</a>, <a href="#ref-24">24</a>, <a href="#ref-27">27</a>, <a href="#ref-28">28</a>], creating an
-    unwarranted sense of confidence in the results. This can be misleading when certain parameters are measured but not
-    reported, a form of p-hacking bias [<a href="#ref-53">53</a>], where significant results are highlighted while
-    ignoring the increased risk of false positives due to the large number of tests conducted.
+    ในบางกรณี เพียงแค่สังเกตเห็นการเปลี่ยนแปลงหรือความแตกต่างที่มีนัยสำคัญก็ถูกนำเสนอเป็นหลักฐานว่า 3D-DXA ทำงานได้
+    โดยมองข้ามว่าผลกระทบที่แท้จริงนั้นถูกต้องหรือไม่ ในการตอบโต้จดหมายถึงบรรณาธิการของข้าพเจ้า มีการนำเสนอความแตกต่าง
+    ที่มีนัยสำคัญระหว่างกลุ่มการรักษาเพื่อเป็นหลักฐานความมีประสิทธิภาพของ 3D-DXA อย่างไรก็ตาม ในการประเมินนี้
+    ผู้เขียนได้ให้ผลลัพธ์ที่แตกต่างกัน 2 แบบสำหรับการเปลี่ยนแปลง BMD ของกระดูกเปลือกแข็งหลังการรักษาด้วย TPTD
+    แบบหนึ่งแสดงการเพิ่มขึ้นอย่างมีนัยสำคัญ [<a href="#ref-52">52</a>] และอีกแบบแสดงการลดลงอย่างไม่มีนัยสำคัญ [<a
+      href="#ref-15">15</a>] ซึ่งทั้งสองอย่างนี้ไม่ได้สะท้อนถึงการเปลี่ยนแปลงที่แท้จริงที่ควรจะเกิดขึ้นในการรักษาด้วย
+    TPTD
+    ดังที่ข้าพเจ้าได้อธิบายไว้ในส่วน "ผลลัพธ์ที่ทำให้เข้าใจผิดในการศึกษาประสิทธิภาพของยา"
+
+    <h3>การขาดการแก้ไขการเปรียบเทียบพหุคูณ (Absence of multiple comparison correction)</h3>
+
+    ข้อกังวลในส่วนนี้ไม่ได้เกี่ยวข้องกับตัวซอฟต์แวร์ 3D-DXA เองเป็นหลัก แต่เกี่ยวข้องกับการบริการที่จัดหาโดย
+    3D-Shaper Medical และสิ่งตีพิมพ์ที่ตามมา ประเด็นสำคัญอยู่ที่การขาดการแก้ไขการเปรียบเทียบพหุคูณ
+    เมื่อรายงานการเปลี่ยนแปลงหรือความแตกต่างในพารามิเตอร์ของ 3D-DXA โดยเฉพาะในแผนที่พารามิเตอร์ของกระดูกเปลือกแข็ง
 
     <BR>
 
-    A similar issue occurs when studies using 3D-Shaper present color-coded maps showing changes or differences in
-    cortical parameters on the bone surface or BMD values in the volume. In these cases, each vertex or voxel represents
-    an individual statistical test, with significance often determined by a simple t-test at each point [<a
+    การใช้การแก้ไขการเปรียบเทียบพหุคูณมีความสำคัญอย่างยิ่งเมื่อวิเคราะห์ข้อมูลที่มีการวัดค่าที่แตกต่างกันหลายค่า
+    สำหรับ 3D-Shaper ซอฟต์แวร์จะสร้างพารามิเตอร์กระดูก 71 ค่า ซึ่งแต่ละค่าแสดงถึงการทดสอบทางสถิติที่แยกจากกัน
+    หากไม่มีการปรับปรุงสำหรับการเปรียบเทียบพหุคูณเหล่านี้ เช่น การแก้ไขแบบ Bonferroni
+    โอกาสที่จะได้รับผลลัพธ์ที่มีนัยสำคัญ
+    โดยบังเอิญจะเพิ่มขึ้น นำไปสู่ข้อสรุปที่ผิดพลาด แม้จะเป็นเช่นนี้ การศึกษาที่ใช้ 3D-Shaper
+    บ่อยครั้งมักรายงานการเปลี่ยนแปลง
+    หรือความแตกต่างที่มีนัยสำคัญโดยไม่มีการใช้การแก้ไขการเปรียบเทียบพหุคูณรูปแบบใดๆ [<a href="#ref-10">10</a>, <a
+      href="#ref-24">24</a>, <a href="#ref-27">27</a>, <a href="#ref-28">28</a>]
+    ซึ่งสร้างความรู้สึกมั่นใจที่ไม่อาจยืนยันได้
+    ในผลลัพธ์ สิ่งนี้อาจทำให้เข้าใจผิดเมื่อพารามิเตอร์บางอย่างถูกวัดแต่ไม่มีการรายงาน ซึ่งเป็นรูปแบบหนึ่งของอคติ
+    p-hacking [<a href="#ref-53">53</a>] ที่มีการเน้นย้ำถึงผลลัพธ์ที่มีนัยสำคัญในขณะที่เพิกเฉยต่อความเสี่ยงที่เพิ่มขึ้น
+    ของผลบวกปลอม (false positives) เนื่องจากมีการทดสอบจำนวนมากที่ดำเนินการ
+
+    <BR>
+
+    ปัญหาที่คล้ายกันเกิดขึ้นเมื่อการศึกษาที่ใช้ 3D-Shaper นำเสนอแผนที่รหัสสีที่แสดงการเปลี่ยนแปลงหรือความแตกต่างใน
+    พารามิเตอร์ของกระดูกเปลือกแข็งบนพื้นผิวกระดูกหรือค่า BMD ในปริมาตร ในกรณีเหล่านี้ จุดยอด (vertex) หรือวอกเซลแต่ละจุด
+    แสดงถึงการทดสอบทางสถิติแต่ละอย่าง โดยที่นัยสำคัญมักจะถูกกำหนดโดยการทดสอบ t-test ง่ายๆ ในแต่ละจุด [<a
       href="#ref-9">9</a>, <a href="#ref-10">10</a>, <a href="#ref-11">11</a>, <a href="#ref-12">12</a>, <a
       href="#ref-13">13</a>, <a href="#ref-28">28</a>, <a href="#ref-52">52</a>, <a href="#ref-54">54</a>, <a
-      href="#ref-55">55</a>]. This approach highlights seemingly significant regions in the color-coded maps, creating
-    the illusion of localized changes or differences where there are none. When presenting changes or differences in the
-    volume through color-coded cross-sectional views, the statistical significance at the voxel level is generally not
-    provided at all [<a href="#ref-9">9</a>, <a href="#ref-11">11</a>, <a href="#ref-30">30</a>, <a
-      href="#ref-52">52</a>, <a href="#ref-54">54</a>, <a href="#ref-55">55</a>, <a href="#ref-56">56</a>]. In the same
-    way this suggests real changes when, in fact, they may simply be a result of random variation. Consequently, these
-    color-coded maps can give an overly optimistic impression of the impact of treatments or interventions, falsely
-    suggesting efficacy where there may be none.
+      href="#ref-55">55</a>] แนวทางนี้เน้นย้ำถึงภูมิภาคที่ดูเหมือนจะมีนัยสำคัญในแผนที่รหัสสี สร้างภาพลวงตาของ
+    การเปลี่ยนแปลงหรือความแตกต่างที่เฉพาะเจาะจงในขณะที่ไม่มีการเปลี่ยนแปลงดังกล่าว เมื่อนำเสนอการเปลี่ยนแปลงหรือ
+    ความแตกต่างในปริมาตรผ่านภาพตัดขวางรหัสสี นัยสำคัญทางสถิติในระดับวอกเซลโดยทั่วไปจะไม่ถูกระบุเลย [<a
+      href="#ref-9">9</a>, <a href="#ref-11">11</a>, <a href="#ref-30">30</a>, <a href="#ref-52">52</a>, <a
+      href="#ref-54">54</a>, <a href="#ref-55">55</a>, <a href="#ref-56">56</a>] ในลักษณะเดียวกันนี้
+    สิ่งนี้ชี้ให้เห็นถึง
+    การเปลี่ยนแปลงที่แท้จริง ทั้งที่ในความเป็นจริง สิ่งเหล่านี้อาจเป็นเพียงผลมาจากความแปรปรวนแบบสุ่ม ดังนั้น
+    แผนที่รหัสสีเหล่านี้สามารถบ่งบอกถึงความประทับใจที่มองโลกในแง่ดีเกินไปเกี่ยวกับผลกระทบของการรักษาหรือการแทรกแซง
+    ซึ่งระบุถึงประสิทธิภาพที่ผิดพลาด ทั้งที่อาจจะไม่มีอยู่จริง
 
     <BR>
 
-    The issue of false positives due to inadequate multiple comparison corrections has been a persistent challenge in
-    the field of neuroimaging [<a href="#ref-57">57</a>]. To address this, the neuroimaging community has developed
-    solutions that can also be applied to studies examining cortical bone changes on the bone surface and density
-    changes in the voxels of QCT scans. Poole et al. [<a href="#ref-58">58</a>] describe how SurfStat
-    (http://math.mccgill.ca/keith/surfstat/) can be used to test whether differences in the cortical parameters at each
-    point on the bone surface were statistically significant, with random field theory applied for multiple comparison
-    correction. Similar packages exist for voxel-based analysis, such as the Statistical Parametric Mapping library
-    (https://www.fil.ion.ucl.ac.uk/spm/) and the FMRIB Software Library (https://fsl.fmrib.ox.ac.uk). The use of these
-    tools would improve the statistical rigor of studies using 3D-DXA, although the observed changes or differences
-    would still predominantly reflect the correlation of all parameters with aBMD.
+    ปัญหาเรื่องผลบวกปลอมเนื่องจากการแก้ไขการเปรียบเทียบพหุคูณที่ไม่เพียงพอเป็นความท้าทายที่ยาวนานในสาขาประสาทภาพ
+    (neuroimaging) [<a href="#ref-57">57</a>] เพื่อจัดการกับปัญหานี้ ชุมชนประสาทภาพได้พัฒนาแนวทางที่สามารถ
+    นำไปใช้กับการศึกษาที่ตรวจสอบการเปลี่ยนแปลงของกระดูกเปลือกแข็งบนพื้นผิวกระดูกและการเปลี่ยนแปลงความหนาแน่น
+    ในวอกเซลของการสแกน QCT ได้เช่นกัน Poole และคณะ [<a href="#ref-58">58</a>] อธิบายว่า SurfStat
+    (http://math.mccgill.ca/keith/surfstat/) สามารถนำมาใช้เพื่อทดสอบว่าความแตกต่างในพารามิเตอร์ของกระดูกเปลือกแข็ง
+    ในแต่ละจุดบนพื้นผิวกระดูกนั้นมีนัยสำคัญทางสถิติหรือไม่ โดยใช้ทฤษฎีสนามสุ่ม (random field theory) สำหรับการแก้ไข
+    การเปรียบเทียบพหุคูณ แพ็คเกจที่คล้ายกันมีอยู่สำหรับการวิเคราะห์ตามวอกเซล เช่น ไลบรารี Statistical Parametric Mapping
+    (https://www.fil.ion.ucl.ac.uk/spm/) และ FMRIB Software Library (https://fsl.fmrib.ox.ac.uk)
+    การใช้เครื่องมือเหล่านี้
+    จะช่วยปรับปรุงความเข้มงวดทางสถิติของการศึกษาที่ใช้ 3D-DXA แม้ว่าการเปลี่ยนแปลงหรือความแตกต่างที่สังเกตได้
+    จะยังคงสะท้อนถึงความสัมพันธ์ของพารามิเตอร์ทั้งหมดกับ aBMD เป็นส่วนใหญ่
 
 
-    <h2>Implications</h2>
-    The use of 3D-DXA has wide-reaching implications in both research and clinical practice. The following sections will
-    delve into these challenges.
+    <h2>ผลกระทบ (Implications)</h2>
+    การใช้ 3D-DXA มีผลกระทบในวงกว้างทั้งในงานวิจัยและการปฏิบัติทางคลินิก ส่วนต่อไปนี้จะเจาะลึกถึงความท้าทายเหล่านี้
 
-    <h3>Misleading results in drug efficacy studies</h3>
+    <h3>ผลลัพธ์ที่ทำให้เข้าใจผิดในการศึกษาประสิทธิภาพของยา (Misleading results in drug efficacy studies)</h3>
 
 
-    In most studies, the results of 3D-DXA align with what is expected in the cortex, as cortical parameters in healthy
-    individuals are typically correlated with aBMD. This often leads to seemingly sensible results. However, this
-    approach becomes flawed when the changes do not follow conventional patterns. The method is particularly problematic
-    in drug trials where normal bone modeling and remodeling are altered, and the usual proportional increases or
-    decreases in all parameters may not occur.
-
-    <BR>
-
-    An illustrative example is a study on teriparatide, where 3D-DXA indicated an increase in all cortical parameters,
-    including a significant increase in cortical vBMD compared to placebo [<a href="#ref-52">52</a>]. In contrast, using
-    an equivalent cortical measurement technique applied to QCT, cortical BMD was shown to significantly decrease
-    following the same 18-month teriparatide treatment, which was seen consistently in data from three different
-    clinical trials [<a href="#ref-41">41</a>]. This decrease is attributed to an increased rate of remodeling, which
-    results in greater cortical porosity, as also observed using micro-CT [<a href="#ref-59">59</a>].
+    ในการศึกษาส่วนใหญ่ ผลลัพธ์ของ 3D-DXA จะสอดคล้องกับสิ่งที่คาดหวังในกระดูกเปลือกแข็ง เนื่องจากพารามิเตอร์ของ
+    กระดูกเปลือกแข็งในคนที่มีสุขภาพดีมักจะมีความสัมพันธ์กับ aBMD สิ่งนี้มักจะนำไปสู่ผลลัพธ์ที่ดูสมเหตุสมผล อย่างไรก็ตาม
+    แนวทางนี้มีความบกพร่องเมื่อการเปลี่ยนแปลงไม่ได้ดำเนินตามรูปแบบดั้งเดิม วิธีการนี้มีปัญหาโดยเฉพาะอย่างยิ่งใน
+    การทดลองยาซึ่งกระบวนการสร้างและสลายกระดูกปกติ (bone modeling and remodeling) ถูกเปลี่ยนแปลง และการเพิ่มขึ้นหรือลดลง
+    ตามสัดส่วนปกติในพารามิเตอร์ทั้งหมดอาจไม่เกิดขึ้น
 
     <BR>
 
-    In an earlier study, 3D-Shaper Medical did report a decrease in cortical BMD in response to teriparatide [<a
-      href="#ref-15">15</a>]. Although this was noted by the authors as a decrease, the change was not statistically
-    significant. A more recent independent study also found no significant changes in cortical BMD in response to
-    teriparatide treatment using a 3D-DXA analysis [<a href="#ref-60">60</a>]. It may be possible that there is some
-    influence from the cortex of the shaft, which is partly visible in the DXA image. Due to the nature of 3D-DXA, an
-    aBMD decrease in this region, might have been projected across the entire femur model, including areas where no
-    cortex is visible, since the model parameters influence the density distribution globally. However, this did not
-    lead to the correct significant decrease in cortical BMD observed in QCT studies.
+    ตัวอย่างที่แสดงให้เห็นคือการศึกษาเกี่ยวกับ teriparatide ซึ่ง 3D-DXA บ่งชี้ถึงการเพิ่มขึ้นของพารามิเตอร์ของ
+    กระดูกเปลือกแข็งทั้งหมด รวมถึงการเพิ่มขึ้นอย่างมีนัยสำคัญของ vBMD ของกระดูกเปลือกแข็งเมื่อเทียบกับยาหลอก [<a
+      href="#ref-52">52</a>] ในทางตรงกันข้าม เมื่อใช้เทคนิคการวัดกระดูกเปลือกแข็งที่เทียบเท่ากันกับ QCT พบว่า BMD ของ
+    กระดูกเปลือกแข็งลดลงอย่างมีนัยสำคัญภายหลังการรักษาด้วย teriparatide เป็นเวลา 18 เดือนแบบเดียวกัน ซึ่งเห็นได้
+    สม่ำเสมอในข้อมูลจากการทดลองทางคลินิกที่แตกต่างกันสามรายการ [<a href="#ref-41">41</a>] การลดลงนี้มาจากอัตราของ
+    การสลายกระดูกที่เพิ่มขึ้น ซึ่งส่งผลให้ความโปร่งของกระดูกเปลือกแข็ง (cortical porosity) สูงขึ้น ดังที่สังเกตได้
+    จากการใช้ micro-CT เช่นกัน [<a href="#ref-59">59</a>]
 
     <BR>
 
-    The study that reported an increase in all cortical parameters with teriparatide (TPTD) also evaluated abaloparatide
-    in parallel, showing an even greater increase in all parameters for the latter [<a href="#ref-52">52</a>]. Follow-up
-    studies using 3D-DXA analysis also reported significant increases in cortical BMD after abaloparatide treatment [<a
-      href="#ref-55">55</a>, <a href="#ref-56">56</a>]. Given that abaloparatide shares a similar mechanism of action
-    with TPTD, increasing the rate of bone remodeling, one would reasonably expect it to also lead to a decrease in
-    cortical BMD. In fact, a study using QCT observed a decrease in cortical BMD following a similar period of
-    abaloparatide treatment in 35 patients [<a href="#ref-61">61</a>], although the reduction was not statistically
-    significant. This suggests that the 3D-DXA studies not only produced inaccurate changes but also likely resulted in
-    an overly favorable assessment of abaloparatide’s effects.
+    ในการศึกษาก่อนหน้านี้ 3D-Shaper Medical ได้รายงานการลดลงของ BMD ของกระดูกเปลือกแข็งเพื่อตอบสนองต่อ
+    teriparatide [<a href="#ref-15">15</a>] แม้ว่าสิ่งนี้จะถูกผู้เขียนระบุว่าเป็นการลดลง แต่การเปลี่ยนแปลงนั้น
+    ไม่มีนัยสำคัญทางสถิติ การศึกษาอิสระล่าสุดยังพบว่าไม่มีการเปลี่ยนแปลงที่มีนัยสำคัญใน BMD ของกระดูกเปลือกแข็ง
+    เพื่อตอบสนองต่อการรักษาด้วย teriparatide โดยใช้การวิเคราะห์ 3D-DXA [<a href="#ref-60">60</a>] อาจเป็นไปได้ว่า
+    มีอิทธิพลบางประการจากกระดูกเปลือกแข็งของแท่งกระดูก ซึ่งมองเห็นได้บางส่วนในภาพ DXA เนื่องจากธรรมชาติของ 3D-DXA
+    การลดลงของ aBMD ในภูมิภาคนี้อาจถูกฉายไปทั่วโมเดลกระดูกต้นขาทั้งหมด รวมถึงพื้นที่ที่มองไม่เห็นกระดูกเปลือกแข็ง
+    เนื่องจากพารามิเตอร์ของโมเดลมีอิทธิพลต่อการกระจายความหนาแน่นไปทั่วโลก อย่างไรก็ตาม สิ่งนี้ไม่ได้นำไปสู่ผลลัพธ์
+    การลดลงอย่างมีนัยสำคัญของ BMD ในกระดูกเปลือกแข็งที่ถูกต้องตามที่สังเกตได้ในการศึกษา QCT
 
     <BR>
 
-    A study by Lewiecki et al. [<a href="#ref-54">54</a>] further illustrates the limitations of 3D-DXA in measuring
-    discordant cortical changes. Their 3D-DXA analysis reported increases in all cortical parameters in response to
-    romosozumab. In contrast, a previous QCT analysis found no increase in cortical BMD following the same treatment [<a
-      href="#ref-62">62</a>]. The authors noted: “It is unclear why data obtained by QCT and DXA-based 3D-SHAPER for
-    romosozumab treatment on hip integral and trabecular vBMD were similar across the studies but differed for cortical
-    vBMD.” Given that the letter to the editor of Bone seen by some of the same authors had already explained and
-    predicted this discrepancy [<a href="#ref-7">7</a>], it appears that there persists a misunderstanding regarding the
-    capabilities and limitations of 3D-DXA. As a result, this misunderstanding has likely again led to an overly
-    optimistic assessment of the drug's efficacy.
+    การศึกษาที่รายงานการเพิ่มขึ้นของพารามิเตอร์กระดูกเปลือกแข็งทั้งหมดด้วย teriparatide (TPTD) ยังได้ประเมิน
+    abaloparatide ควบคู่ไปด้วย โดยแสดงให้เห็นการเพิ่มขึ้นที่มากขึ้นของพารามิเตอร์ทั้งหมดสำหรับสารหลัง [<a
+      href="#ref-52">52</a>] การศึกษาต่อเนื่องโดยใช้การวิเคราะห์ 3D-DXA ยังรายงานการเพิ่มขึ้นอย่างมีนัยสำคัญของ
+    BMD ของกระดูกเปลือกแข็งหลังการรักษาด้วย abaloparatide [<a href="#ref-55">55</a>, <a href="#ref-56">56</a>]
+    เมื่อพิจารณาว่า abaloparatide มีกลไกการออกฤทธิ์ที่คล้ายคลึงกับ TPTD ในการส่งเสริมอัตราการสลายกระดูก
+    ก็มีเหตุผลที่จะคาดหวังว่ามันจะนำไปสู่การลดลงของ BMD ในกระดูกเปลือกแข็งด้วยเช่นกัน อันที่จริง การศึกษาโดยใช้ QCT
+    สังเกตเห็นการลดลงของ BMD ของกระดูกเปลือกแข็งหลังการรักษาด้วย abaloparatide ในช่วงเวลาที่ใกล้เคียงกันในผู้ป่วย 35 ราย
+    [<a href="#ref-61">61</a>] แม้ว่าการลดลงนั้นจะไม่มีนัยสำคัญทางสถิติ สิ่งนี้ชี้ให้เห็นว่าการศึกษาด้วย 3D-DXA
+    ไม่เพียงแต่สร้างการเปลี่ยนแปลงที่ไม่ถูกต้อง แต่ยังน่าจะส่งผลให้การประเมินผลกระทบของ abaloparatide ดีเกินจริงอีกด้วย
 
     <BR>
 
-    These studies further disseminate potentially incorrect results by presenting color maps of cortical and trabecular
-    bone changes. 3D-DXA cannot measure localized or focal changes, partly because each model parameter affects the
-    density distribution globally, and also because these changes are not visible on a DXA image. The failure to apply
-    multiple comparison corrections in these studies further undermines the results, as the seemingly significant
-    regions in the maps are, in fact, much less significant, leading to an overly optimistic assessment of various
-    drugs.
+    การศึกษาโดย Lewiecki และคณะ [<a href="#ref-54">54</a>] แสดงให้เห็นข้อจำกัดของ 3D-DXA เพิ่มเติมในการวัด
+    พารามิเตอร์กระดูกเปลือกแข็งที่ขัดแย้งกัน การวิเคราะห์ 3D-DXA ของพวกเขารายงานการเพิ่มขึ้นของพารามิเตอร์
+    กระดูกเปลือกแข็งทั้งหมดเพื่อตอบสนองต่อ romosozumab ในทางตรงกันข้าม การวิเคราะห์ QCT ก่อนหน้านี้พบว่า
+    ไม่มีการเพิ่มขึ้นของ BMD ของกระดูกเปลือกแข็งหลังการรักษาแบบเดียวกัน [<a href="#ref-62">62</a>] ผู้เขียนระบุว่า
+    “ยังไม่ชัดเจนว่าทำไมข้อมูลที่ได้จาก QCT และ 3D-SHAPER บนพื้นฐานของ DXA สำหรับการรักษาด้วย romosozumab
+    ต่อ vBMD รวมของสะโพกและ vBMD ของกระดูกโปร่งจึงมีความคล้ายคลึงกันในทุกการศึกษา แต่กลับแตกต่างกันสำหรับ vBMD
+    ของกระดูกเปลือกแข็ง”
+    เมื่อพิจารณาว่าจดหมายถึงบรรณาธิการของวารสาร Bone ที่ผู้เขียนบางคนคนเดียวกันได้เห็นนั้นได้อธิบายและทำนาย
+    ความคลาดเคลื่อนนี้ไว้แล้ว [<a href="#ref-7">7</a>] ดูเหมือนว่าจะยังคงมีพฤติกรรมความเข้าใจผิดเกี่ยวกับความสามารถ
+    และข้อจำกัดของ 3D-DXA
+    และเป็นผลให้ความเข้าใจผิดนี้ยังคงนำไปสู่การประเมินประสิทธิภาพของยาที่มองโลกในแง่ดีเกินไปอีกครั้ง
 
-    <h3>Patient management</h3>
+    <BR>
+
+    การศึกษาเหล่านี้ยิ่งเผยแพร่ผลลัพธ์ที่อาจไม่ถูกต้องผ่านการนำเสนอแผนที่สีของการเปลี่ยนแปลงของกระดูกเปลือกแข็งและ
+    กระดูกโปร่ง 3D-DXA ไม่สามารถวัดการเปลี่ยนแปลงที่มีจุดโฟกัสหรือการเปลี่ยนแปลงเฉพาะจุดได้ ส่วนหนึ่งก็เป็นเพราะ
+    พารามิเตอร์ของโมเดลมีอิทธิพลต่อการกระจายความหนาแน่นไปทั่วโลก และส่วนหนึ่งก็เป็นเพราะการเปลี่ยนแปลงเหล่านี้
+    มองไม่เห็นในภาพ DXA การไม่ใช้การแก้ไขการเปรียบเทียบพหุคูณในการศึกษาเหล่านี้ยิ่งบั่นทอนผลลัพธ์ เนื่องจากภูมิภาค
+    ที่ดูเหมือนจะมีนัยสำคัญในแผนที่นั้น ในความเป็นจริงมีความนัยสำคัญน้อยกว่ามาก นำไปสู่การประเมินยาประเภทต่างๆ
+    ที่ดีเกินจริง
+
+    <h3>การจัดการผู้ป่วย (Patient management)</h3>
+
+    แม้ว่าซอฟต์แวร์ 3D-Shaper จะสามารถผลิตค่าการวัดได้ 71 ค่า แต่เวอร์ชันที่ได้รับการอนุมัติทางคลินิกจะผลิตเพียง
+    ค่า vBMD ของกระดูกโปร่งทั่วโลก และ sBMD ของกระดูกเปลือกแข็ง รวมถึงค่า T-score และ Z-score ที่เกี่ยวข้อง
+    ยังไม่ชัดเจนว่าค่า T- และ Z-score ได้มาจากประชากรกลุ่มใด แม้ว่าในการสัมมนาผ่านเว็บโดย 3D-Shaper Medical
+    จะมีการบันทึกข้อมูลอ้างอิงของกลุ่มคนผิวขาวไว้ [<a href="#ref-63">63</a>] แผนภูมิอ้างอิงเคยถูกสร้างขึ้นสำหรับประชากร
+    ชาวสเปน [<a href="#ref-64">64</a>] และประชากรชาวอาร์เจนตินา [<a href="#ref-65">65</a>] ซึ่งทั้งสองถูกนำมาแสดงใน
+    <a href="#fig:ReferenceData">รูปที่ 6</a> แผนภูมิเหล่านี้มีความแตกต่างกันอย่างชัดเจนและแตกต่างจากตัวเลขที่สร้างโดย
+    ซอฟต์แวร์ 3D-Shaper 3D-Shaper Medical, DMS Imaging และผู้จัดจำหน่ายของพวกเขาไม่ได้เปิดเผยข้อมูลประชากรนี้
+    หรือระบุว่าข้อมูลเหล่านี้ได้มาอย่างไร อย่างไรก็ตาม บริษัท โตโย เมดิก จำกัด (โตเกียว, ญี่ปุ่น) ผู้จัดจำหน่าย
+    3D-Shaper
+    ในญี่ปุ่น ยืนยันว่าซอฟต์แวร์ 3D-Shaper ที่ได้รับการอนุมัติสำหรับตลาดญี่ปุ่นไม่ได้ใช้ข้อมูลอ้างอิงจากประชากรญี่ปุ่น
+    เมื่อพิจารณาถึงความแตกต่างอย่างมากในพารามิเตอร์ของกระดูกเปลือกแข็งและกระดูกโปร่งระหว่างประชากรผิวขาวและประชากรเอเชีย
+    [<a href="#ref-17">17</a>] การใช้ค่า T- และ Z-score เหล่านี้ในญี่ปุ่นจึงดูเหมือนไม่มีความรอบคอบหากไม่มีการตรวจสอบ
+    ความถูกต้องเพิ่มเติม ความถูกต้องของข้อมูลควรได้รับการยืนยันสำหรับประชากรทุกกลุ่มที่นำไปใช้งาน
+
+    <BR>
+
+    แม้ว่าซอฟต์แวร์ 3D-Shaper หรือ 3D-DXA เพื่อการค้าจะไม่ได้ให้การตัดสินใจในการรักษาโดยอัตโนมัติ แต่วัสดุส่งเสริมการขาย
+    แนะนำการใช้ตารางเพื่อช่วยแพทย์ในการตัดสินใจเลือกแนวทางการรักษาหลังจากการวิเคราะห์ด้วย 3D-DXA ตารางนี้
+    ซึ่งจำลองไว้ในตารางที่ 1 ให้สัญลักษณ์ (-, =, +, ++, +++) สำหรับการรักษาประเภทต่างๆ เพื่อแสดงลักษณะที่การรักษา
+    ส่งผลกระทบต่อ vBMD ของกระดูกโปร่งหรือ sBMD ของกระดูกเปลือกแข็ง สัญลักษณ์เหล่านี้อิงตามเกณฑ์ (thresholds)
+    ซึ่งระบุไว้ในตารางที่ 3 หากมีข้อมูล แม้ว่าค่าเกณฑ์จะค่อนข้างตามอำเภอใจหรือไม่ระบุชัดเจน แต่ตารางอาจมีความถูกต้อง
+    ในภาพรวมจากความรู้ในการศึกษา QCT อย่างไรก็ตาม ข้อมูลเหล่านี้ได้รับการระบุว่ามาจากงานศึกษา 3D-DXA พร้อมการอ้างอิง
+    ถึงการรักษาประเภทต่างๆ เนื่องจาก 3D-DXA มีประเด็นเฉพาะตัวเมื่อพารามิเตอร์ของกระดูกเปลือกแข็งไม่ได้เปลี่ยนแปลงไป
+    ในแนวทางเดียวกับความหนาแน่นโดยรวม เช่น การรักษาด้วย teriparatide ข้าพเจ้าต้องการเน้นย้ำถึงผลกระทบที่ได้จากยาตัวนี้
+    ข้าพเจ้าได้ระบุสัญลักษณ์สำหรับการอ้างอิงแต่ละรายการที่จัดหาโดย 3D-Shaper Medical
+    รวมถึงงานศึกษาอื่นที่ไม่ได้ถูกกล่าวถึง
+    ไว้ในตารางที่ 2 ซึ่งค่าเหล่านี้มีความหลากหลายและแตกต่างจากสัญลักษณ์ที่ 3D-Shaper Medical จัดหาไว้ในตาราง
+    ดังนั้น จึงไม่ชัดเจนว่าสัญลักษณ์เหล่านี้ได้มาอย่างไร ซึ่งทำให้เกิดคำถามถึงความสมเหตุสมผลของมันเมื่อใช้ร่วมกับ
+    การวิเคราะห์ 3D-DXA
+
+    <BR>
+
+    ในการสัมมนาผ่านเว็บ [<a href="#ref-66">66</a>] 3D-Shaper Medical แนะนำความเป็นไปได้ในการใช้งานทางคลินิก
+    ในกรณีที่ 3D-Shaper ส่งผลให้ sBMD ของกระดูกเปลือกแข็งต่ำและ vBMD ของกระดูกโปร่งต่ำมาก เนื่องจาก teriparatide
+    ตามตารางนี้ จะช่วยปรับปรุงกระดูกโปร่งได้ดีกว่ากระดูกเปลือกแข็ง teriparatide
+    จึงถูกระบุว่าเป็นแนวทางการรักษาที่ดีที่สุด
+    อย่างไรก็ตาม ตามตารางนี้ แพทย์จะเลือกใช้ Denosumab หรือ Abaloparatide มากกว่า teribaratide ตามธรรมชาติ
+    หากเพิกเฉยต่อความหนาแน่นของกระดูกสันหลัง (vertebral aBMD)
+
+    <BR>
+
+    3D-DXA น่าจะถูกใช้งานควบคู่ไปกับการประเมิน T-score และ Z-score ของ DXA ทั่วไปเท่านั้น ดังนั้น ความเสี่ยงในการหลุด
+    บุคคลที่มีความเสี่ยงสูงจึงมีน้อยมาก อย่างไรก็ตาม เนื่องจากข้อผิดพลาดที่เกี่ยวข้องกับ 3D-DXA ค่า sBMD
+    ของกระดูกเปลือกแข็ง
+    และ vBMD ของกระดูกโปร่งจะสูงขึ้นหรือต่ำลงเล็กน้อยอยู่เสมอ ในผู้ป่วยที่อยู่บนขอบของการรักษา สิ่งนี้อาจทำให้แพทย์เขวไป
+    สู่การให้ยาต้านโรคกระดูกพรุนทั้งที่ไม่ได้มีการระบุความจำเป็นโดย aBMD เพียงอย่างเดียว
+
+    <BR>
+
+    การศึกษาเกี่ยวกับคะแนนกระดูกโปร่ง (Trabecular Bone Score หรือ TBS) แสดงให้เห็นว่าการประเมินเพิ่มเติมนี้
+    มีอิทธิพลต่อการตัดสินใจในการรักษาอย่างมีนัยสำคัญในโรคกระดูกพรุนทุติยภูมิ [<a href="#ref-67">67</a>] ในงานศึกษานั้น
+    21–25.5% ของผู้ป่วยที่มีการวัด BMD ปกติกลับมีคุณภาพกระดูกที่ไม่ดีตามที่ระบุโดย TBS ซึ่งส่งผลต่อการเปลี่ยน
+    การตัดสินใจรักษา ผลกระทบในทำนองเดียวกันอาจเกิดขึ้นกับ 3D-DXA ซึ่งอาจนำไปสู่ผลลัพธ์ที่ไม่พึงประสงค์ เช่น
+    การสั่งยาเกินความจำเป็น หากตารางถูกนำมาใช้ สิ่งนี้อาจโน้มน้าวแพทย์ให้เลือกยาตัวใดตัวหนึ่งมากกว่าอีกตัวหนึ่งเช่นกัน
+
+    <BR>
+
+    นอกจากนี้ 3D-Shaper Medical ยังระบุด้วยว่าผู้ป่วยสามารถรับการติดตามผลเพื่อกำหนดว่าการรักษาที่เลือกนั้น
+    มีผลกระทบตามที่คาดหวังต่อกระดูกเปลือกแข็งและกระดูกโปร่งจริงหรือไม่ อย่างไรก็ตาม เมื่อพิจารณาว่าข้อผิดพลาดของ
+    3D-DXA มีขนาดใหญ่กว่าการเปลี่ยนแปลงที่คาดหวัง และความสามารถในการทำซ้ำนั้นต่ำ [<a href="#ref-36">36</a>]
+    จึงไม่สามารถรับรองได้ว่าการเปลี่ยนแปลงที่เห็นในการประเมินติดตามผลด้วย 3D-DXA เกิดจากผลกระทบที่แท้จริง
+    หรือเป็นเพียงข้อผิดพลาดที่มีอยู่ใน 3D-DXA หากแพทย์เชื่อมั่นในผลลัพธ์เหล่านี้ พวกเขาอาจเขวไปสู่ความต้องการ
+    เปลี่ยนแปลงการรักษาอย่างไม่จำเป็น
+
+    <BR>
+
+    ปัจจุบันซอฟต์แวร์ 3D-Shaper ยังได้รับใบอนุญาตจาก FDA ผ่านกระบวนการแจ้งเตือนก่อนวางตลาด 510(k) [<a
+      href="#ref-68">68</a>] 3D-Shaper Medical ได้รับสิ่งนี้โดยการใช้การศึกษาค่าความสัมพันธ์ที่เปรียบเทียบพื้นที่หน้าตัด
+    (CSA),
+    โมเมนต์ความเฉื่อยของหน้าตัด (CSMI), เซกชันโมดูลัส (Z), อัตราส่วนการโก่งตัว (Buckling Ratio หรือ BR), ความหนาแน่นของ
+    แร่ธาตุในกระดูกพื้นผิวเปลือกแข็ง (sBMD), ความหนาแน่นของแร่ธาตุในกระดูกเชิงปริมาตรโปร่ง (vBMD)
+    และความหนาแน่นรวมเชิงปริมาตร
+    เข้ากับการวัดที่คล้ายกันจากซอฟต์แวร์ Hip Structural Analysis (HSA) โดยบริษัท Hologic จำกัด ซึ่งเคยได้รับใบอนุญาตจาก
+    FDA มาก่อนแล้ว
+
+    <BR>
+
+    เป็นที่น่าสังเกตว่า ความยาวแกนคอและมุมคอกระดูกต้นขาได้หายไปจากการประเมินนี้ และดังนั้นการใช้พารามิเตอร์เหล่านี้
+    จึงไม่ได้รับการอนุญาตจาก FDA ต้องระบุด้วยว่า
+    แนวทางปฏิบัติของสมาคมระหว่างประเทศสำหรับการวัดความหนาแน่นของกระดูกทางคลินิก
+    (ISCD) แนะนำว่าไม่ควรใช้พารามิเตอร์ HSA ในการประเมินความเสี่ยงของการแตกหักของสะโพก ยกเว้นความยาวแกนสะโพก [<a
+      href="#ref-69">69</a>] นอกจากนี้ การอนุมัติจากหน่วยงานกำกับดูแลนี้ไม่ได้รวมถึงค่า T-score หรือ Z-score
+    เพื่อเปรียบเทียบการวัดกับข้อมูลอ้างอิง สิ่งนี้ก่อให้เกิดข้อกังวลเกี่ยวกับการใช้งานทางคลินิกของ 3D-Shaper
+    ในสหรัฐอเมริกา
+
+    <BR>
+
+    ในที่สุด พารามิเตอร์ของ 3D-Shaper ถูกพิจารณาว่ามีความเทียบเท่าอย่างมากกับตัวเลือก HSA สำหรับเครื่องวัดความหนาแน่น
+    ของกระดูก Hologic QDR X-ray FDA ไม่สามารถยืนยันได้ว่า 3D-Shaper สามารถใช้กับเครื่องสแกน DXA อื่นๆ ได้หรือไม่
+    ทิ้งคำถามเกี่ยวกับความเข้ากันได้กับอุปกรณ์อื่นในสหรัฐอเมริกาไว้โดยที่ยังไม่มีข้อสรุป
+
+
+    <h2>บทวิจารณ์ (Discussion)</h2>
+
+    โดยสรุป 3D-DXA ผลิตพารามิเตอร์ของกระดูกที่หลากหลายซึ่งดูมีรายละเอียดสูง แต่โดยหลักแล้วสะท้อนถึง BMD เชิงพื้นที่
+    โดยรวมมากกว่าจะเป็นการวัดคุณสมบัติที่แยกจากกันของกระดูกเปลือกแข็งหรือกระดูกโปร่ง แม้ว่าซอฟต์แวร์อาจให้ผลลัพธ์ที่
+    มีความสัมพันธ์กับค่าที่แท้จริงในประชากรที่การเปลี่ยนแปลงของกระดูกเปลือกแข็งและกระดูกโปร่งเป็นสัดส่วนกับ aBMD
+    แต่มันมีข้อบกพร่องในการจับค่าการวัดเฉพาะบุคคลหรือการเปลี่ยนแปลงเฉพาะจุด ข้อจำกัดนี้มีความชัดเจนเป็นพิเศษในสถานการณ์
+    เช่น การรักษาด้วยวิธี anabolic ซึ่งพารามิเตอร์ของกระดูกเปลือกแข็งและกระดูกโปร่งอาจเปลี่ยนแปลงในทางตรงกันข้ามกัน
+    และ 3D-DXA ล้มเหลวที่จะสะท้อนการเปลี่ยนแปลงที่แท้จริงเหล่านี้ตามที่สังเกตได้จาก QCT สิ่งนี้ก่อให้เกิดข้อกังวล
+    อย่างมีนัยสำคัญต่อการใช้งานในการดูแลทางคลินิกเป็นประจำหรือการเป็นเครื่องมือวิจัยที่น่าเชื่อถือ
+
+    <BR>
+
+    เบื้องต้น 3D-DXA ถูกพัฒนาขึ้นเพื่อใช้ในการวินิจฉัยโรคกระดูกพรุนได้ดีขึ้นโดยการให้อัตราประมาณการของ vBMD รวม [<a
+      href="#ref-70">70</a>, <a href="#ref-71">71</a>] การไม่ได้พยายามประเมินส่วนแยกต่างหากของกระดูกเปลือกแข็งและ
+    กระดูกโปร่ง vBMD รวมที่ผลิตโดย 3D-DXA อาจยังแสดงถึงค่าประมาณการที่สมเหตุสมผล ระเบียบวิธีนี้ได้ถูกขยายขีดความสามารถ
+    ในภายหลังเพื่อพยายามปรับปรุงการประเมินความเสี่ยงของการแตกหักโดยการวิเคราะห์พารามิเตอร์ของโมเดลโดยตรง เนื่องจาก
+    พารามิเตอร์เหล่านี้อธิบายสัณฐานวิทยาของโมเดลทางสถิติอย่างครบถ้วน [<a href="#ref-51">51</a>, <a
+      href="#ref-72">72</a>,
+    <a href="#ref-73">73</a>, <a href="#ref-74">74</a>] อย่างไรก็ตาม ข้อจำกัดหลักของ 3D-DXA ดังที่แจกแจงไว้ใน
+    บทวิจารณ์นี้ ยังคงอยู่และบั่นทอนความแม่นยำและความน่าเชื่อถือของมัน
+
+    <BR>
+
+    งานศึกษาชิ้นนี้ถูกจำกัดโดยการขาดความโปร่งใสจากบริษัทต่างๆ ที่ทำการผลิต 3D-DXA เพื่อการค้า รวมถึง 3D-Shaper Medical,
+    DMS Imaging และ Fujifilm เป็นผลให้บทความนี้อาศัยข้อมูลที่เปิดเผยต่อสาธารณะและประสบการณ์ส่วนตัวของข้าพเจ้าใน
+    การพัฒนาระเบียบวิธีนี้ ข้าพเจ้าสนับสนุนให้ผู้อ่านขอคำชี้แจงจากบริษัทเหล่านี้หรือตัวแทนของพวกเขาเกี่ยวกับแง่มุม
+    ต่างๆ ของ 3D-DXA และ 3D-Shaper ที่ยังไม่ได้เปิดเผย
+
+    <BR>
+
+    การประเมินจากหน่วยงานวิชาชีพสามารถให้แนวทางที่มีค่าโดยการให้อิสระในการประเมินความถูกต้องของ 3D-DXA และสร้าง
+    คำแนะนำอย่างเป็นทางการเกี่ยวกับการใช้งาน แม้ว่าการอัปเดตแนวทางปฏิบัติสำหรับ dual-energy X-ray absorptiometry
+    โดยคณะทำงานระหว่างประเทศเพื่อแนวปฏิบัติที่ดีที่สุดของ DXA ระบุเกี่ยวกับ 3D-DXA ว่า "ต้องการหลักฐานเพิ่มเติมเพื่อ
+    ให้คำแนะนำสำหรับการใช้งานเทคนิคการถ่ายภาพรูปแบบใหม่เหล่านี้ในการปฏิบัติทางคลินิก" [<a href="#ref-75">75</a>]
+    ข้าพเจ้าเชื่อว่าปัจจุบันมีหลักฐานเพียงพอที่จะเป็นพื้นฐานสำหรับคำแนะนำได้
+    และข้าพเจ้าหวังว่าบททบทวนนี้จะเป็นประโยชน์ในแง่นั้น
+
+    <BR>
+
+    สรุปประเด็นคือ ด้วยข้อจำกัดพื้นฐานของ 3D-DXA การประเมินอย่างวิชาชีพของข้าพเจ้าคือ พารามิเตอร์ของกระดูกเปลือกแข็ง
+    และกระดูกโปร่งที่จัดหาโดย 3D-DXA ไม่ควรนำไปใช้เพื่อจุดประสงค์ในการวิจัย และไม่เหมาะสมที่จะนำไปประยุกต์ใช้ใน
+    งานคลินิก เช่น การวินิจฉัย การติดตามผล หรือการสนับสนุนการตัดสินใจในการรักษา
+
+
+    <h2>ส่วนร่วมของผู้เขียน (Author contributions)</h2>
+    TW มีส่วนร่วมในการกำหนดแนวคิด, การดูแลข้อมูล, การวิเคราะห์อย่างเป็นทางการ, การสืบสวน, ระเบียบวิธีวิจัย, ทรัพยากร,
+    การจัดทำภาพประกอบ และการเขียนต้นฉบับ
+
+
+    <h2>แหล่งเงินทุน (Funding)</h2>
+    ไม่มีการรับเงินทุนสำหรับงานศึกษาชิ้นนี้
+
+
+    <h2>การเข้าถึงข้อมูล (Data availability)</h2>
+    ข้อมูลทั้งหมดที่นำเสนอในบทความนี้สามารถขอได้จากผู้เขียน
+
+
+    <h2>ผลประโยชน์ทับซ้อน (Conflicts of interest)</h2>
+    ผู้เขียนเป็นผู้ร่วมประดิษฐ์สิทธิบัตรที่เกี่ยวข้องกับระเบียบวิธีซึ่งเป็นรากฐานของซอฟต์แวร์ 3D-DXA
+    ผู้เขียนได้มีส่วนร่วม
+    ในการอภิปรายเกี่ยวกับทรัพย์สินทางปัญญาและต้นกำเนิดของรหัสซอฟต์แวร์ 3D-DXA เชิงพาณิชย์, โมเดลทางสถิติ และวัสดุ
+    ส่งเสริมการขาย ผู้เขียนไม่มีส่วนเกี่ยวข้องกับ 3D-Shaper Medical หรือบริษัทอื่นๆ ที่เกี่ยวข้องกับการแสวงหาผลประโยชน์
+    เชิงพาณิชย์จาก 3D-DXA และไม่ได้รับส่วนแบ่งผู้ถือหุ้น ค่าลิขสิทธิ์ หรือค่าตอบแทนทางการเงินอื่นใด
+    ผู้เขียนเคยได้รับเชิญ
+    เป็นวิทยากรให้กับ UCB ในเวทีการศึกษา และได้รับทุนสนับสนุนการวิจัยจาก Amgen Inc. และ Lilly มุมมองที่แสดงในบทความนี้
+    เป็นมุมมองของผู้เขียนแต่เพียงผู้เดียว
+    และตั้งอยู่บนพื้นฐานของการประเมินระเบียบวิธีและหลักฐานทางวิทยาศาสตร์ที่มีอยู่อย่างวิพากษ์
 
     While the 3D-Shaper software can produce 71 measures, the clinically approved version produces only the global
     trabecular vBMD and cortical sBMD as well as an associated T-score and Z-score. It is not clear from what population
@@ -940,19 +1114,19 @@
         </thead>
         <tbody>
           <tr>
-            <td>Teriparatide [<a href="#ref-52">52</a>, <a href="#ref-56">56</a>] (18 months)</td>
+            <td>เทริพาราไทด์ (Teriparatide) [<a href="#ref-52">52</a>, <a href="#ref-56">56</a>] (18 เดือน)</td>
             <td>++ (3.3%)</td>
             <td>++/+++ (9%)</td>
             <td>+ (1.8%)</td>
           </tr>
           <tr>
-            <td>Teriparatide [<a href="#ref-15">15</a>] (24 months)</td>
+            <td>เทริพาราไทด์ (Teriparatide) [<a href="#ref-15">15</a>] (24 เดือน)</td>
             <td>= (p &gt; 0.05)</td>
             <td>++/+++ (5.9%)</td>
             <td>= (p &gt; 0.05)</td>
           </tr>
           <tr>
-            <td>Teriparatide [<a href="#ref-60">60</a>] (24 months)</td>
+            <td>เทริพาราไทด์ (Teriparatide) [<a href="#ref-60">60</a>] (24 เดือน)</td>
             <td>= (p &gt; 0.05)</td>
             <td>++/+++ (&gt;14%)</td>
             <td>= (p &gt; 0.05)</td>
@@ -1027,37 +1201,44 @@
 
     <BR>
 
-    Although the clinical version of 3D-DXA does not provide information about the cortical sBMD in the various
-    anatomical regions, it does display a color coded 3D model of the sBMD across the bone surface. 3D-Shaper Medical
-    subsequently suggests this can be used to detect local fragility [<a href="#ref-66">66</a>]. Unfortunately, 3D-DXA
-    cannot reconstruct the patient specific cortical map. I will refer again for Figure 2 for an intuitive explanation
-    for this. Thus, if a 3D-DXA cortical map suggests local deficiencies, these may be statistically plausible outputs
-    of the model, but do not correspond to the patient's actual anatomy. This again may lead to an unnecessary or
-    inappropriate treatment decision.
+    แม้ว่าซอฟต์แวร์ 3D-DXA เวอร์ชันที่ใช้ในทางคลินิกจะไม่ได้ระบุข้อมูลเกี่ยวกับ sBMD
+    ของกระดูกคอร์เทกซ์ในบริเวณทางกายวิภาคต่างๆ
+    แต่ซอฟต์แวร์จะแสดงแบบจำลอง 3 มิติที่รหัสสีค่า sBMD ทั่วพื้นผิวกระดูก 3D-Shaper Medical
+    ได้เสนอแนะเพิ่มเติมว่าสิ่งนี้สามารถใช้เพื่อตรวจหาความเปราะบางเฉพาะจุดได้ [<a href="#ref-66">66</a>] น่าเสียดายที่
+    3D-DXA ไม่สามารถสร้างแผนที่คอร์เทกซ์ที่จำเพาะสำหรับผู้ป่วยแต่ละรายได้ ผมขออ้างถึงรูปที่ 2
+    อีกครั้งเพื่อคำอธิบายที่เข้าใจง่ายสำหรับเรื่องนี้ ดังนั้น หากแผนที่คอร์เทกซ์ของ 3D-DXA บ่งชี้ถึงความพร่องเฉพาะจุด
+    สิ่งนี้อาจเป็นผลลัพธ์ของแบบจำลองที่ดูมีความเป็นไปได้ทางสถิติ แต่ไม่ตรงกับกายวิภาคศาสตร์ตามจริงของผู้ป่วย
+    ซึ่งอาจนำไปสู่การตัดสินใจรักษาที่ไม่จำเป็นหรือไม่เหมาะสมได้
 
     <BR>
 
-    The 3D-Shaper software has now also received FDA clearance through the 510(k) premarket notification process [<a
-      href="#ref-68">68</a>]. 3D-Shaper Medical obtained this using a correlation study comparing the cross-sectional
-    area (CSA), cross-sectional moment of inertia (CSMI), section modulus (Z), Buckling Ratio (BR), cortical surface
-    bone mineral density (sBMD), trabecular volumetric bone mineral density (vBMD) and integral vBMD to similar
-    measurements from the Hip Structural Analysis (HSA) software by Hologic Inc., which had previously received FDA
-    clearance.
+    ปัจจุบันซอฟต์แวร์ 3D-Shaper ยังได้รับใบอนุญาตจาก FDA ผ่านกระบวนการแจ้งเตือนก่อนวางจำหน่าย 510(k) [<a
+      href="#ref-68">68</a>] โดย 3D-Shaper Medical
+    ได้รับใบอนุญาตนี้โดยใช้การศึกษาความสัมพันธ์เพื่อเปรียบเทียบพื้นที่หน้าตัด (CSA),
+    โมเมนต์ความเฉื่อยของหน้าตัด (CSMI), มอดุรัสของหน้าตัด (Z), อัตราส่วนการโก่งตัว (Buckling Ratio - BR),
+    ความหนาแน่นของแร่ธาตุในกระดูกบริเวณพื้นผิวคอร์เทกซ์ (sBMD), ความหนาแน่นของแร่ธาตุในกระดูกทราเบคิวลาร์เชิงปริมาตร
+    (vBMD) และ
+    integral vBMD กับการวัดที่คล้ายกันจากซอฟต์แวร์ Hip Structural Analysis (HSA) โดย Hologic Inc.
+    ซึ่งเคยได้รับใบอนุญาตจาก FDA
+    มาก่อนหน้านี้
 
     <BR>
 
-    Notably, the neck axis length and neck shaft angle have remained absent from this evaluation, and thus the use of
-    these parameters is not cleared by the FDA. It should be noted that The International Society for Clinical
-    Densitometry (ISCD) guidelines recommend that HSA parameters should not be used to assess risk of hip fracture, with
-    the exception of hip axis length [<a href="#ref-69">69</a>]. Furthermore, this regulatory approval does not include
-    a T-score or Z-score to compare the measurements with reference data. This raises concerns about the clinical
-    applicability of 3D-Shaper in the United States.
+    ที่น่าสังเกตคือ ความยาวแนวแกนคอ (neck axis length) และมุมแกนคอ (neck shaft angle) ยังคงไม่อยู่ในการประเมินนี้
+    ดังนั้นการใช้พารามิเตอร์เหล่านี้จึงไม่ได้รับใบอนุญาตจาก FDA นอกจากนี้ ควรสังเกตว่าแนวทางปฏิบัติของ International
+    Society for Clinical
+    Densitometry (ISCD) แนะนำว่าไม่ควรใช้พารามิเตอร์ HSA เพื่อประเมินความเสี่ยงต่อการแตกหักของสะโพก
+    ยกเว้นความยาวแนวแกนสะโพก [<a href="#ref-69">69</a>] ยิ่งไปกว่านั้น การรับรองตามระเบียบข้อบังคับนี้ไม่รวมถึง T-score
+    หรือ Z-score
+    เพื่อเปรียบเทียบการวัดกับข้อมูลอ้างอิง สิ่งนี้ทำให้เกิดความกังวลเกี่ยวกับการประยุกต์ใช้ 3D-Shaper
+    ในทางคลินิกในสหรัฐอเมริกา
 
     <BR>
 
-    Finally, 3D-Shaper parameters were considered to be substantially equivalent to the HSA option for the Hologic QDR
-    X-ray Bone Densitometers. The FDA is not able to confirm whether 3D-Shaper can be used with other DXA scanners,
-    leaving the question of compatibility with other devices in the United States unresolved.
+    สุดท้ายนี้ พารามิเตอร์ของ 3D-Shaper ถือว่าเทียบเท่ากับตัวเลือก HSA
+    สำหรับเครื่องวัดความหนาแน่นของกระดูกด้วยรังสีเอกซ์ Hologic QDR
+    โดยพื้นฐาน อย่างไรก็ตาม FDA ไม่สามารถยืนยันได้ว่า 3D-Shaper สามารถใช้กับเครื่องสแกน DXA อื่นๆ ได้หรือไม่
+    ทำให้คำถามเรื่องความเข้ากันได้กับอุปกรณ์อื่นๆ ในสหรัฐอเมริกายังคงไม่มีคำตอบ
 
 
     <h2>การอภิปราย</h2>
@@ -1126,7 +1307,7 @@
     และอ้างอิงจากการประเมินระเบียบวิธีและหลักฐานทางวิทยาศาสตร์ที่มีอยู่อย่างถี่ถ้วน
 
 
-    <h2>References</h2>
+    <h2>เอกสารอ้างอิง</h2>
     <ol>
 
       <li id="ref-1">Whitmarsh T (2012). <a href="http://hdl.handle.net/10803/94492" target="_blank"><i>3D

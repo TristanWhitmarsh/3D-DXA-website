@@ -289,7 +289,12 @@
 
         <BR>
 
-        ... (Bahagian teknikal diterjemahkan dengan teliti) ...
+        Dalam model ketumpatan statistik ini, parameter model tunggal—komponen utama pertama—yang merangkumi sebahagian
+        besar (87% dalam femur proksimal) variasi dalam ketumpatan tulang merentas keseluruhan model (<a
+            href="#fig:ShapeDensityModel">Rajah 3</a>) [<a href="#ref-3">3</a>]. Parameter ini berkaitan secara langsung
+        dengan ketumpatan keseluruhan: meningkatkan nilainya membawa kepada peningkatan serentak dan berkadar dalam
+        semua nilai ketumpatan dan parameter kortikal di seluruh femur (<a href="#fig:density_model">Rajah 4</a>) [<a
+            href="#ref-7">7</a>].
 
         <figure id="fig:ShapeDensityModel">
             <img src="/Figure3.jpg"
@@ -360,12 +365,193 @@
         ketumpatan keseluruhan, dan dengan itu, pada parameter model pertama. Akibatnya, parameter kortikal dan
         trabekular secara inheren berkorelasi.
 
-        <h2>Kaedah pengesahan</h2>
         Walaupun terdapat batasan wujud 3D-DXA, banyak penerbitan melaporkan penemuan positif mengenai ketepatannya.
         Percanggahan ini boleh dikaitkan dengan penggunaan kaedah pengesahan yang tidak sesuai.
 
+        <h3>Metrik penilaian prestasi yang salah</h3>
+        3D-Shaper Medical membandingkan mesh permukaan yang dihasilkan oleh 3D-DXA daripada imej DXA dengan mesh
+        permukaan yang dihasilkan secara manual daripada imbasan QCT subjek yang sama, menghasilkan jarak purata
+        titik-ke-permukaan sebanyak 0.93 mm [<a href="#ref-2">2</a>]. Mereka juga membandingkan parameter kortikal,
+        mendapati ralat mutlak purata sebanyak 0.33 mm untuk ketebalan kortikal dan 72 mg/cm³ untuk ketumpatan kortikal.
+        Walau bahawasanya, tiada rangka rujukan untuk menentukan sama ada ralat yang dilaporkan ini boleh diterima, yang
+        bermaksud metrik ini tidak semestinya mengesahkan keberkesanan perisian tersebut.
+
+        <BR>
+
+        Satu lagi cara di mana 3D-DXA dinilai adalah melalui penggunaan korelasi. Pekali korelasi masing-masing sebanyak
+        0.86, 0.93, 0.95 dan 0.91 dilaporkan untuk vBMD trabekular, kortikal, dan integral, serta ketebalan kortikal.
+        Walau bagaimanapun, korelasi yang kuat ini terutamanya disebabkan oleh fakta bahawa semua parameter kortikal
+        dalam kedua-dua model 3D-DXA dan imbasan QCT berkorelasi kuat dengan ketumpatan keseluruhan. Pesakit dengan aBMD
+        yang lebih tinggi daripada purata dalam imbasan DXA mereka akan, secara purata, juga menunjukkan peningkatan
+        vBMD trabekular, kortikal, dan integral, bersama-sama dengan korteks yang lebih tebal. Keputusan korelasi ini
+        tidak memberikan bukti konklusif tentang ketepatan perisian dalam menghasilkan pembinaan semula khusus pesakit
+        dan, malah, mungkin mencipta gambaran yang mengelirukan tentang prestasinya.
+
+        <BR>
+
+        Korelasi juga digunakan untuk menilai kajian berasaskan populasi menggunakan 3D-DXA. Kesan yang sama dapat
+        dilihat apabila analisis 3D-DXA menunjukkan korelasi yang signifikan antara parameternya dan faktor yang diuji
+        atau merentas populasi yang berbeza. Ini sekali lagi kerana parameter ini secara inheren berkorelasi dengan BMD
+        keseluruhan dan dengan itu mencerminkan secara langsung perubahan atau perbezaan dalam aBMD. Penemuan mungkin
+        kelihatan munasabah dan boleh mencerminkan perubahan sebenar dengan teliti. Sebagai contoh, senaman meningkatkan
+        ketumpatan keseluruhan dan kandungan mineral tulang kortikal [<a href="#ref-49">49</a>], membawa kepada
+        keputusan yang nampaknya munasabah daripada analisis 3D-DXA apabila aBMD meningkat disebabkan oleh senaman.
+        Walau bagaimanapun, ini tidak mencerminkan parameter kortikal sebenar itu sendiri, tetapi hanyalah perubahan
+        atau perbezaan asas dalam aBMD. Oleh itu, kajian-kajian ini boleh mencipta gambaran yang mengelirukan tentang
+        keberkesanan 3D-DXA, memberikan rasa palsu tentang keupayaannya untuk mengukur parameter kortikal secara tepat.
+
+        <BR>
+
+        Penilaian yang lebih sesuai akan melibatkan perbandingan parameter kortikal dengan model garis dasar asas,
+        seperti penganggar buta (blind estimator). Di sini penganggar buta merujuk kepada kaedah anggaran yang mudah dan
+        naif yang tidak mengambil kira kebolehubahan individu dan sebaliknya menggunakan nilai purata daripada
+        keseluruhan populasi kepada semua subjek. Sebagai contoh, penganggar buta untuk ketebalan kortikal akan
+        menggunakan peta ketebalan kortikal purata daripada sekumpulan individu dan menerapkannya secara seragam pada
+        setiap kes, tanpa mengira ciri-ciri khusus mereka. Pendekatan ini berfungsi sebagai garis dasar, atau piawaian
+        minimum, yang mana kaedah yang lebih maju harus dinilai. Sebarang kaedah canggih sekurang-kurangnya harus
+        mengatasi anggaran asas ini. Setakat pengetahuan saya, penilaian sedemikian belum lagi diterbitkan.
+
+        <BR>
+
+        Kebanyakan penerbitan mengenai perisian 3D-DXA hanya mempamerkan pembinaan semula yang berjaya, yang boleh
+        mewujudkan rasa yakin palsu terhadap kebolehpercayaan perisian tersebut. Untuk menilai kebolehpercayaan 3D-DXA
+        secara kuantitatif, penilaian kadar kegagalan boleh dilakukan. Dalam satu kajian terdahulu [<a
+            href="#ref-51">51</a>], walaupun tidak dinyatakan secara nyata, hanya 80 daripada 173 subjek yang dikekalkan
+        selepas mengecualikan pembinaan semula yang dikenal pasti sebagai tidak tepat melalui perbandingan unjuran model
+        dengan imej DXA, menghasilkan kadar kegagalan melebihi 50%. Untuk membolehkan penilaian sedemikian, 3D-Shaper
+        perlu menyediakan paparan sebelah-menyebelah unjuran model dan imej DXA. Penilaian yang lebih mantap,
+        bagaimanapun, akan membandingkan rendering dan pandangan keratan rentas isipadu yang dihasilkan dengan imbasan
+        QCT kebenaran asas (ground-truth) dan menilai kadar kegagalan dalam penilaian bebas.
+
+        <BR>
+
+        Dalam beberapa kes, sekadar memerhati perubahan atau perbezaan yang signifikan dibentangkan sebagai bukti bahawa
+        3D-DXA berfungsi, sambil mengabaikan sama ada kesan sebenar adalah betul. Dalam maklum balas kepada surat saya
+        kepada editor, perbezaan signifikan antara kumpulan rawatan dibentangkan sebagai bukti keberkesanan 3D-DXA.
+        Walau bagaimanapun, dalam penilaian ini, penulis memberikan 2 keputusan yang berbeza untuk perubahan BMD
+        kortikal selepas rawatan TPTD, satu menunjukkan peningkatan yang signifikan [<a href="#ref-52">52</a>] und satu
+        lagi penurunan yang tidak signifikan [<a href="#ref-15">15</a>]. Tiada satu pun daripada ini mencerminkan
+        perubahan sebenar yang dijangkakan dalam rawatan TPTD, seperti yang saya terangkan dalam Bahagian “Keputusan
+        yang mengelirukan dalam kajian keberkesanan ubat”.
+
+        <h3>Ketiadaan pembetulan perbandingan berganda</h3>
+        Kebimbangan dalam bahagian ini bukan terutamanya berkaitan dengan perisian 3D-DXA itu sendiri, tetapi lebih
+        kepada perkhidmatan yang disediakan oleh 3D-Shaper Medical dan penerbitan seterusnya. Isu kritikal terletak pada
+        kekurangan pembetulan perbandingan berganda apabila melaporkan perubahan atau perbezaan dalam parameter 3D-DXA,
+        terutamanya dalam peta parameter kortikal.
+
+        <BR>
+
+        Mengaplikasikan pembetulan perbandingan berganda adalah sangat penting apabila menganalisis data dengan pelbagai
+        ukuran yang berbeza. Untuk 3D-Shaper, perisian menjana 71 parameter tulang, dengan setiap satu mewakili ujian
+        statistik yang berasingan. Tanpa melaraskan perbandingan berganda ini, seperti dengan pembetulan Bonferroni,
+        kemungkinan untuk memperoleh keputusan yang signifikan secara kebetulan meningkat, membawa kepada kesimpulan
+        yang salah. Walau bagaimanapun, kajian yang menggunakan 3D-Shaper sering melaporkan perubahan atau perbezaan
+        signifikan tanpa menggunakan sebarang bentuk pembetulan perbandingan berganda [<a href="#ref-10">10</a>, <a
+            href="#ref-24">24</a>, <a href="#ref-27">27</a>, <a href="#ref-28">28</a>], mewujudkan rasa yakin yang tidak
+        wajar terhadap keputusan tersebut. Ini boleh mengelirukan apabila parameter tertentu diukur tetapi tidak
+        dilaporkan, satu bentuk bias p-hacking [<a href="#ref-53">53</a>], di mana keputusan signifikan diserlahkan
+        sambil mengabaikan peningkatan risiko positif palsu (false positives) disebabkan oleh jumlah ujian yang besar
+        yang dijalankan.
+
+        <BR>
+
+        Isu yang sama berlaku apabila kajian menggunakan 3D-Shaper membentangkan peta kod warna yang menunjukkan
+        perubahan atau perbezaan dalam parameter kortikal pada permukaan tulang atau nilai BMD dalam isipadu. Dalam kes
+        ini, setiap verteks atau voksel mewakili ujian statistik individu, dengan kepentingan sering ditentukan oleh
+        ujian-t mudah pada setiap titik [<a href="#ref-9">9</a>, <a href="#ref-10">10</a>, <a href="#ref-11">11</a>, <a
+            href="#ref-12">12</a>, <a href="#ref-13">13</a>, <a href="#ref-28">28</a>, <a href="#ref-52">52</a>, <a
+            href="#ref-54">54</a>, <a href="#ref-55">55</a>]. Pendekatan ini menyerlahkan kawasan yang nampaknya
+        signifikan dalam peta kod warna, mewujudkan ilusi perubahan atau perbezaan setempat di mana sebenarnya tiada.
+        Apabila membentangkan perubahan atau perbezaan dalam isipadu melalui pandangan keratan rentas berkod warna,
+        kepentingan statistik pada tahap voksel secara amnya tidak disediakan langsung [<a href="#ref-9">9</a>, <a
+            href="#ref-11">11</a>, <a href="#ref-30">30</a>, <a href="#ref-52">52</a>, <a href="#ref-54">54</a>, <a
+            href="#ref-55">55</a>, <a href="#ref-56">56</a>]. Cara ini mencadangkan perubahan sebenar padahal, pada
+        hakikatnya, ia mungkin sekadar hasil daripada variasi rawak. Akibatnya, peta kod warna ini boleh memberikan
+        gambaran yang terlalu optimistik tentang kesan rawatan atau intervensi, secara palsu mencadangkan keberkesanan
+        di mana mungkin tiada.
+
+        <BR>
+
+        Isu positif palsu disebabkan oleh pembetulan perbandingan berganda yang tidak mencukupi telah menjadi cabaran
+        berterusan dalam bidang neuroimejan [<a href="#ref-57">57</a>]. Untuk menangani perkara ini, komuniti
+        neuroimejan telah membangunkan penyelesaian yang juga boleh digunakan untuk kajian yang meneliti perubahan
+        tulang kortikal pada permukaan tulang dan perubahan ketumpatan dalam voksel imbasan QCT. Poole et al. [<a
+            href="#ref-58">58</a>] menerangkan cara SurfStat (http://math.mccgill.ca/keith/surfstat/) boleh digunakan
+        untuk menguji sama ada perbezaan dalam parameter kortikal pada setiap titik pada permukaan tulang adalah
+        signifikan secara statistik, dengan teori medan rawak digunakan untuk pembetulan perbandingan berganda. Pakej
+        serupa wujud untuk analisis berasaskan voksel, seperti perpustakaan Statistical Parametric Mapping
+        (https://www.fil.ion.ucl.ac.uk/spm/) dan FMRIB Software Library (https://fsl.fmrib.ox.ac.uk). Penggunaan alatan
+        ini akan meningkatkan ketegasan statistik kajian yang menggunakan 3D-DXA, walaupun perubahan atau perbezaan yang
+        diperhatikan masih sebahagian besarnya mencerminkan korelasi semua parameter dengan aBMD.
+
         <h3>Implikasi</h3>
         Penggunaan 3D-DXA mempunyai implikasi yang luas dalam penyelidikan dan amalan klinikal.
+
+        <h3>Keputusan yang mengelirukan dalam kajian keberkesanan ubat</h3>
+        Dalam kebanyakan kajian, keputusan 3D-DXA selaras dengan apa yang dijangkakan dalam korteks, kerana parameter
+        kortikal pada individu yang sihat biasanya berkorelasi dengan aBMD. Ini sering membawa kepada keputusan yang
+        nampaknya munasabah. Walau bagaimanapun, pendekatan ini menjadi cacat apabila perubahan tidak mengikut corak
+        konvensional. Kaedah ini amat bermasalah dalam ujian ubat di mana pemodelan dan pembentukan semula tulang yang
+        normal diubah, dan peningkatan atau penurunan berkadar biasa dalam semua parameter mungkin tidak berlaku.
+
+        <BR>
+
+        Contoh ilustrasi ialah kajian tentang teriparatide, di mana 3D-DXA menunjukkan peningkatan dalam semua parameter
+        kortikal, termasuk peningkatan signifikan dalam vBMD kortikal berbanding plasebo [<a href="#ref-52">52</a>].
+        Sebaliknya, menggunakan teknik pengukuran kortikal yang setara yang digunakan pada QCT, BMD kortikal ditunjukkan
+        menurun secara signifikan berikutan rawatan teriparatide selama 18 bulan yang sama, yang dilihat secara
+        konsisten dalam data daripada tiga ujian klinikal yang berbeza [<a href="#ref-41">41</a>]. Penurunan ini
+        dikaitkan dengan peningkatan kadar pembentukan semula, yang menghasilkan keliangan kortikal (cortical porosity)
+        yang lebih besar, seperti yang juga diperhatikan menggunakan micro-CT [<a href="#ref-59">59</a>].
+
+        <BR>
+
+        Dalam kajian terdahulu, 3D-Shaper Medical melaporkan penurunan dalam BMD kortikal sebagai tindak balas kepada
+        teriparatide [<a href="#ref-15">15</a>]. Walaupun ini dicatatkan oleh penulis sebagai penurunan, perubahan itu
+        tidak signifikan secara statistik. Satu kajian bebas yang lebih baru juga mendapati tiada perubahan signifikan
+        dalam BMD kortikal sebagai tindak balas kepada rawatan teriparatide menggunakan analisis 3D-DXA [<a
+            href="#ref-60">60</a>]. Berkemungkinan terdapat kesan daripada korteks syaf, yang sebahagiannya kelihatan
+        dalam imej DXA. Disebabkan sifat 3D-DXA, penurunan aBMD di kawasan ini mungkin telah dipancarkan ke seluruh
+        model femur, termasuk kawasan di mana tiada korteks kelihatan, memandangkan parameter model mempengaruhi taburan
+        ketumpatan secara global. Walau bagaimanapun, ini tidak membawa kepada penurunan signifikan yang betul dalam BMD
+        kortikal seperti yang diperhatikan dalam kajian QCT.
+
+        <BR>
+
+        Kajian yang melaporkan peningkatan dalam semua parameter kortikal dengan teriparatide (TPTD) juga menilai
+        abaloparatide secara selari, menunjukkan peningkatan yang lebih besar dalam semua parameter untuk abaloparatide
+        [<a href="#ref-52">52</a>]. Kajian susulan menggunakan analisis 3D-DXA juga melaporkan peningkatan signifikan
+        dalam BMD kortikal selepas rawatan abaloparatide [<a href="#ref-55">55</a>, <a href="#ref-56">56</a>].
+        Memandangkan abaloparatide berkongsi mekanisme tindakan yang serupa dengan TPTD, meningkatkan kadar pembentukan
+        semula tulang, seseorang secara munasabah menjangkakan ia juga akan membawa kepada penurunan dalam BMD kortikal.
+        Malah, satu kajian menggunakan QCT memerhatikan penurunan dalam BMD kortikal berikutan tempoh rawatan
+        abaloparatide yang sama dalam 35 pesakit [<a href="#ref-61">61</a>], walaupun pengurangan itu tidak signifikan
+        secara statistik. Ini mencadangkan bahawa kajian 3D-DXA bukan sahaja menghasilkan perubahan yang tidak tepat
+        tetapi juga berkemungkinan menghasilkan penilaian yang terlalu menggalakkan terhadap kesan abaloparatide.
+
+        <BR>
+
+        Satu kajian oleh Lewiecki et al. [<a href="#ref-54">54</a>] seterusnya menggambarkan had 3D-DXA dalam mengukur
+        perubahan kortikal yang tidak seiring. Analisis 3D-DXA mereka melaporkan peningkatan dalam semua parameter
+        kortikal sebagai tindak balas kepada romosozumab. Sebaliknya, analisis QCT terdahulu mendapati tiada peningkatan
+        dalam BMD kortikal berikutan rawatan yang sama [<a href="#ref-62">62</a>]. Penulis mencatatkan: “Adalah tidak
+        jelas mengapa data yang diperoleh oleh QCT dan 3D-SHAPER berasaskan DXA untuk rawatan romosozumab pada vBMD
+        integral dan trabekular pinggul adalah serupa merentas kajian tetapi berbeza untuk vBMD kortikal.” Memandangkan
+        surat kepada editor Bone yang dilihat oleh beberapa penulis yang sama telah pun menjelaskan dan meramalkan
+        perbezaan ini [<a href="#ref-7">7</a>], nampaknya masih wujud salah faham mengenai keupayaan dan had 3D-DXA.
+        Akibatnya, salah faham ini berkemungkinan sekali lagi membawa kepada penilaian yang terlalu optimistik terhadap
+        keberkesanan ubat tersebut.
+
+        <BR>
+
+        Kajian-kajian ini seterusnya menyebarkan keputusan yang berpotensi tidak betul dengan membentangkan peta warna
+        perubahan tulang kortikal dan trabekular. 3D-DXA tidak boleh mengukur perubahan setempat atau fokal,
+        sebahagiannya kerana setiap parameter model mempengaruhi taburan ketumpatan secara global, dan juga kerana
+        perubahan ini tidak kelihatan pada imej DXA. Kegagalan untuk mengaplikasikan pembetulan perbandingan berganda
+        dalam kajian-kajian ini seterusnya menjejaskan keputusan, kerana kawasan yang nampaknya signifikan dalam peta
+        sebenarnya adalah jauh kurang signifikan, membawa kepada penilaian yang terlalu optimistik terhadap pelbagai
+        ubat.
 
         <h2>Pengurusan Pesakit</h2>
         Walaupun perisian 3D-Shaper boleh menghasilkan 71 ukuran, versi yang diluluskan secara klinikal hanya
@@ -457,19 +643,19 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Teriparatide [<a href="#ref-52">52</a>, <a href="#ref-56">56</a>] (18 months)</td>
+                        <td>Teriparatide [<a href="#ref-52">52</a>, <a href="#ref-56">56</a>] (18 bulan)</td>
                         <td>++ (3.3%)</td>
                         <td>++/+++ (9%)</td>
                         <td>+ (1.8%)</td>
                     </tr>
                     <tr>
-                        <td>Teriparatide [<a href="#ref-15">15</a>] (24 months)</td>
+                        <td>Teriparatide [<a href="#ref-15">15</a>] (24 bulan)</td>
                         <td>= (p &gt; 0.05)</td>
                         <td>++/+++ (5.9%)</td>
                         <td>= (p &gt; 0.05)</td>
                     </tr>
                     <tr>
-                        <td>Teriparatide [<a href="#ref-60">60</a>] (24 months)</td>
+                        <td>Teriparatide [<a href="#ref-60">60</a>] (24 bulan)</td>
                         <td>= (p &gt; 0.05)</td>
                         <td>++/+++ (&gt;14%)</td>
                         <td>= (p &gt; 0.05)</td>

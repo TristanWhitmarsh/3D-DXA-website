@@ -111,20 +111,25 @@
 
         /* language switcher */
         .lang-switcher {
-            display: flex;
-            gap: .75rem;
-            padding: .75rem 1rem;
-            flex-wrap: wrap;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1000;
         }
 
-        .lang-switcher a {
-            text-decoration: none;
-            padding: .25rem .5rem;
-            border-radius: .5rem;
+        .lang-switcher select {
+            padding: 0.4rem 0.6rem;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background-color: white;
+            font-family: inherit;
+            font-size: 0.9rem;
+            cursor: pointer;
+            outline: none;
         }
 
-        .lang-switcher a.active {
-            outline: 1px solid currentColor;
+        .lang-switcher select:hover {
+            border-color: #888;
         }
     </style>
 </head>
@@ -132,7 +137,7 @@
 <body>
 
     <div class="lang-switcher">
-        <select aria-label="Language" onchange="if(this.value) location.href=this.value;">
+        <select aria-label="Language selection">
             <option value="/" lang="en">English</option>
             <option value="/nl/" lang="nl">Nederlands</option>
             <option value="/es/" lang="es">Español</option>
@@ -144,7 +149,7 @@
             <option value="/ko/" lang="ko">한국어</option>
             <option value="/hi/" lang="hi">हिन्दी</option>
             <option value="/ja/" lang="ja">日本語</option>
-            <option value="/ms/" lang="ms" selected>Bahasa Melayu</option>
+            <option value="/ms/" lang="ms">Bahasa Melayu</option>
         </select>
     </div>
 
@@ -362,9 +367,20 @@
         <h3>Implikasi</h3>
         Penggunaan 3D-DXA mempunyai implikasi yang luas dalam penyelidikan dan amalan klinikal.
 
-        <h3>Pengurusan Pesakit</h3>
+        <h2>Pengurusan Pesakit</h2>
         Walaupun perisian 3D-Shaper boleh menghasilkan 71 ukuran, versi yang diluluskan secara klinikal hanya
-        menghasilkan vBMD trabekular global dan sBMD kortikal serta T-skor dan Z-skor yang berkaitan.
+        menghasilkan vBMD trabekular global dan sBMD kortikal serta T-skor dan Z-skor yang berkaitan. Tidak jelas
+        daripada populasi mana T- dan Z-skor diperoleh, walaupun dalam webinar oleh 3D-Shaper Medical, data rujukan
+        Kaukasia telah dinyatakan [<a href="#ref-63">63</a>]. Plot rujukan sebelum ini telah dihasilkan untuk populasi
+        Sepanyol [<a href="#ref-64">64</a>] dan Argentina [<a href="#ref-65">65</a>], yang kedua-duanya diterbitkan
+        semula dalam <a href="#fig:ReferenceData">Rajah 6</a>. Walau bagaimanapun, plot ini kelihatan berbeza antara
+        satu sama lain dan juga daripada angka yang dihasilkan oleh perisian 3D-Shaper. 3D-Shaper Medical, DMS Imaging
+        dan pengedar mereka tidak mendedahkan populasi ini, atau bagaimana data ini diperoleh. Walau bagaimanapun, ia
+        disahkan oleh Toyo Medic Co., Ltd. (Tokyo, Jepun), pengedar 3D-Shaper di Jepun, bahawa perisian 3D-Shaper yang
+        diluluskan untuk pasaran Jepun tidak menggunakan data rujukan daripada populasi Jepun. Memandangkan perbezaan
+        besar dalam parameter kortikal dan trabekular antara populasi Kaukasia dan Asia [<a href="#ref-68">68</a>],
+        penggunaan T- dan Z-skor ini di Jepun nampaknya tidak wajar tanpa pengesahan lanjut. Kesahihannya juga harus
+        disahkan untuk setiap populasi di mana ia digunakan.
 
         <figure id="fig:ReferenceData" margin:0 0 1em 1em;">
             <img src="/Figure6.jpg" alt="Data rujukan untuk populasi Sepanyol (kiri) dan Argentina (kanan).">
@@ -382,9 +398,9 @@
                 <thead>
                     <tr>
                         <th></th>
-                        <th>2D DXA (Total hip) aBMD</th>
-                        <th>3D-DXA (3D-Shaper) Trabecular vBMD</th>
-                        <th>3D-DXA (3D-Shaper) Cortical sBMD</th>
+                        <th>2D DXA (Jumlah pinggul) aBMD</th>
+                        <th>3D-DXA (3D-Shaper) vBMD Trabekular</th>
+                        <th>3D-DXA (3D-Shaper) sBMD Kortikal</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -466,9 +482,9 @@
                 <thead>
                     <tr>
                         <th>Simbol</th>
-                        <th>(Total hip) aBMD</th>
-                        <th>Trabecular vBMD</th>
-                        <th>Cortical sBMD</th>
+                        <th>(Jumlah pinggul) aBMD</th>
+                        <th>vBMD Trabekular</th>
+                        <th>sBMD Kortikal</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -519,10 +535,110 @@
 
         <BR>
 
-        Satu kajian mengenai Trabecular Bone Score (TBS) menunjukkan bahawa penilaian tambahan ini mempengaruhi
-        keputusan rawatan secara signifikan dalam osteoporosis sekunder [<a href="#ref-67">67</a>].
+        Dalam satu webinar [<a href="#ref-66">66</a>] 3D-Shaper Medical mencadangkan potensi penggunaan klinikal di mana
+        3D-Shaper menghasilkan sBMD kortikal yang rendah dan vBMD trabekular yang sangat rendah. Oleh kerana
+        teriparatide, menurut jadual, meningkatkan tulang trabekular lebih daripada tulang kortikal, teriparatide
+        dikatakan sebagai rawatan terbaik. Walau bagaimanapun, berdasarkan jadual ini, seorang doktor secara semulajadi
+        akan memilih Denosumab atau Abaloparatide berbanding teriparatide jika mengabaikan aBMD tulang belakang.
 
-        <h2>Kesimpulan</h2>
+        <BR>
+
+        3D-DXA kemungkinan besar hanya akan digunakan bersama penilaian T-skor dan Z-skor DXA biasa. Oleh itu, bahaya
+        terlepas individu berisiko tinggi adalah minimum. Walau bagaimanapun, disebabkan ralat yang berkaitan dengan
+        3D-DXA, sBMD kortikal dan vBMD trabekular akan sentiasa sedikit lebih tinggi atau lebih rendah. Pada pesakit
+        yang berada di sempadan rawatan, ini mungkin mempengaruhi doktor untuk memberikan ubat anti-osteoporosis di mana
+        ini tidak akan ditunjukkan oleh aBMD sahaja.
+
+        <BR>
+
+        Satu kajian mengenai Trabecular Bone Score (TBS) menunjukkan bahawa penilaian tambahan ini mempengaruhi
+        keputusan rawatan secara signifikan dalam osteoporosis sekunder [<a href="#ref-67">67</a>]. Dalam kajian itu,
+        21–25.5% pesakit dengan ukuran BMD yang tidak khusus mempunyai kualiti tulang yang rendah yang ditunjukkan oleh
+        TBS, yang mengubah keputusan rawatan. Kesan yang sama mungkin berlaku dengan 3D-DXA, yang berpotensi membawa
+        kepada akibat yang tidak diingini seperti preskripsi berlebihan. Jika jadual itu digunakan, ia juga mungkin
+        mempengaruhi doktor untuk memilih satu ubat berbanding yang lain.
+
+        <BR>
+
+        Ia juga dinyatakan oleh 3D-Shaper Medical bahawa pesakit boleh dipantau untuk menentukan sama ada rawatan yang
+        dipilih memang mempunyai kesan yang diharapkan pada korteks dan ruang trabekular. Walau bagaimanapun,
+        memandangkan ralat 3D-DXA adalah lebih besar daripada perubahan yang dijangkakan, dan kebolehulangan adalah
+        rendah [<a href="#ref-36">36</a>], tidak dapat dipastikan sama ada perubahan yang dilihat dalam penilaian 3D-DXA
+        susulan adalah disebabkan oleh kesan sebenar atau sekadar ralat inheren 3D-DXA. Jika doktor mempercayai
+        keputusan ini, mereka mungkin terpengaruh untuk menukar rawatan secara tidak perlu.
+
+        <BR>
+
+        Walaupun versi klinikal 3D-DXA tidak menyediakan maklumat mengenai sBMD kortikal di pelbagai kawasan anatomi, ia
+        memaparkan model 3D berkod warna sBMD merentasi permukaan tulang. 3D-Shaper Medical seterusnya mencadangkan ini
+        boleh digunakan untuk mengesan kerapuhan tempatan [<a href="#ref-66">66</a>]. Malangnya, 3D-DXA tidak dapat
+        membina semula peta kortikal khusus pesakit. Saya akan merujuk lagi kepada Rajah 2 untuk penjelasan intuitif
+        bagi perkara ini. Oleh itu, jika peta kortikal 3D-DXA mencadangkan kekurangan tempatan, ini mungkin output model
+        yang munasabah secara statistik, tetapi tidak sepadan dengan anatomi sebenar pesakit. Ini sekali lagi boleh
+        membawa kepada keputusan rawatan yang tidak perlu atau tidak sesuai.
+
+        <BR>
+
+        Perisian 3D-Shaper kini juga telah menerima pelepasan FDA melalui proses pemberitahuan pra-pasaran 510(k) [<a
+            href="#ref-68">68</a>]. 3D-Shaper Medical memperoleh ini menggunakan kajian korelasi membandingkan luas
+        keratan rentas (CSA), momen inersia keratan rentas (CSMI), modulus keratan (Z), Nisbah Buckling (BR), ketumpatan
+        mineral tulang permukaan kortikal (sBMD), ketumpatan mineral tulang volumetrik trabekular (vBMD) dan vBMD
+        integral dengan ukuran yang serupa daripada perisian Hip Structural Analysis (HSA) oleh Hologic Inc., yang
+        sebelum ini telah menerima pelepasan FDA.
+
+        <BR>
+
+        Terutamanya, panjang paksi leher dan sudut syaf leher tetap tidak ada dalam penilaian ini, dan oleh itu
+        penggunaan parameter ini tidak dilepaskan oleh FDA. Perlu diingat bahawa garis panduan International Society for
+        Clinical Densitometry (ISCD) mengesyorkan bahawa parameter HSA tidak boleh digunakan untuk menilai risiko patah
+        tulang pinggul, kecuali panjang paksi pinggul [<a href="#ref-69">69</a>]. Selain itu, kelulusan kawal selia ini
+        tidak termasuk T-skor atau Z-skor untuk membandingkan ukuran dengan data rujukan. Ini menimbulkan kebimbangan
+        mengenai kebolehgunaan klinikal 3D-Shaper di Amerika Syarikat.
+
+        <BR>
+
+        Akhir sekali, parameter 3D-Shaper dianggap sebahagian besarnya setara dengan pilihan HSA untuk Hologic QDR X-ray
+        Bone Densitometers. FDA tidak dapat mengesahkan sama ada 3D-Shaper boleh digunakan dengan pengimbas DXA lain,
+        meninggalkan persoalan keserasian dengan peranti lain di Amerika Syarikat tidak dapat diselesaikan.
+
+        <h2>Perbincangan</h2>
+
+        Secara ringkasnya, 3D-DXA menghasilkan pelbagai parameter tulang yang kelihatan sangat terperinci, tetapi
+        terutamanya mencerminkan keseluruhan BMD kawasan daripada mengukur sifat kortikal atau trabekular yang berbeza.
+        Walaupun perisian mungkin menghasilkan keputusan yang berkorelasi dengan nilai sebenar dalam populasi di mana
+        perubahan kortikal dan trabekular adalah berkadar dengan aBMD, ia kurang berjaya dalam menangkap ukuran khusus
+        pesakit atau perubahan tempatan. Had ini amat ketara dalam senario seperti terapi anabolik, di mana parameter
+        tulang kortikal dan trabekular mungkin berubah secara songsang dan 3D-DXA gagal mencerminkan perubahan sebenar
+        ini yang diperhatikan oleh QCT. Ini menimbulkan kebimbangan ketara untuk penggunaannya dalam penjagaan klinikal
+        rutin atau sebagai alat penyelidikan yang boleh dipercayai.
+
+        <BR>
+
+        3D-DXA pada asalnya dibangunkan untuk mendiagnosis osteoporosis dengan lebih baik dengan menyediakan anggaran
+        vBMD integral [<a href="#ref-70">70</a>, <a href="#ref-71">71</a>]. Dengan tidak cuba menilai secara berasingan
+        ruang kortikal dan trabekular, vBMD integral yang dihasilkan oleh 3D-DXA mungkin masih mewakili anggaran yang
+        sah. Metodologi ini kemudiannya diperluaskan untuk cuba memperbaiki anggaran risiko patah tulang dengan
+        menganalisis parameter model secara langsung, memandangkan parameter ini menerangkan sepenuhnya morfologi model
+        statistik [<a href="#ref-51">51</a>, <a href="#ref-72">72</a>, <a href="#ref-73">73</a>, <a
+            href="#ref-74">74</a>]. Walau bagaimanapun, had utama 3D-DXA, seperti yang diperincikan dalam ulasan ini,
+        tetap ada dan menjejaskan ketepatan serta kebolehpercayaannya.
+
+        <BR>
+
+        Kajian ini dihadkan oleh kekurangan ketelusan daripada syarikat yang mengkomersialkan 3D-DXA, termasuk 3D-Shaper
+        Medical, DMS Imaging, dan Fujifilm. Akibatnya, ia bergantung pada maklumat yang tersedia secara umum dan
+        pengalaman saya sendiri dalam membangunkan metodologi ini. Saya menggalakkan pembaca untuk mencari penjelasan
+        daripada syarikat-syarikat ini atau wakil mereka mengenai aspek 3D-DXA dan 3D-Shaper yang belum didedahkan.
+
+        <BR>
+
+        Penilaian daripada persatuan profesional boleh memberikan panduan berharga dengan menyediakan penilaian bebas
+        terhadap kesahihan 3D-DXA dan menetapkan cadangan rasmi mengenai penggunaannya. Walaupun kemas kini pada garis
+        panduan amalan untuk absorptiometri sinar-X tenaga ganda oleh International Working Group on DXA Best Practices
+        menyatakan mengenai 3D-DXA bahawa "lebih banyak bukti diperlukan untuk membuat cadangan bagi aplikasi teknik
+        pengimejan baharu ini dalam amalan klinikal" [<a href="#ref-75">75</a>], saya percaya kini terdapat bukti yang
+        mencukupi untuk mendasarkan cadangan padanya, dan saya berharap ulasan ini akan membantu dalam hal itu.
+
         Kesimpulannya, memandangkan had asas 3D-DXA, adalah penilaian profesional saya bahawa parameter kortikal dan
         trabekular yang disediakan oleh 3D-DXA tidak harus digunakan untuk tujuan penyelidikan, dan juga tidak sesuai
         untuk aplikasi klinikal seperti diagnosis, pemantauan, atau sokongan keputusan rawatan.
@@ -999,6 +1115,9 @@
 
     <script>
         (function () {
+            const switcher = document.querySelector('.lang-switcher select');
+            if (!switcher) return;
+
             const supported = ['en', 'nl', 'es', 'fr', 'it', 'de', 'pt', 'th', 'ko', 'hi', 'ja', 'ms'];
 
             // Split current path and detect if it starts with a locale
@@ -1010,17 +1129,18 @@
             // "rest" = everything after the locale (or the whole path if no locale)
             const rest = '/' + parts.slice(hasLocale ? 1 : 0).join('/') || '/';
 
-            document.querySelectorAll('.lang-switcher a').forEach(a => {
-                const lang = a.getAttribute('hreflang');
+            // Update select value to match current language
+            switcher.value = current === 'en' ? '/' : '/' + current + '/';
 
-                // English lives at the root, others live under /xx/
-                const base = (lang === 'en') ? '' : '/' + lang;
+            // Function to handle language change while preserving fragment
+            window.changeLang = function (val) {
+                if (!val) return;
+                const fragment = window.location.hash;
+                window.location.href = val + fragment;
+            };
 
-                // Build final href; ensure we keep the rest-of-path if you add subpages later
-                a.href = base + (rest === '/' ? '/' : rest);
-
-                if (lang === current) a.classList.add('active');
-            });
+            // We can also update the onchange in HTML or just use this one
+            switcher.setAttribute('onchange', 'changeLang(this.value)');
         })();
     </script>
 </body>

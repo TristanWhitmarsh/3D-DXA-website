@@ -110,19 +110,25 @@
     }
 
     .lang-switcher {
-      display: flex;
-      gap: .75rem;
-      padding: .75rem 1rem;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index: 1000;
     }
 
-    .lang-switcher a {
-      text-decoration: none;
-      padding: .25rem .5rem;
-      border-radius: .5rem;
+    .lang-switcher select {
+      padding: 0.4rem 0.6rem;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      background-color: white;
+      font-family: inherit;
+      font-size: 0.9rem;
+      cursor: pointer;
+      outline: none;
     }
 
-    .lang-switcher a.active {
-      outline: 1px solid currentColor;
+    .lang-switcher select:hover {
+      border-color: #888;
     }
   </style>
 </head>
@@ -130,9 +136,9 @@
 <body>
 
   <div class="lang-switcher">
-    <select aria-label="Taalkeuze" onchange="if(this.value) location.href=this.value;">
+    <select aria-label="Language selection">
       <option value="/" lang="en">English</option>
-      <option value="/nl/" lang="nl" selected>Nederlands</option>
+      <option value="/nl/" lang="nl">Nederlands</option>
       <option value="/es/" lang="es">Español</option>
       <option value="/fr/" lang="fr">Français</option>
       <option value="/it/" lang="it">Italiano</option>
@@ -692,7 +698,7 @@
         (A) Tabel uit promotiemateriaal; alleen de verwijzingen voor teriparatide zijn getoond. (B) Effecten van
         teriparatide uit 3D-DXA-studies, plus een extra studie.
         (C) Drempelwaarden waarop de symbolen zijn gebaseerd (waar beschikbaar). * De toevoeging van [<a
-          href="#ref-3">3</a>] lijkt een vergissing (geen TPTD).</figcaption>
+          href="#ref-55">55</a>] lijkt een vergissing (geen TPTD).</figcaption>
     </figure>
 
     <p>Hoewel de klinische versie geen regionale sBMD-waarden presenteert, toont zij wel een kleurgecodeerd 3D-model van
@@ -1085,6 +1091,9 @@
 
   <script>
     (function () {
+      const switcher = document.querySelector('.lang-switcher select');
+      if (!switcher) return;
+
       const supported = ['en', 'nl', 'es', 'fr', 'it', 'de', 'pt', 'th', 'ko', 'hi', 'ja', 'ms'];
 
       // Split current path and detect if it starts with a locale
@@ -1096,17 +1105,18 @@
       // "rest" = everything after the locale (or the whole path if no locale)
       const rest = '/' + parts.slice(hasLocale ? 1 : 0).join('/') || '/';
 
-      document.querySelectorAll('.lang-switcher a').forEach(a => {
-        const lang = a.getAttribute('hreflang');
+      // Update select value to match current language
+      switcher.value = current === 'en' ? '/' : '/' + current + '/';
 
-        // English lives at the root, others live under /xx/
-        const base = (lang === 'en') ? '' : '/' + lang;
+      // Function to handle language change while preserving fragment
+      window.changeLang = function (val) {
+        if (!val) return;
+        const fragment = window.location.hash;
+        window.location.href = val + fragment;
+      };
 
-        // Build final href; ensure we keep the rest-of-path if you add subpages later
-        a.href = base + (rest === '/' ? '/' : rest);
-
-        if (lang === current) a.classList.add('active');
-      });
+      // We can also update the onchange in HTML or just use this one
+      switcher.setAttribute('onchange', 'changeLang(this.value)');
     })();
   </script>
 </body>

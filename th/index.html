@@ -106,19 +106,25 @@
 
     /* language switcher */
     .lang-switcher {
-      display: flex;
-      gap: .75rem;
-      padding: .75rem 1rem;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index: 1000;
     }
 
-    .lang-switcher a {
-      text-decoration: none;
-      padding: .25rem .5rem;
-      border-radius: .5rem;
+    .lang-switcher select {
+      padding: 0.4rem 0.6rem;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      background-color: white;
+      font-family: inherit;
+      font-size: 0.9rem;
+      cursor: pointer;
+      outline: none;
     }
 
-    .lang-switcher a.active {
-      outline: 1px solid currentColor;
+    .lang-switcher select:hover {
+      border-color: #888;
     }
   </style>
 </head>
@@ -126,7 +132,7 @@
 <body>
 
   <div class="lang-switcher">
-    <select aria-label="Language" onchange="if(this.value) location.href=this.value;">
+    <select aria-label="Language selection">
       <option value="/" lang="en">English</option>
       <option value="/nl/" lang="nl">Nederlands</option>
       <option value="/es/" lang="es">Español</option>
@@ -134,7 +140,7 @@
       <option value="/it/" lang="it">Italiano</option>
       <option value="/de/" lang="de">Deutsch</option>
       <option value="/pt/" lang="pt">Português</option>
-      <option value="/th/" lang="th" selected>ไทย</option>
+      <option value="/th/" lang="th">ไทย</option>
       <option value="/ko/" lang="ko">한국어</option>
       <option value="/hi/" lang="hi">हिन्दी</option>
       <option value="/ja/" lang="ja">日本語</option>
@@ -798,14 +804,14 @@
     trabecular vBMD and cortical sBMD as well as an associated T-score and Z-score. It is not clear from what population
     the T- and Z-score are derived, although in a webinar by 3D-Shaper Medical a Caucasian reference data is noted [<a
       href="#ref-63">63</a>]. Reference plots have previously been produced for a Spanish [<a href="#ref-64">64</a>] and
-    Argentinian [<a href="#ref-65">65</a>] population, which are both reproduced in <a href="#fig:ReferenceData">Figure
-      6</a>. These plots, however, appear distinct from each other and from the figures produced by the 3D-Shaper
-    software. 3D-Shaper Medical, DMS Imaging and their distributors do not disclose this population, or how these data
-    have been derived. However, it is confirmed by Toyo Medic Co., Ltd. (Tokyo, Japan), the distributor of 3D-Shaper in
-    Japan, that the 3D-Shaper software approved for the Japanese market does not use reference data from a Japanese
-    population. Considering the large difference in cortical and trabecular parameters between Caucasian and Asian
-    populations [<a href="#ref-68">68</a>], applying these T- and Z-scores in Japan does not seem prudent without
-    further validation. Their validity should also be confirmed for every population in which they are applied.
+    ประชากรอาร์เจนตินา [<a href="#ref-65">65</a>] ซึ่งทั้งคู่แสดงซ้ำใน <a href="#fig:ReferenceData">รูปที่ 6</a>
+    อย่างไรก็ตาม แผนภูมิเหล่านี้ดูเหมือนจะแตกต่างจากกันและกัน และแตกต่างจากรูปที่สร้างโดยซอฟต์แวร์ 3D-Shaper 3D-Shaper
+    Medical, DMS Imaging และตัวแทนจำหน่ายไม่ได้เปิดเผยประชากรกลุ่มนี้หรือวิธีการได้มาของข้อมูลเหล่านี้ อย่างไรก็ตาม
+    ได้รับการยืนยันโดย Toyo Medic Co., Ltd. (โตเกียว ประเทศญี่ปุ่น) ตัวแทนจำหน่าย 3D-Shaper ในญี่ปุ่นว่าซอฟต์แวร์
+    3D-Shaper ที่ได้รับอนุมัติสำหรับตลาดญี่ปุ่นไม่ได้ใช้ข้อมูลอ้างอิงจากประชากรญี่ปุ่น
+    เมื่อพิจารณาถึงความแตกต่างอย่างมากในพารามิเตอร์คอร์เทกซ์และทราเบคิวลาร์ระหว่างประชากรคอเคเชียนและเอเชีย [<a
+      href="#ref-68">68</a>] การใช้ T-score และ Z-score เหล่านี้ในญี่ปุ่นจึงดูไม่รอบคอบนักหากไม่มีการตรวจสอบเพิ่มเติม
+    ความถูกต้องของข้อมูลเหล่านี้ควรได้รับการยืนยันสำหรับทุกประชากรที่มีการนำไปใช้ด้วยเช่นกัน
 
 
     <figure id="fig:ReferenceData" margin:0 0 1em 1em;">
@@ -818,34 +824,35 @@
     </figure>
 
 
-    While the 3D-Shaper or commercial 3D-DXA software does not provide a treatment decision automatically, promotional
-    material suggest the use of a table to aid the clinician in deciding on a treatment following a 3D-DXA analysis.
-    This table, which was reproduced in Table 1, provides, for various treatment types,
-    symbols (-, =, +, ++, +++) to represent how the treatment affects the trabecular vBMD or cortical sBMD. The symbols
-    are based on thresholds, which, where available, are provided in Table 3. Although the
-    threshold values are rather arbitrary or not specified, the table may be largely correct from knowledge on QCT
-    studies. However, these data are said to have been derived from the 3D-DXA studies with references added to the
-    various treatment types. Since 3D-DXA has particular issues when the cortical parameters do not change in line with
-    the overall density, such as with a teriparatide treatment, I would like to highlight the provided effects from this
-    drug. I have provided the symbols for each of the references provided by 3D-Shaper Medical, as well as a different
-    study that was not mentioned, in Table 2. They are quite varied and different from the
-    symbols 3D-Shaper Medical provided in the table. It is, therefore, not clear how the symbols were derived, which
-    puts into question their validity when using in conjunction with a 3D-DXA analysis.
+    แม้ว่าซอฟต์แวร์ 3D-Shaper หรือ 3D-DXA เชิงพาณิชย์จะไม่ได้ให้การตัดสินใจรักษาโดยอัตโนมัติ
+    แต่ข้อมูลสื่อประชาสัมพันธ์แนะนำให้ใช้ตารางเพื่อช่วยแพทย์ในการตัดสินใจเลือกวิธีรักษาหลังจากการวิเคราะห์ 3D-DXA
+    ตารางนี้ซึ่งแสดงซ้ำในตารางที่ 1 ให้สัญลักษณ์ (-, =, +, ++, +++) สำหรับประเภทการรักษาต่างๆ
+    เพื่อแสดงว่าการรักษานั้นส่งผลต่อ vBMD ของกระดูกทราเบคิวลาร์ หรือ sBMD ของกระดูกคอร์เทกซ์อย่างไร
+    สัญลักษณ์เหล่านี้อ้างอิงตามเกณฑ์ซึ่งแสดงไว้ในตารางที่ 3 (หากมีข้อมูล)
+    แม้ว่าค่าเกณฑ์จะดูค่อนข้างตามอำเภอใจหรือไม่ระบุแน่ชัด แต่ตารางนี้อาจมีความถูกต้องเป็นส่วนใหญ่จากความรู้ในการศึกษา
+    QCT อย่างไรก็ตาม ข้อมูลเหล่านี้กล่าวว่าได้มาจากการศึกษา 3D-DXA โดยมีการเพิ่มข้อมูลอ้างอิงสำหรับประเภทการรักษาต่างๆ
+    เนื่องจาก 3D-DXA มีปัญหาเฉพาะเมื่อพารามิเตอร์คอร์เทกซ์ไม่เปลี่ยนแปลงไปในทิศทางเดียวกับความหนาแน่นโดยรวม เช่น
+    กรณีการรักษาด้วยเทริพาราไทด์ (teriparatide) ผมจึงขอเน้นย้ำถึงผลกระทบที่ระบุไว้สำหรับยานี้
+    ผมได้แสดงสัญลักษณ์สำหรับข้อมูลอ้างอิงแต่ละรายการที่ 3D-Shaper Medical ให้มา รวมถึงการศึกษาอื่นๆ
+    ที่ไม่ได้ระบุไว้ในตารางที่ 2 ซึ่งมีความหลากหลายมากและแตกต่างจากสัญลักษณ์ที่ 3D-Shaper Medical ระบุไว้ในตาราง
+    ดังนั้นจึงไม่ชัดเจนว่าสัญลักษณ์เหล่านี้ได้มาอย่างไร
+    ซึ่งทำให้เกิดข้อสงสัยเกี่ยวกับความถูกต้องเมื่อใช้ร่วมกับการวิเคราะห์ 3D-DXA
 
     <BR>
 
-    In a webinar [<a href="#ref-66">66</a>] 3D-Shaper Medical suggested a potential clinical use where 3D-Shaper
-    resulted in a low cortical sBMD and very low trabecular vBMD. Since teriparatide, according to the table, improves
-    the trabecular bone more than the cortical bone, teriparatide was said to be the best treatment. However, based on
-    this table, a clinician would naturally choose Denosumab or Abaloparatide over teribaratide if neglecting the
-    vertebral aBMD.
+    ในการสัมมนาผ่านเว็บ [<a href="#ref-66">66</a>] 3D-Shaper Medical ได้เสนอแนะการใช้งานทางคลินิกที่อาจเกิดขึ้น โดยที่
+    3D-Shaper ให้ผลลัพธ์เป็น sBMD ของคอร์เทกซ์ต่ำและ vBMD ของทราเบคิวลาร์ต่ำมาก เนื่องจากเทริพาราไทด์ตามตาราง
+    ระบุว่าช่วยปรับปรุงกระดูกทราเบคิวลาร์ได้ดีกว่ากระดูกคอร์เทกซ์ จึงมีการกล่าวว่าเทริพาราไทด์เป็นการรักษาที่ดีที่สุด
+    อย่างไรก็ตาม ตามตารางนี้ แพทย์จะเลือกใช้ Denosumab หรือ Abaloparatide
+    มากกว่าเทริพาราไทด์โดยธรรมชาติหากไม่ได้คำนึงถึง aBMD ของกระดูกสันหลัง
 
     <BR>
 
-    3D-DXA will likely only be used alongside regular DXA T-score and Z-score assessments. Thus, the danger of missing a
-    high risk individual will be minimum. However, due to the error associated with 3D-DXA, the cortical sBMD and
-    trabecular vBMD will always be slightly higher or lower. In patients on the border of treatment this may sway the
-    clinician to give anti-osteoporosis drugs where this would not be indicated by aBMD alone.
+    3D-DXA มักจะถูกใช้ร่วมกับการประเมิน T-score และ Z-score ของ DXA ปกติเท่านั้น
+    ดังนั้นอันตรายจากการพลาดบุคคลที่มีความเสี่ยงสูงจึงจะมีน้อยมาก อย่างไรก็ตาม เนื่องจากข้อผิดพลาดที่เกี่ยวข้องกับ
+    3D-DXA ค่า sBMD ของคอร์เทกซ์และ vBMD ของทราเบคิวลาร์จะสูงหรือต่ำกว่าความเป็นจริงเล็กน้อยเสมอ
+    ในผู้ป่วยที่มีค่าอยู่ในเกณฑ์ก้ำกึ่งในการรักษา สิ่งนี้อาจโน้มน้าวให้แพทย์สั่งยาต้านโรคกระดูกพรุนในกรณีที่ aBMD
+    เพียงอย่างเดียวไม่ได้ระบุว่าจำเป็นต้องใช้
 
     <BR>
 
@@ -858,11 +865,12 @@
 
     <BR>
 
-    It is also stated by 3D-Shaper Medical that patients can be monitored to determine whether the selected treatment
-    does indeed have the expected effect on the cortex and trabecular compartment. However, considering that errors of
-    3D-DXA are greater than expected changes, and that repeatability is low [<a href="#ref-36">36</a>], it cannot be
-    ascertained whether changes seen in a follow-up 3D-DXA assessment are due to real effects or merely the inherent
-    error of 3D-DXA. If a clinician trusts these results, they may be swayed to unnecessarily change the treatment.
+    นอกจากนี้ 3D-Shaper Medical
+    ยังระบุด้วยว่าสามารถติดตามอาการผู้ป่วยเพื่อพิจารณาว่าการรักษาที่เลือกส่งผลต่อชั้นคอร์เทกซ์และทราเบคิวลาร์ตามที่คาดไว้หรือไม่
+    อย่างไรก็ตาม เมื่อพิจารณาว่าข้อผิดพลาดของ 3D-DXA นั้นมากกว่าการเปลี่ยนแปลงที่คาดไว้ และความสามารถในการวัดซ้ำนั้นต่ำ
+    [<a href="#ref-36">36</a>] จึงไม่สามารถยืนยันได้ว่าการเปลี่ยนแปลงที่เห็นในการประเมิน 3D-DXA
+    ติดตามผลนั้นเกิดจากผลลัพธ์ที่เกิดขึ้นจริงหรือเพียงแค่ข้อผิดพลาดในตัวของ 3D-DXA หากแพทย์เชื่อมั่นในผลลัพธ์เหล่านี้
+    ก็อาจถูกโน้มน้าวให้เปลี่ยนการรักษาโดยไม่จำเป็น
 
 
 
@@ -874,9 +882,9 @@
         <thead>
           <tr>
             <th></th>
-            <th>2D DXA (Total hip) aBMD</th>
-            <th>3D-DXA (3D-Shaper) Trabecular vBMD</th>
-            <th>3D-DXA (3D-Shaper) Cortical sBMD</th>
+            <th>2D DXA (กระดูกสะโพกโดยรวม) aBMD</th>
+            <th>3D-DXA (3D-Shaper) vBMD ของกระดูกทราเบคิวลาร์</th>
+            <th>3D-DXA (3D-Shaper) sBMD ของกระดูกคอร์เทกซ์</th>
           </tr>
         </thead>
         <tbody>
@@ -899,8 +907,8 @@
             <td>++</td>
           </tr>
           <tr>
-            <td>Teriparatide [<a href="#ref-3">3</a>, <a href="#ref-4">4</a>, <a href="#ref-5">5</a>, <a
-                href="#ref-6">6</a>]*</td>
+            <td>เทริพาราไทด์ (Teriparatide) [<a href="#ref-15">15</a>, <a href="#ref-52">52</a>, <a
+                href="#ref-55">55</a>*, <a href="#ref-56">56</a>]</td>
             <td>+</td>
             <td>++</td>
             <td>=</td>
@@ -932,19 +940,19 @@
         </thead>
         <tbody>
           <tr>
-            <td>Teriparatide [<a href="#ref-4">4</a>, <a href="#ref-5">5</a>] (18 months)</td>
+            <td>Teriparatide [<a href="#ref-52">52</a>, <a href="#ref-56">56</a>] (18 months)</td>
             <td>++ (3.3%)</td>
             <td>++/+++ (9%)</td>
             <td>+ (1.8%)</td>
           </tr>
           <tr>
-            <td>Teriparatide [<a href="#ref-6">6</a>] (24 months)</td>
+            <td>Teriparatide [<a href="#ref-15">15</a>] (24 months)</td>
             <td>= (p &gt; 0.05)</td>
             <td>++/+++ (5.9%)</td>
             <td>= (p &gt; 0.05)</td>
           </tr>
           <tr>
-            <td>Teriparatide [<a href="#ref-7">7</a>] (24 months)</td>
+            <td>Teriparatide [<a href="#ref-60">60</a>] (24 months)</td>
             <td>= (p &gt; 0.05)</td>
             <td>++/+++ (&gt;14%)</td>
             <td>= (p &gt; 0.05)</td>
@@ -956,10 +964,10 @@
       <table>
         <thead>
           <tr>
-            <th>Symbol</th>
-            <th>(Total hip) aBMD</th>
-            <th>Trabecular vBMD</th>
-            <th>Cortical sBMD</th>
+            <th>สัญลักษณ์</th>
+            <th>(กระดูกสะโพกโดยรวม) aBMD</th>
+            <th>vBMD ของกระดูกทราเบคิวลาร์</th>
+            <th>sBMD ของกระดูกคอร์เทกซ์</th>
           </tr>
         </thead>
         <tbody>
@@ -1001,14 +1009,15 @@
           </tr>
         </tbody>
       </table>
-      <figcaption>These tables illustrate how 3D-Shaper Medical suggests a 3D-DXA analysis can be used to decide on a
-        treatment. (A) The table provided by 3D-Shaper Medical which is said to help prescribe a treatment best suited
-        to a patients' needs. Only the references for teriparatide are provided here. (B) The effects of teriparatide
-        treatment seen from a 3D-DXA analysis as reported by the referenced studies, as well as an additional study that
-        was not referenced by 3D-Shaper Medical. (C) The threshold values that determine the various symbols that
-        indicate the way a particular treatment affects the aBMD, trabecular vBMD and cortical sBMD, where this was
-        available. * the addition of [<a href="#ref-3">3</a>] is likely an error since this study does not include
-        teriparatide.</figcaption>
+      <figcaption>ตารางเหล่านี้แสดงให้เห็นว่า 3D-Shaper Medical แนะนำให้ใช้การวิเคราะห์ 3D-DXA
+        เพื่อตัดสินใจเลือกวิธีรักษาอย่างไร (A) ตารางที่ได้รับจาก 3D-Shaper Medical
+        ซึ่งมีไว้เพื่อช่วยเลือกวิธีรักษาที่เหมาะสมที่สุดกับความต้องการของผู้ป่วย
+        โดยที่นี่แสดงเฉพาะข้อมูลอ้างอิงสำหรับเทริพาราไทด์เท่านั้น (B)
+        ผลของการรักษาด้วยเทริพาราไทด์ที่เห็นจากการวิเคราะห์ 3D-DXA ตามที่รายงานโดยการศึกษาอ้างอิง
+        รวมถึงการศึกษาเพิ่มเติมอื่นที่ไม่ได้อ้างอิงโดย 3D-Shaper Medical (C) ค่าเกณฑ์ที่กำหนดสัญลักษณ์ต่างๆ
+        เพื่อระบุว่าการรักษาแบบเจาะจงส่งผลต่อ aBMD, vBMD ของกระดูกทราเบคิวลาร์ และ sBMD ของกระดูกคอร์เทกซ์อย่างไร
+        (เท่าที่มีข้อมูล) * การเพิ่ม [<a href="#ref-55">55</a>]
+        น่าจะเป็นข้อผิดพลาดเนื่องจากการศึกษานี้ไม่ได้รวมเทริพาราไทด์ไว้</figcaption>
     </figure>
 
 
@@ -1051,66 +1060,70 @@
     leaving the question of compatibility with other devices in the United States unresolved.
 
 
-    <h2>Discussion</h2>
+    <h2>การอภิปราย</h2>
 
-    In summary, 3D-DXA produces a variety of bone parameters that appear highly detailed, but primarily reflect overall
-    areal BMD rather than measuring distinct cortical or trabecular properties. While the software may yield results
-    that correlate with true values in populations where cortical and trabecular changes are proportional to aBMD, it
-    falls short in capturing patient-specific measurements or localized changes. This limitation is especially
-    pronounced in scenarios such as anabolic therapy, where cortical and trabecular bone parameters may change inversely
-    and 3D-DXA fails to reflect these true changes observed by QCT. This raises significant concerns for its use in
-    routine clinical care or as a reliable research tool.
-
-    <BR>
-
-    3D-DXA was initially developed to better diagnose osteoporosis by providing an estimate of the integral vBMD [<a
-      href="#ref-70">70</a>, <a href="#ref-71">71</a>]. By not attempting to separately assess the cortical and
-    trabecular compartments, the integral vBMD produced by 3D-DXA may still represent a valid estimation. The
-    methodology was later extended to attempt to improve fracture risk estimations by analyzing the model parameters
-    directly, since these parameters fully describe the morphology of the statistical model [<a href="#ref-51">51</a>,
-    <a href="#ref-72">72</a>, <a href="#ref-73">73</a>, <a href="#ref-74">74</a>]. However, the key limitations of
-    3D-DXA, as detailed in this review, remain and undermine its accuracy and reliability.
+    โดยสรุป 3D-DXA สร้างพารามิเตอร์กระดูกที่หลากหลายซึ่งดูเหมือนจะละเอียดมาก แต่โดยหลักแล้วพารามิเตอร์เหล่านั้นสะท้อนถึง
+    BMD โดยรวม มากกว่าการวัดคุณลักษณะของกระดูกคอร์เทกซ์หรือทราเบคิวลาร์ที่แยกจากกัน
+    แม้ว่าซอฟต์แวร์อาจให้ผลลัพธ์ที่สอดคล้องกับค่าจริงในประชากรที่การเปลี่ยนแปลงของคอร์เทกซ์และทราเบคิวลาร์เป็นสัดส่วนกับ
+    aBMD แต่ซอฟต์แวร์ยังขาดความสามารถในการวัดเจาะจงรายบุคคลหรือตรวจวัดการเปลี่ยนแปลงเฉพาะที่
+    ข้อจำกัดนี้เห็นได้ชัดเป็นพิเศษในสถานการณ์ต่างๆ เช่น การรักษาด้วยยาเสริมสร้างกระดูก (anabolic therapy)
+    ซึ่งพารามิเตอร์ของกระดูกคอร์เทกซ์และทราเบคิวลาร์อาจเปลี่ยนแปลงในทิศทางตรงกันข้ามกัน และ 3D-DXA
+    ไม่สามารถสะท้อนถึงการเปลี่ยนแปลงที่แท้จริงที่สังเกตได้จาก QCT
+    สิ่งนี้ทำให้เกิดความกังวลอย่างมากต่อการใช้งานในการดูแลทางคลินิกตามปกติ หรือการใช้เป็นเครื่องมือวิจัยที่เชื่อถือได้
 
     <BR>
 
-    This study was limited by the lack of transparency from the companies commercializing 3D-DXA, including 3D-Shaper
-    Medical, DMS Imaging, and Fujifilm. As a result, it relies on publicly available information and my own experience
-    in developing this methodology. I encourage readers to seek clarifications from these companies or their
-    representatives regarding aspects of 3D-DXA and 3D-Shaper that have not been disclosed.
+    เดิมที 3D-DXA ได้รับการพัฒนาเพื่อช่วยวินิจฉัยโรคกระดูกพรุนได้ดีขึ้น โดยให้ค่าประมาณของ vBMD แบบบูรณาการ (integral
+    vBMD) [<a href="#ref-70">70</a>, <a href="#ref-71">71</a>]
+    การที่ไม่ได้พยายามประเมินส่วนประกอบของคอร์เทกซ์และทราเบคิวลาร์แยกจากกัน ทำให้ค่า integral vBMD ที่สร้างโดย 3D-DXA
+    อาจยังคงเป็นค่าประมาณที่ถูกต้อง
+    ต่อมามีการขยายระเบียบวิธีเพื่อพยายามปรับปรุงการประเมินความเสี่ยงของการแตกหักโดยการวิเคราะห์พารามิเตอร์ของแบบจำลองโดยตรง
+    เนื่องจากพารามิเตอร์เหล่านี้อธิบายลักษณะทางสัณฐานวิทยาของแบบจำลองทางสถิติได้อย่างสมบูรณ์ [<a href="#ref-51">51</a>,
+    <a href="#ref-72">72</a>, <a href="#ref-73">73</a>, <a href="#ref-74">74</a>] อย่างไรก็ตาม ข้อจำกัดที่สำคัญของ
+    3D-DXA ตามที่ระบุไว้ในบทวิจารณ์นี้ ยังคงอยู่และส่งผลต่อความแม่นยำและความน่าเชื่อถือ
 
     <BR>
 
-    Evaluations from professional societies could provide valuable guidance by providing independent assessments of the
-    validity of 3D-DXA and establishing official recommendations regarding its use. Although an update on the practice
-    guideline for dual-energy X-ray absorptiometry by the International Working Group on DXA Best Practices states
-    regarding 3D-DXA that "more evidence is needed to make recommendations for the application of these novel imaging
-    techniques in clinical practice" [<a href="#ref-75">75</a>], I believe there is now sufficient evidence to base a
-    recommendation on, and I hope this review will be helpful in that regard.
+    การศึกษานี้มีข้อจำกัดเนื่องจากขาดความโปร่งใสจากบริษัทที่จำหน่าย 3D-DXA เชิงพาณิชย์ ได้แก่ 3D-Shaper Medical, DMS
+    Imaging และ Fujifilm ด้วยเหตุนี้
+    จึงต้องอาศัยข้อมูลที่สาธารณะเข้าถึงได้และประสบการณ์ส่วนตัวของผมเองในการพัฒนาระเบียบวิธีนี้
+    ผมขอแนะนำให้ผู้อ่านขอคำชี้แจงจากบริษัทเหล่านี้หรือตัวแทน ในเรื่องเกี่ยวกับแง่มุมต่างๆ ของ 3D-DXA และ 3D-Shaper
+    ที่ยังไม่ได้เปิดเผย
 
     <BR>
 
-    In conclusion, given the fundamental limitations of 3D-DXA, it is my professional assessment that the cortical and
-    trabecular parameters provided by 3D-DXA should not be used for research purposes, nor are they suitable for
-    clinical applications such as diagnosis, monitoring, or treatment decision support.
+    การประเมินจากสมาคมวิชาชีพอาจให้คำแนะนำที่มีคุณค่า โดยการให้การประเมินความถูกต้องของ 3D-DXA อย่างเป็นอิสระ
+    และกำหนดข้อเสนอแนะอย่างเป็นทางการเกี่ยวกับการใช้งาน แม้ว่าการปรับปรุงแนวทางปฏิบัติสำหรับ dual-energy X-ray
+    absorptiometry โดย International Working Group on DXA Best Practices จะระบุไว้เกี่ยวกับ 3D-DXA ว่า
+    "ยังต้องการหลักฐานเพิ่มเติมเพื่อจัดทำข้อเสนอแนะสำหรับการใช้เทคนิคการถ่ายภาพรูปแบบใหม่เหล่านี้ในการปฏิบัติงานทางคลินิก"
+    [<a href="#ref-75">75</a>] ผมเชื่อว่าขณะนี้มีหลักฐานเพียงพอที่จะจัดทำข้อเสนอแนะได้แล้ว
+    และผมหวังว่าบทวิจารณ์นี้จะเป็นประโยชน์ในประเด็นดังกล่าว
 
-    <h2>Author contributions</h2>
-    TW contributed to the conceptualization, data curation, formal analysis, investigation, methodology, resources,
-    visualization, and writing of the manuscript.
+    <BR>
 
-    <h2>Funding</h2>
-    No funding was received for this study.
+    สรุปได้ว่า เมื่อพิจารณาถึงข้อจำกัดพื้นฐานของ 3D-DXA
+    ผมขอประเมินอย่างมืออาชีพว่าพารามิเตอร์คอร์เทกซ์และทราเบคิวลาร์ที่ได้จาก 3D-DXA
+    ไม่ควรนำไปใช้เพื่อวัตถุประสงค์ในการวิจัย และไม่เหมาะสมสำหรับการใช้งานทางคลินิก เช่น การวินิจฉัย การติดตามผล
+    หรือการสนับสนุนการตัดสินใจเลือกวิธีรักษา
 
-    <h2>Data availability</h2>
-    All data presented in this article are available from the author upon request.
+    <h2>ส่วนร่วมของผู้เขียน</h2>
+    TW มีส่วนร่วมในการกำหนดแนวคิด, การคัดกรองข้อมูล, การวิเคราะห์อย่างเป็นทางการ, การสืบสวน, ระเบียบวิธี, ทรัพยากร,
+    การนำเสนอภาพ และการเขียนต้นฉบับ
+
+    <h2>การระดมทุน</h2>
+    ไม่ได้รับการระดมทุนสำหรับการศึกษานี้
+
+    <h2>การเข้าถึงข้อมูล</h2>
+    ข้อมูลทั้งหมดที่นำเสนอในบทความนี้สามารถขอได้จากผู้เขียนตามคำขอ
 
     <h2>ความขัดแย้งทางผลประโยชน์</h2>
-    The author is the co-inventor of a patent related to the methodology underlying the 3D-DXA software. The author has
-    been involved in discussions regarding the intellectual property and origins of the commercial 3D-DXA software code,
-    statistical models, and promotional material. The author is not affiliated with 3D-Shaper Medical or other companies
-    involved in the commercial exploitation of 3D-DXA and has not received equity, royalties, or other financial
-    compensation. The author has lectured for UCB in educational fora and received research grant support from Amgen
-    Inc. and Lilly. The views expressed in this article are solely those of the author and are based on a critical
-    evaluation of the methodology and available scientific evidence.
+    ผู้เขียนเป็นผู้ร่วมประดิษฐ์สิทธิบัตรที่เกี่ยวข้องกับระเบียบวิธีที่รองรับซอฟต์แวร์ 3D-DXA
+    ผู้เขียนได้มีส่วนร่วมในการหารือเกี่ยวกับทรัพย์สินทางปัญญาและที่มาของรหัสซอฟต์แวร์ 3D-DXA เชิงพาณิชย์,
+    แบบจำลองทางสถิติ และสื่อประชาสัมพันธ์ ผู้เขียนไม่ได้มีความเกี่ยวข้องกับ 3D-Shaper Medical หรือบริษัทอื่นๆ
+    ที่เกี่ยวข้องกับการแสวงหาประโยชน์เชิงพาณิชย์จาก 3D-DXA และไม่ได้รับส่วนของผู้ถือหุ้น, ค่าลิขสิทธิ์
+    หรือค่าตอบแทนทางการเงินอื่นใด ผู้เขียนเคยบรรยายให้กับ UCB ในเวทีการศึกษา และได้รับการสนับสนุนทุนวิจัยจาก Amgen Inc.
+    และ Lilly ความคิดเห็นที่แสดงในบทความนี้เป็นของผู้เขียนเพียงผู้เดียว
+    และอ้างอิงจากการประเมินระเบียบวิธีและหลักฐานทางวิทยาศาสตร์ที่มีอยู่อย่างถี่ถ้วน
 
 
     <h2>References</h2>
@@ -1453,6 +1466,9 @@
 
   <script>
     (function () {
+      const switcher = document.querySelector('.lang-switcher select');
+      if (!switcher) return;
+
       const supported = ['en', 'nl', 'es', 'fr', 'it', 'de', 'pt', 'th', 'ko', 'hi', 'ja', 'ms'];
 
       // Split current path and detect if it starts with a locale
@@ -1464,17 +1480,18 @@
       // "rest" = everything after the locale (or the whole path if no locale)
       const rest = '/' + parts.slice(hasLocale ? 1 : 0).join('/') || '/';
 
-      document.querySelectorAll('.lang-switcher a').forEach(a => {
-        const lang = a.getAttribute('hreflang');
+      // Update select value to match current language
+      switcher.value = current === 'en' ? '/' : '/' + current + '/';
 
-        // English lives at the root, others live under /xx/
-        const base = (lang === 'en') ? '' : '/' + lang;
+      // Function to handle language change while preserving fragment
+      window.changeLang = function (val) {
+        if (!val) return;
+        const fragment = window.location.hash;
+        window.location.href = val + fragment;
+      };
 
-        // Build final href; ensure we keep the rest-of-path if you add subpages later
-        a.href = base + (rest === '/' ? '/' : rest);
-
-        if (lang === current) a.classList.add('active');
-      });
+      // We can also update the onchange in HTML or just use this one
+      switcher.setAttribute('onchange', 'changeLang(this.value)');
     })();
   </script>
 </body>

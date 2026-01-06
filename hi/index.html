@@ -106,19 +106,25 @@
 
     /* language switcher */
     .lang-switcher {
-      display: flex;
-      gap: .75rem;
-      padding: .75rem 1rem;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index: 1000;
     }
 
-    .lang-switcher a {
-      text-decoration: none;
-      padding: .25rem .5rem;
-      border-radius: .5rem;
+    .lang-switcher select {
+      padding: 0.4rem 0.6rem;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      background-color: white;
+      font-family: inherit;
+      font-size: 0.9rem;
+      cursor: pointer;
+      outline: none;
     }
 
-    .lang-switcher a.active {
-      outline: 1px solid currentColor;
+    .lang-switcher select:hover {
+      border-color: #888;
     }
   </style>
 </head>
@@ -126,7 +132,7 @@
 <body>
 
   <div class="lang-switcher">
-    <select aria-label="Language" onchange="if(this.value) location.href=this.value;">
+    <select aria-label="Language selection">
       <option value="/" lang="en">English</option>
       <option value="/nl/" lang="nl">Nederlands</option>
       <option value="/es/" lang="es">Español</option>
@@ -136,7 +142,7 @@
       <option value="/pt/" lang="pt">Português</option>
       <option value="/th/" lang="th">ไทย</option>
       <option value="/ko/" lang="ko">한국어</option>
-      <option value="/hi/" lang="hi" selected>हिन्दी</option>
+      <option value="/hi/" lang="hi">हिन्दी</option>
       <option value="/ja/" lang="ja">日本語</option>
       <option value="/ms/" lang="ms">Bahasa Melayu</option>
     </select>
@@ -856,8 +862,8 @@
             <td>++</td>
           </tr>
           <tr>
-            <td>Teriparatide [<a href="#ref-3">3</a>, <a href="#ref-4">4</a>, <a href="#ref-5">5</a>, <a
-                href="#ref-6">6</a>]*</td>
+            <td>Teriparatide [<a href="#ref-15">15</a>, <a href="#ref-52">52</a>, <a href="#ref-55">55</a>*, <a
+                href="#ref-56">56</a>]</td>
             <td>+</td>
             <td>++</td>
             <td>=</td>
@@ -889,19 +895,19 @@
         </thead>
         <tbody>
           <tr>
-            <td>टेरिपैराटाइड [<a href="#ref-4">4</a>, <a href="#ref-5">5</a>] (18 महीने)</td>
+            <td>टेरिपैराटाइड [<a href="#ref-52">52</a>, <a href="#ref-56">56</a>] (18 महीने)</td>
             <td>++ (3.3%)</td>
             <td>++/+++ (9%)</td>
             <td>+ (1.8%)</td>
           </tr>
           <tr>
-            <td>टेरिपैराटाइड [<a href="#ref-6">6</a>] (24 महीने)</td>
+            <td>टेरिपैराटाइड [<a href="#ref-15">15</a>] (24 महीने)</td>
             <td>= (p &gt; 0.05)</td>
             <td>++/+++ (5.9%)</td>
             <td>= (p &gt; 0.05)</td>
           </tr>
           <tr>
-            <td>टेरिपैराटाइड [<a href="#ref-7">7</a>] (24 महीने)</td>
+            <td>टेरिपैराटाइड [<a href="#ref-60">60</a>] (24 महीने)</td>
             <td>= (p &gt; 0.05)</td>
             <td>++/+++ (&gt;14%)</td>
             <td>= (p &gt; 0.05)</td>
@@ -964,7 +970,7 @@
         संदर्भ प्रदान किए गए हैं। (B) संदर्भित अध्ययनों द्वारा रिपोर्ट किए गए 3D-DXA विश्लेषण से देखे गए टेरिपैराटाइड
         उपचार के प्रभाव, साथ ही एक अतिरिक्त अध्ययन जिसे 3D-Shaper Medical द्वारा संदर्भित नहीं किया गया था। (C)
         थ्रेसहोल्ड मान जो विभिन्न प्रतीकों को निर्धारित करते हैं जो संकेत देते हैं कि एक विशेष उपचार aBMD, ट्रैब्युलर
-        vBMD और कॉर्टिकल sBMD को कैसे प्रभावित करता है, जहाँ यह उपलब्ध था। * [<a href="#ref-3">3</a>] का जुड़ना संभवतः
+        vBMD और कॉर्टिकल sBMD को कैसे प्रभावित करता है, जहाँ यह उपलब्ध था। * [<a href="#ref-55">55</a>] का जुड़ना संभवतः
         एक त्रुटि है क्योंकि इस अध्ययन में टेरिपैराटाइड शामिल नहीं है।</figcaption>
     </figure>
 
@@ -1410,6 +1416,9 @@
 
   <script>
     (function () {
+      const switcher = document.querySelector('.lang-switcher select');
+      if (!switcher) return;
+
       const supported = ['en', 'nl', 'es', 'fr', 'it', 'de', 'pt', 'th', 'ko', 'hi', 'ja', 'ms'];
 
       // Split current path and detect if it starts with a locale
@@ -1421,17 +1430,18 @@
       // "rest" = everything after the locale (or the whole path if no locale)
       const rest = '/' + parts.slice(hasLocale ? 1 : 0).join('/') || '/';
 
-      document.querySelectorAll('.lang-switcher a').forEach(a => {
-        const lang = a.getAttribute('hreflang');
+      // Update select value to match current language
+      switcher.value = current === 'en' ? '/' : '/' + current + '/';
 
-        // English lives at the root, others live under /xx/
-        const base = (lang === 'en') ? '' : '/' + lang;
+      // Function to handle language change while preserving fragment
+      window.changeLang = function (val) {
+        if (!val) return;
+        const fragment = window.location.hash;
+        window.location.href = val + fragment;
+      };
 
-        // Build final href; ensure we keep the rest-of-path if you add subpages later
-        a.href = base + (rest === '/' ? '/' : rest);
-
-        if (lang === current) a.classList.add('active');
-      });
+      // We can also update the onchange in HTML or just use this one
+      switcher.setAttribute('onchange', 'changeLang(this.value)');
     })();
   </script>
 </body>
